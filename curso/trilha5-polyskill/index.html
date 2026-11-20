@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>T5 — polyskill cross-runtime | PolySkills</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#FACC15',dark:{900:'#111827',800:'#1f2937',700:'#374151',600:'#4b5563'}}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+body{font-family:'Inter',sans-serif}code,pre,.font-mono{font-family:'JetBrains Mono',monospace}.dark body{background-color:#111827}
+.topic-explanation{display:none}.topic-explanation.active{display:block}
+html:not(.dark) body{background-color:#f8fafc}
+html:not(.dark) .bg-dark-900{background-color:#fff}html:not(.dark) .bg-dark-800{background-color:#f9fafb}html:not(.dark) .bg-dark-700{background-color:#f3f4f6}html:not(.dark) .bg-dark-600{background-color:#e5e7eb}
+html:not(.dark) .text-neutral-100{color:#111827}html:not(.dark) .text-neutral-300{color:#4b5563}html:not(.dark) .text-neutral-400{color:#6b7280}html:not(.dark) .text-neutral-500{color:#9ca3af}
+html:not(.dark) .border-dark-600{border-color:#d1d5db}html:not(.dark) .border-dark-700{border-color:#e5e7eb}
+html:not(.dark) .text-teal-400{color:#0d9488}html:not(.dark) .bg-teal-500\/20{background-color:rgba(13,148,136,.12)}html:not(.dark) .bg-teal-500\/10{background-color:rgba(13,148,136,.08)}html:not(.dark) .border-teal-500\/30{border-color:rgba(13,148,136,.25)}html:not(.dark) .hover\:bg-teal-500\/30:hover{background-color:rgba(13,148,136,.18)}html:not(.dark) .hover\:text-teal-400:hover{color:#0d9488}html:not(.dark) .hover\:bg-teal-500\/10:hover{background-color:rgba(13,148,136,.08)}html:not(.dark) .group:hover .group-hover\:text-teal-400{color:#0d9488}
+html:not(.dark) .hover\:text-emerald-400:hover{color:#059669}html:not(.dark) .hover\:bg-emerald-500\/10:hover{background-color:rgba(5,150,105,.08)}
+html:not(.dark) .hover\:text-blue-400:hover{color:#2563eb}html:not(.dark) .hover\:bg-blue-500\/10:hover{background-color:rgba(37,99,235,.08)}
+html:not(.dark) .hover\:text-purple-400:hover{color:#7c3aed}html:not(.dark) .hover\:bg-purple-500\/10:hover{background-color:rgba(124,58,237,.08)}
+html:not(.dark) .hover\:text-amber-400:hover{color:#92400e}html:not(.dark) .hover\:bg-amber-500\/10:hover{background-color:rgba(217,119,6,.08)}
+html:not(.dark) .hover\:text-rose-400:hover{color:#9f1239}html:not(.dark) .hover\:bg-rose-500\/10:hover{background-color:rgba(225,29,72,.08)}
+html:not(.dark) [class*="bg-gradient-to"]{background-image:none!important}
+html:not(.dark) .text-primary{color:#a16207}html:not(.dark) .bg-primary\/10{background-color:rgba(161,98,7,.08)}html:not(.dark) .border-primary\/40{border-color:rgba(161,98,7,.25)}
+html:not(.dark) .text-sky-400{color:#0369a1}html:not(.dark) .text-yellow-400{color:#a16207}html:not(.dark) .hover\:text-sky-300:hover{color:#0284c7}html:not(.dark) .hover\:text-yellow-300:hover{color:#854d0e}
+html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
+.dark .border-dark-600{border-color:#374151}.dark .divide-dark-600>:not([hidden])~:not([hidden]){border-color:#374151}
+</style>
+<link href="https://inematds.github.io/polyskills/curso/trilha5-polyskill/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/polyskills/en/curso/trilha5-polyskill/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/polyskills/es/curso/trilha5-polyskill/" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="./" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha5-polyskill/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha5-polyskill/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html"><span class="text-2xl">🦜</span><span class="font-bold text-lg hidden sm:inline">PolySkills</span></a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-fundamentos/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-claude-code/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Claude Code</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-codex/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Codex</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-conversao/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Conversão</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-teal-400 bg-teal-500/10" href="index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">polyskill</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6-fluxos/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Fluxos</span></a>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div></div>
+</nav>
+<header class="bg-gradient-to-br from-teal-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-teal-500/20 text-teal-400 text-xs font-semibold rounded-full mb-4">TRILHA 5 • DESTAQUE</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🦜 polyskill — skills cross-runtime</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Uma definição source, outputs otimizados pra cada runtime. Round-trip Claude ↔ Codex, drift policy automática, adapters plugáveis pra novos runtimes.</p>
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">2</div><div class="text-xs text-neutral-400">Módulos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">14</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">~90min</div><div class="text-xs text-neutral-400">Duração</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">Avanç.</div><div class="text-xs text-neutral-400">Nível</div></div>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<section class="mb-12">
+<h2 class="text-2xl font-bold mb-6">Mapa da trilha</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-teal-500/30 p-5 transition-all" href="#modulo-5-1">
+<div class="flex items-center justify-between mb-2"><span class="text-teal-400 font-bold text-sm">5.1</span><span class="text-xs text-neutral-500">~45 min</span></div>
+<h3 class="font-semibold mb-1 group-hover:text-teal-400 transition-colors">🏛️ A spec, a dor, a arquitetura</h3>
+<p class="text-xs text-neutral-400">Por que polyskill existe</p>
+</a>
+<a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-teal-500/30 p-5 transition-all" href="#modulo-5-2">
+<div class="flex items-center justify-between mb-2"><span class="text-teal-400 font-bold text-sm">5.2</span><span class="text-xs text-neutral-500">~45 min</span></div>
+<h3 class="font-semibold mb-1 group-hover:text-teal-400 transition-colors">⚡ CLI polyskill na prática</h3>
+<p class="text-xs text-neutral-400">init → build → install → reconcile</p>
+</a>
+</div>
+</section>
+<h2 class="text-2xl font-bold mb-6">Conteúdo detalhado</h2>
+<!-- MODULO 5.1 -->
+<div class="bg-dark-800 rounded-xl border border-dark-600 mb-6" id="modulo-5-1">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2"><span class="text-teal-400 font-bold">5.1</span><span class="text-xs text-neutral-500">~45 min</span></div>
+<h3 class="text-2xl font-bold mb-2">🏛️ O padrão Agent Skills, a dor e a arquitetura do polyskill</h3>
+<p class="text-neutral-400 text-sm">Antes do CLI, o conceito. Por que polyskill existe e o que ele resolve.</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">📐</span><div><span class="font-medium">A spec aberta Agent Skills</span><span class="text-neutral-500 text-sm ml-2">- agentskills.io e os 40+ runtimes</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Spec aberta originada na Anthropic e adotada por 40+ ferramentas. Define o formato canônico de skill: arquivo <code>SKILL.md</code>, frontmatter com <code>name</code> e <code>description</code>, corpo markdown, convenção de pastas <code>scripts/</code>, <code>references/</code>, <code>assets/</code>.</p></div>
+<div><span class="text-teal-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É o denominador comum real. Tudo que você escreve dentro dessa spec funciona em qualquer runtime compatível. Tudo fora vira amarra a um runtime só.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Os 4 pilares (SKILL.md, name, description, body), convenção de pastas, compromisso aberto, agentskills.io como autoridade.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">😩</span><div><span class="font-medium">A dor — manter duas skills divergentes</span><span class="text-neutral-500 text-sm ml-2">- Drift inevitável</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Você cria uma skill no Claude. Copia/adapta pro Codex. Funciona. Uma semana depois, melhora a do Claude. Esquece de propagar. Depois melhora a do Codex. Esquece. Em um mês são duas skills DIFERENTES, e ninguém sabe qual está certa.</p></div>
+<div><span class="text-teal-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Sem entender a dor, polyskill parece overkill. Quem já sofreu drift de skill (ou pior, perdeu uma versão) entende o valor imediatamente.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Drift orgânico, fork acidental, fonte de verdade ambígua, custo cognitivo de "qual versão é a boa", quebra de funcionalidade silenciosa.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">💡</span><div><span class="font-medium">A ideia central — uma source, vários alvos</span><span class="text-neutral-500 text-sm ml-2">- Compilador de skills</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Você escreve a skill UMA vez no formato canônico portable (<code>definition.md</code>). O polyskill <em>compila</em> pra <code>dist/claude/</code> e <code>dist/codex/</code>, cada um otimizado pro runtime alvo. Como Babel/TypeScript pra skills.</p></div>
+<div><span class="text-teal-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Esse é o "aha moment". Uma vez que clica que a skill é fonte e os dois outputs são gerados, todo o resto do polyskill faz sentido.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Source canônico, build artifacts (<code>dist/</code>), compilação seletiva por target, otimização por runtime (truncar description, reescrever injeção).</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">🧱</span><div><span class="font-medium">As 3 peças — IR, adapters, CLI</span><span class="text-neutral-500 text-sm ml-2">- A arquitetura completa</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">(1) <strong>IR</strong> — Representação Interna neutra, sem amarras de runtime; (2) <strong>Adapters</strong> — 1 arquivo TypeScript por runtime, sabe ler E escrever o formato dele; (3) <strong>CLI</strong> — orquestra os adapters pelo registry.</p></div>
+<div><span class="text-teal-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Adicionar runtime novo é literalmente um arquivo: o adapter. Entendendo isso, você sabe que Gemini, Cursor, Copilot são "só" novos adapters — não rewrite do polyskill.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Compilador frontend/middle/backend, plugin via registry, interface Adapter (parse, emit, validate), separação de concerns.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">🔁</span><div><span class="font-medium">Round-trip — bidirecional de verdade</span><span class="text-neutral-500 text-sm ml-2">- Claude ↔ portable ↔ Codex</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Adapter "lê E escreve". Você pode importar uma skill existente do Claude (<code>--from claude</code>), virar portable, daí emitir pros dois. Mesma coisa começando do Codex (<code>--from codex</code>).</p></div>
+<div><span class="text-teal-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Você não precisa começar do zero. Tem uma skill de Claude que adora? Importa, gera portable, daí emite. Tem uma do Codex? Mesma coisa pelo outro lado.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Bidirecionalidade obrigatória do adapter, lossy vs lossless, suporte a <code>scripts/</code>, <code>references/</code>, <code>assets/</code> em todas direções.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">🛡️</span><div><span class="font-medium">Drift policy — o seguro contra atropelar</span><span class="text-neutral-500 text-sm ml-2">- Hash de output, --force, reconcile</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Toda vez que faz build, polyskill calcula hash dos arquivos gerados. No build seguinte, se algum arquivo de alvo foi editado à mão, o build aborta com erro. Você decide: <code>--force</code> (sobrescreve) ou <code>polyskill reconcile</code> (inspeciona o drift).</p></div>
+<div><span class="text-teal-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Sem isso, você ajustaria à mão um output do Claude pra um caso específico, faria build no dia seguinte, perderia o ajuste. Drift policy é a apólice.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Hash de arquivo, detecção de modificação fora-da-banda, opt-in pra sobrescrever (<code>--force</code>), reconcile interativo, princípio "no silent loss".</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">7</span>
+<span class="text-lg">🦜</span><div><span class="font-medium">A meta-skill — polyskill como skill</span><span class="text-neutral-500 text-sm ml-2">- /polyskill e $polyskill em NL</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">O próprio polyskill vem como skill instalável nos dois runtimes. Você invoca em linguagem natural: <code>/polyskill converte minha skill x pra funcionar nos dois</code> (Claude) ou <code>$polyskill converte ...</code> (Codex). A skill chama o CLI por baixo.</p></div>
+<div><span class="text-teal-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Você nunca decora flag. Pede em PT-BR, a skill traduz pra <code>polyskill import --from claude</code>, <code>polyskill build</code>, etc.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Skill como wrapper de CLI, NL interface, Caminho A (drag&amp;drop sem CLI) vs Caminho B (fonte + CLI), dogfooding.</p></div>
+</div></div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-5-1')">Ver em Modal</button>
+<a class="px-4 py-2 text-sm bg-teal-600 hover:bg-teal-500 text-white rounded-lg transition-colors" href="modulo-5-1.html">Ver Completo</a>
+</div>
+</div>
+<!-- MODULO 5.2 -->
+<div class="bg-dark-800 rounded-xl border border-dark-600 mb-6" id="modulo-5-2">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2"><span class="text-teal-400 font-bold">5.2</span><span class="text-xs text-neutral-500">~45 min</span></div>
+<h3 class="text-2xl font-bold mb-2">⚡ CLI polyskill na prática</h3>
+<p class="text-neutral-400 text-sm">Da instalação ao reconcile. Cada comando explicado e usado num exemplo real.</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">📥</span><div><span class="font-medium">Instalação — Caminho A vs Caminho B</span><span class="text-neutral-500 text-sm ml-2">- Drag&amp;drop vs source + CLI</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm"><strong>A:</strong> copia <code>skill/dist/claude/polyskill</code> pra <code>~/.claude/skills/</code> e <code>skill/dist/codex/polyskill</code> pra <code>~/.agents/skills/</code>. Funciona como skill. <strong>B:</strong> clona repo, <code>npm install &amp;&amp; npm run build &amp;&amp; npm link</code>, ganha o CLI completo.</p></div>
+<div><span class="text-teal-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Caminho A só roda a skill — sem CLI, alguns comandos quebram. Caminho B é completo. Pra construir suas próprias skills cross-runtime, B é obrigatório.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Bundle pré-buildado vs source, npm link, validação com <code>polyskill --version</code> e <code>polyskill detect</code>.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">🚀</span><div><span class="font-medium">polyskill init &lt;nome&gt;</span><span class="text-neutral-500 text-sm ml-2">- Workspace portable do zero</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Comando que cria um workspace de skill com a estrutura portable: <code>definition.md</code> (frontmatter YAML + body), pastas <code>scripts/</code>, <code>references/</code>, <code>assets/</code>, e config do build.</p></div>
+<div><span class="text-teal-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Skill nova começa aqui. Você nunca cria SKILL.md à mão — cria definition.md uma vez, polyskill cuida do resto.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Estrutura inicial, definition.md vs SKILL.md, frontmatter mínimo, edição interativa do body.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">📤</span><div><span class="font-medium">polyskill import &lt;path&gt; --from claude|codex</span><span class="text-neutral-500 text-sm ml-2">- Traz skill existente</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Aponta pra uma skill existente em qualquer runtime e gera o workspace portable equivalente. Funciona nos dois sentidos: <code>--from claude</code> pega de <code>.claude/skills/</code>, <code>--from codex</code> pega de <code>.agents/skills/</code>.</p></div>
+<div><span class="text-teal-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Você tem 10 skills do Claude que adora. Importa cada uma com um comando, daí roda <code>build</code> e ganha versão Codex de cada. Reverse engineering grátis.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Importação preserva scripts/references/assets, normalização do frontmatter, conversão de injeção dinâmica em prosa quando vier do Claude.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">🏗️</span><div><span class="font-medium">polyskill build</span><span class="text-neutral-500 text-sm ml-2">- Emite pra todos os alvos</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Gera <code>dist/claude/&lt;skill&gt;/SKILL.md</code> e <code>dist/codex/&lt;skill&gt;/SKILL.md</code> (+ sidecar <code>agents/openai.yaml</code> quando há branding ou MCP deps). É o passo de compilação.</p></div>
+<div><span class="text-teal-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É o comando que você roda toda vez que edita <code>definition.md</code>. Pode (e deve) ir num watch ou pre-commit hook.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Cache de hash, flag <code>--force</code> pra sobrescrever drift, dist como output gitignorável (mas o repo do polyskill commita pra ilustrar).</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">📦</span><div><span class="font-medium">polyskill install</span><span class="text-neutral-500 text-sm ml-2">- build + copia pros diretórios</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Combina build + copy pros diretórios canônicos: <code>~/.claude/skills/&lt;skill&gt;</code> e <code>~/.agents/skills/&lt;skill&gt;</code>. Skill fica instantaneamente disponível nos dois runtimes.</p></div>
+<div><span class="text-teal-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É o comando do "deploy local". Editou, testa rodando <code>install</code>, invoca no terminal do Claude OU do Codex, sem mexer manualmente em pastas.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Reload automático (Claude) vs refresh manual (Codex), idempotência, escopo (global vs projeto), uninstall (rm direto da pasta).</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">🔍</span><div><span class="font-medium">polyskill detect / status / adapters</span><span class="text-neutral-500 text-sm ml-2">- Comandos de inspeção</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm"><code>detect</code> diz quais runtimes estão na máquina; <code>status</code> diz quais alvos estão em sync com o último build; <code>adapters</code> lista os adapters instalados (hoje: portable, claude, codex).</p></div>
+<div><span class="text-teal-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Pra debug. Skill não dispara? Roda <code>detect</code> pra ver se o runtime está visível. Build estranho? <code>status</code> mostra o que está dessincronizado.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Comandos read-only, parseable pra script, output JSON quando <code>--json</code>, troubleshooting sem editar nada.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">7</span>
+<span class="text-lg">🩺</span><div><span class="font-medium">polyskill validate / reconcile</span><span class="text-neutral-500 text-sm ml-2">- Lint e resolução de drift</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm"><code>validate</code> roda linter por adapter (regras por alvo: limite de description no Codex, sintaxe de injeção no Claude, etc.). <code>reconcile</code> compara <code>dist/</code> com os diretórios instalados e mostra divergências, oferecendo merge guiado.</p></div>
+<div><span class="text-teal-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Validate roda no CI antes de merge. Reconcile resolve a situação real "alguém editou à mão fora do polyskill".</p></div>
+<div><span class="text-teal-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Regras por adapter, exit code 0 vs 1 pra CI, drift report interativo, decisão "manter override / sobrescrever / fundir".</p></div>
+</div></div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-5-2')">Ver em Modal</button>
+<a class="px-4 py-2 text-sm bg-teal-600 hover:bg-teal-500 text-white rounded-lg transition-colors" href="modulo-5-2.html">Ver Completo</a>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 mt-8">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="../trilha4-conversao/index.html">← Trilha 4: Conversão</a>
+<a class="flex-1 text-center px-6 py-3 bg-rose-600 text-white rounded-lg font-semibold hover:bg-rose-500 transition-colors" href="../trilha6-fluxos/index.html">Trilha 6: Fluxos →</a>
+</div>
+</main>
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-5-1" onclick="if(event.target === this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
+<div class="flex items-center space-x-3"><span class="text-teal-400 font-bold">5.1</span><span class="font-semibold">O padrão Agent Skills, a dor e a arquitetura</span></div>
+<button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
+</div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-5-1.html"></iframe>
+</div></div>
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-5-2" onclick="if(event.target === this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
+<div class="flex items-center space-x-3"><span class="text-teal-400 font-bold">5.2</span><span class="font-semibold">CLI polyskill na prática</span></div>
+<button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
+</div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-5-2.html"></iframe>
+</div></div>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>PolySkills • T5 polyskill • <a class="text-teal-400 hover:text-teal-300" href="https://github.com/inematds/pollyskill" target="_blank">github.com/inematds/pollyskill</a> • <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+function toggleTopic(button){const t=button.closest('.topic-item'),e=t.querySelector('.topic-explanation'),m=button.closest('.bg-dark-800');m.querySelectorAll('.topic-explanation.active').forEach(x=>{if(x!==e)x.classList.remove('active')});e.classList.toggle('active')}
+function openModal(id){const m=document.getElementById(id);if(m){m.classList.remove('hidden');document.body.style.overflow='hidden'}}
+function closeModal(){document.querySelectorAll('.modal').forEach(m=>m.classList.add('hidden'));document.body.style.overflow='auto'}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+const themeToggle=document.getElementById('theme-toggle'),tDark=document.getElementById('theme-toggle-dark-icon'),tLight=document.getElementById('theme-toggle-light-icon'),html=document.documentElement;
+if(localStorage.getItem('theme')==='light'||(!localStorage.getItem('theme')&&!html.classList.contains('dark'))){tDark.classList.remove('hidden');html.classList.remove('dark')}else{tLight.classList.remove('hidden')}
+themeToggle.addEventListener('click',()=>{tDark.classList.toggle('hidden');tLight.classList.toggle('hidden');html.classList.toggle('dark');localStorage.setItem('theme',html.classList.contains('dark')?'dark':'light')});
+</script>
+</body>
+</html>

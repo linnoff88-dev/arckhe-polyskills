@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>4.1 AI-assisted migration | PolySkills</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#FACC15',dark:{900:'#111827',800:'#1f2937',700:'#374151',600:'#4b5563'}}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+body{font-family:'Inter',sans-serif}code,pre,.font-mono{font-family:'JetBrains Mono',monospace}.dark body{background-color:#111827}
+html:not(.dark) body{background-color:#f8fafc}
+html:not(.dark) .bg-dark-900{background-color:#fff}html:not(.dark) .bg-dark-800{background-color:#f9fafb}html:not(.dark) .bg-dark-700{background-color:#f3f4f6}html:not(.dark) .bg-dark-600{background-color:#e5e7eb}
+html:not(.dark) .text-neutral-100{color:#111827}html:not(.dark) .text-neutral-300{color:#4b5563}html:not(.dark) .text-neutral-400{color:#6b7280}html:not(.dark) .text-neutral-500{color:#9ca3af}
+html:not(.dark) .border-dark-600{border-color:#d1d5db}html:not(.dark) .border-dark-700{border-color:#e5e7eb}
+html:not(.dark) .text-amber-400{color:#92400e}html:not(.dark) .bg-amber-500\/20{background-color:rgba(217,119,6,.12)}html:not(.dark) .bg-amber-500\/10{background-color:rgba(217,119,6,.08)}html:not(.dark) .border-amber-500\/30{border-color:rgba(217,119,6,.25)}html:not(.dark) .bg-amber-900\/20{background-color:rgba(217,119,6,.08)}html:not(.dark) .bg-amber-900\/30{background-color:rgba(217,119,6,.10)}html:not(.dark) .bg-amber-900\/40{background-color:rgba(217,119,6,.12)}html:not(.dark) .hover\:text-amber-400:hover{color:#92400e}html:not(.dark) .hover\:bg-amber-500\/10:hover{background-color:rgba(217,119,6,.08)}
+html:not(.dark) .hover\:text-emerald-400:hover{color:#059669}html:not(.dark) .hover\:bg-emerald-500\/10:hover{background-color:rgba(5,150,105,.08)}
+html:not(.dark) .hover\:text-blue-400:hover{color:#2563eb}html:not(.dark) .hover\:bg-blue-500\/10:hover{background-color:rgba(37,99,235,.08)}
+html:not(.dark) .hover\:text-purple-400:hover{color:#7c3aed}html:not(.dark) .hover\:bg-purple-500\/10:hover{background-color:rgba(124,58,237,.08)}
+html:not(.dark) .hover\:text-teal-400:hover{color:#0d9488}html:not(.dark) .hover\:bg-teal-500\/10:hover{background-color:rgba(13,148,136,.08)}
+html:not(.dark) .hover\:text-rose-400:hover{color:#9f1239}html:not(.dark) .hover\:bg-rose-500\/10:hover{background-color:rgba(225,29,72,.08)}
+html:not(.dark) .text-emerald-400{color:#059669}html:not(.dark) .bg-emerald-500\/20{background-color:rgba(5,150,105,.12)}html:not(.dark) .border-emerald-500\/30{border-color:rgba(5,150,105,.25)}html:not(.dark) .bg-emerald-900\/20{background-color:rgba(5,150,105,.06)}
+html:not(.dark) .text-blue-400{color:#2563eb}html:not(.dark) .bg-blue-500\/20{background-color:rgba(37,99,235,.12)}html:not(.dark) .border-blue-500\/30{border-color:rgba(37,99,235,.25)}html:not(.dark) .bg-blue-900\/20{background-color:rgba(37,99,235,.08)}
+html:not(.dark) .text-red-400{color:#b91c1c}html:not(.dark) .bg-red-900\/20{background-color:rgba(185,28,28,.06)}html:not(.dark) .border-red-500\/30{border-color:rgba(185,28,28,.25)}
+html:not(.dark) .text-teal-400{color:#0d9488}html:not(.dark) .bg-teal-500\/20{background-color:rgba(13,148,136,.12)}html:not(.dark) .border-teal-500\/30{border-color:rgba(13,148,136,.25)}
+html:not(.dark) [class*="bg-gradient-to"]{background-image:none!important}
+html:not(.dark) .text-primary{color:#a16207}html:not(.dark) .bg-primary\/10{background-color:rgba(161,98,7,.08)}html:not(.dark) .border-primary\/30{border-color:rgba(161,98,7,.25)}html:not(.dark) .border-primary\/40{border-color:rgba(161,98,7,.25)}
+html:not(.dark) .text-sky-400{color:#0369a1}html:not(.dark) .text-yellow-400{color:#a16207}html:not(.dark) .hover\:text-sky-300:hover{color:#0284c7}html:not(.dark) .hover\:text-yellow-300:hover{color:#854d0e}
+html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
+.dark .border-dark-600{border-color:#374151}.dark .divide-dark-600>:not([hidden])~:not([hidden]){border-color:#374151}
+</style>
+<link href="https://inematds.github.io/polyskills/curso/trilha4-conversao/modulo-4-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/polyskills/en/curso/trilha4-conversao/modulo-4-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/polyskills/es/curso/trilha4-conversao/modulo-4-1.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha4-conversao/modulo-4-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-4-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha4-conversao/modulo-4-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html"><span class="text-2xl">🦜</span><span class="font-bold text-lg hidden sm:inline">PolySkills</span></a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-fundamentos/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentals</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-claude-code/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Claude Code</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-codex/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Codex</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-amber-400 bg-amber-500/10" href="index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Conversion</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5-polyskill/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">polyskill</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6-fluxos/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Workflows</span></a>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div></div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-amber-400" href="../../index.html">Start</a><span>/</span>
+<a class="hover:text-amber-400" href="index.html">Track 4</a><span>/</span>
+<span class="text-amber-400">Module 4.1</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-amber-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-amber-500/20 text-amber-400 text-xs font-semibold rounded-full mb-4">MODULE 4.1</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🔄 AI-assisted migration + parallel maintenance</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">You don’t migrate by hand. You ask the new agent to migrate it for itself—and then keep both sides in sync without becoming a copyist.</p>
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-amber-400">7</div><div class="text-xs text-neutral-400">Topics</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-amber-400">40</div><div class="text-xs text-neutral-400">Minutes</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-amber-400">Practical</div><div class="text-xs text-neutral-400">Level</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-amber-400">Hands-on</div><div class="text-xs text-neutral-400">Type</div></div>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-12">
+<h3 class="text-lg font-semibold text-primary mb-2 flex items-center"><span class="mr-2">🎯</span>What you get here</h3>
+<p class="text-neutral-300">A tested, battle-tested prompt template for converting a Claude project → Codex (and vice versa), a post-migration validation checklist, a list of the 5 pitfalls that catch everyone, and the natural bridge to Track 5 (polyskill).</p>
+</div>
+<h2 class="text-2xl font-bold mb-6">Detailed content</h2>
+<!-- 1. Premissa -->
+<section class="mb-16" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">🎯 The premise — agents migrate agents</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Manual migration is costly and has subtle bugs (forgetting a sidecar, changing a path, losing a flag). Solution: <strong class="text-amber-400">open the TARGET agent and ask it to read the current config and generate the equivalent</strong>. Migration in minutes, with a chance to catch nuances a human might forget.</p>
+<div class="bg-amber-900/20 rounded-xl border border-amber-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-amber-400 mb-3">Why it works</h3>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li>• The agent knows its own format (native configuration)</li>
+<li>• Can CONSULT documentation (web fetch, MCP)</li>
+<li>• Iterate quickly over files without getting carpal tunnel</li>
+<li>• Note what changed so you can review it</li>
+</ul>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-3">✗ By hand</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li>• 2–4h for a medium-sized project</li>
+<li>• Forgets details (sidecar, syntax)</li>
+<li>• Doesn't consult up-to-date documentation</li>
+<li>• A subtle bug only appears in production</li>
+</ul>
+</div>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-3">✓ AI-assisted</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li>• 10–30 min for the same project</li>
+<li>• Covers details people skip</li>
+<li>• Can read official docs during the process</li>
+<li>• Report of what changed</li>
+</ul>
+</div>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-amber-400">Key concepts</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-amber-400">Agent migrates agent</strong><br/><span class="text-neutral-400 text-xs">Core principle</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-amber-400">Doc fetch</strong><br/><span class="text-neutral-400 text-xs">Real-time web</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-amber-400">Fast iteration</strong><br/><span class="text-neutral-400 text-xs">Minutes vs. hours</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-amber-400">Human validation</strong><br/><span class="text-neutral-400 text-xs">Essential afterward</span></div>
+</div>
+</div>
+</section>
+<!-- 2. Prompt-template -->
+<section class="mb-16" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">📋 The prompt template — copy, paste, run</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Vague results come from vague prompts. Use this standardized template to <strong class="text-amber-400">ensure complete coverage</strong> of the migration:</p>
+<div class="bg-amber-900/20 rounded-xl border border-amber-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-amber-400 mb-3">Template — Claude → Codex</h3>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-4 overflow-x-auto leading-relaxed">Este projeto foi criado pra Claude Code. Quero usar Codex também.
+
+Faça o seguinte (cobertura completa, não pule etapa):
+
+1. Leia o `CLAUDE.md` atual.
+   Gere um `AGENTS.md` equivalente. Mantém instruções,
+   convenções e comandos de build/test.
+   Remove sintaxe backtick-bang (vira prosa de fallback).
+
+2. Leia `.claude/settings.json`.
+   Crie `.codex/config.toml` equivalente. Converte:
+   - permissions (allow/deny/ask) → sandbox_mode + approval_policy
+   - hooks → entries equivalentes (mesma matcher, mesmo command)
+   - env vars → seção [env]
+   - MCP servers de .mcp.json → [mcp_servers.&lt;nome&gt;]
+
+3. Pra cada sub-agent em `.claude/agents/*.md`:
+   Converte pra `.codex/agents/&lt;nome&gt;.toml`.
+   Frontmatter → chaves TOML. Body → string em `instructions = """..."""`.
+   Adapta description pra mencionar invocação explícita.
+
+4. Pra cada skill em `.claude/skills/&lt;nome&gt;/`:
+   Copia pra `.agents/skills/&lt;nome&gt;/` (note: .agents/, NÃO .codex/).
+   Remove campos não-portáveis do frontmatter (allowed-tools,
+   disable-model-invocation, model). Converte backtick-bang em prosa.
+   Se a skill precisa de MCP, cria `agents/openai.yaml` sidecar.
+
+5. Pra cada slash command em `.claude/commands/*.md`:
+   Copia pra `.codex/commands/`. Remove backtick-bang.
+
+6. Antes de terminar: pesquise documentação oficial do Codex
+   pra confirmar formatos atuais (sandbox, profiles, MCP).
+
+7. Devolva um RELATÓRIO no final:
+   - Arquivos criados (com path)
+   - Conversões não-óbvias que fez
+   - Coisas que removeu (e por quê)
+   - O que NÃO conseguiu portar e precisa ajuste manual</pre>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3">Template — Codex → Claude</h3>
+<p class="text-sm text-neutral-300 mb-2">It’s the same prompt, with the source and destination reversed. Points to reverse:</p>
+<ul class="text-sm text-neutral-300 space-y-1 pl-4 list-disc marker:text-blue-400">
+<li>AGENTS.md → CLAUDE.md</li>
+<li>.codex/config.toml → .claude/settings.json (TOML → JSON)</li>
+<li>.codex/agents/*.toml → .claude/agents/*.md (TOML struct → markdown frontmatter+body)</li>
+<li>.agents/skills/ → .claude/skills/ (it can stay in .agents/, but Claude expects .claude/skills/)</li>
+<li>Sidecar openai.yaml → skill frontmatter (allowed-tools, etc.)</li>
+<li>Fallback prose can become backtick-bang (optional)</li>
+</ul>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span>Save as a skill or slash command</h3>
+<p class="text-neutral-300 text-sm">This template is a natural candidate to become a slash command (<code>/migrate-from-claude</code>) or skill (<code>migrate-claude-to-codex</code>) in the target agent. You only run <code>/migrate-from-claude</code> and it works.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-amber-400">Key concepts</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-amber-400">Order matters</strong><br/><span class="text-neutral-400 text-xs">Doc fetch first</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-amber-400">Explicit list</strong><br/><span class="text-neutral-400 text-xs">By file type</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-amber-400">Final report</strong><br/><span class="text-neutral-400 text-xs">Asks for an explanation</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-amber-400">Symmetric reverse</strong><br/><span class="text-neutral-400 text-xs">Reverse direction</span></div>
+</div>
+</div>
+</section>
+<!-- 3. Checklist -->
+<section class="mb-16" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">✅ Post-migration checklist</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">An agent can say “migrated” and have skipped something. 5 minutes of validation saves hours of “why isn't this working?” Check off each item:</p>
+<div class="space-y-4 mb-6">
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5">
+<h4 class="font-bold text-amber-400 mb-3">🗂️ File structure</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li>☐ <code>AGENTS.md</code> exists at the root (or CLAUDE.md, in the opposite direction)</li>
+<li>☐ <code>.codex/config.toml</code> exists (or .claude/settings.json)</li>
+<li>☐ <code>.codex/agents/</code> has one <code>.toml</code> per sub-agent</li>
+<li>☐ <code>.agents/skills/</code> has one folder per skill (NOT in .codex/skills/)</li>
+</ul>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5">
+<h4 class="font-bold text-amber-400 mb-3">⚙️ Technical validation</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li>☐ Open Codex in the project — loads without a parse error</li>
+<li>☐ List available agents — they all appear</li>
+<li>☐ List skills — they all appear</li>
+<li>☐ <code>$</code> + skill name auto-completes</li>
+<li>☐ MCP servers connect (if applicable)</li>
+</ul>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5">
+<h4 class="font-bold text-amber-400 mb-3">🧪 Functional smoke test</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li>☐ Invoke a simple skill ($skill or natural language prompt)</li>
+<li>☐ Run a sub-agent ("use agent X to...")</li>
+<li>☐ Run a slash command</li>
+<li>☐ Verify that hooks (if any) fire on the right events</li>
+<li>☐ Check whether backtick-bang was converted (it doesn't become literal text)</li>
+</ul>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5">
+<h4 class="font-bold text-amber-400 mb-3">📝 AGENTS.md sanity check</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li>☐ Build/test commands are still at the top</li>
+<li>☐ Core conventions preserved</li>
+<li>☐ No Claude-only syntax (backtick-bang, Task tool refs)</li>
+<li>☐ Reasonable size (&lt; 2KB)</li>
+</ul>
+</div>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-amber-400">Key concepts</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-amber-400">Validation ≠ faith</strong><br/><span class="text-neutral-400 text-xs">Doesn't trust the agent</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-amber-400">Smoke test</strong><br/><span class="text-neutral-400 text-xs">Invoke one of each</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-amber-400">Critical paths</strong><br/><span class="text-neutral-400 text-xs">.agents vs .codex</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-amber-400">Dead syntax</strong><br/><span class="text-neutral-400 text-xs">Residual bang</span></div>
+</div>
+</div>
+</section>
+<!-- 4. 5 armadilhas -->
+<section class="mb-16" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">⚠️ The 5 most common pitfalls</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Almost EVERY migration includes at least one of these. When you know about them, you spot them early. Without that knowledge, you spend hours debugging.</p>
+<div class="space-y-4 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-2">1. Skill in .codex/skills/ instead of .agents/skills/</h4>
+<p class="text-sm text-neutral-400 mb-2"><strong>Symptom:</strong> "<code>$skill</code> doesn’t trigger, but the file is there".</p>
+<p class="text-sm text-neutral-300"><strong>Fix:</strong> move the entire folder to <code>.agents/skills/&lt;nome&gt;/</code>. Refresh Codex (Plugins → reload).</p>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-2">2. Backtick-bang copied without fallback</h4>
+<p class="text-sm text-neutral-400 mb-2"><strong>Symptom:</strong> Skill works in Claude, but in Codex it returns a strange response with <code>`!git status`</code> text type.</p>
+<p class="text-sm text-neutral-300"><strong>Fix:</strong> replace with prose ("before you start, run <code>git status</code> and read the result"), or put the logic in a script.</p>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-2">3. Long description truncated (limit ~8K)</h4>
+<p class="text-sm text-neutral-400 mb-2"><strong>Symptom:</strong> Skill triggers on only some prompts; not all triggers work.</p>
+<p class="text-sm text-neutral-300"><strong>Fix:</strong> move triggers and examples to the first 1–2 KB of the description. The rest (additional context) can go afterward—and may be truncated.</p>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-2">4. Agents in Markdown instead of TOML</h4>
+<p class="text-sm text-neutral-400 mb-2"><strong>Symptom:</strong> Codex doesn’t list the agents, or there’s a parse error on startup.</p>
+<p class="text-sm text-neutral-300"><strong>Fix:</strong> convert frontmatter to TOML keys, body to <code>instructions = """..."""</code>. Rename the extension to <code>.toml</code>.</p>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-2">5. Expecting auto-dispatch of sub-agent in Codex</h4>
+<p class="text-sm text-neutral-400 mb-2"><strong>Symptom:</strong> "Why isn’t my code-reviewer being called when I ask for a review?".</p>
+<p class="text-sm text-neutral-300"><strong>Fix:</strong> call by name — "use the code-reviewer agent to review X". Codex doesn’t auto-trigger based on the description (see T3.1).</p>
+</div>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-amber-400">Key concepts</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-amber-400">Correct path</strong><br/><span class="text-neutral-400 text-xs">.agents/skills/</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-amber-400">Bang → prose</strong><br/><span class="text-neutral-400 text-xs">Semantic fallback</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-amber-400">Front-loading</strong><br/><span class="text-neutral-400 text-xs">Triggers at the top</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-amber-400">Named invocation</strong><br/><span class="text-neutral-400 text-xs">"use agent X"</span></div>
+</div>
+</div>
+</section>
+<!-- 5. Manutenção -->
+<section class="mb-16" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">🔁 Synchronized maintenance — the "tax"</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Initial migration is an event. Maintenance is <strong class="text-amber-400">recurring</strong>. Every important change to CLAUDE.md needs to be replicated in AGENTS.md (and vice versa). Same for skills. Same for sub-agents. Without discipline, they diverge within weeks.</p>
+<div class="bg-amber-900/20 rounded-xl border border-amber-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-amber-400 mb-3">The simple rule: “changed here, changed there”</h3>
+<p class="text-neutral-300 text-sm mb-3">Whenever you edit:</p>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li>📘 <code>CLAUDE.md</code> → updates <code>AGENTS.md</code></li>
+<li>⚙️ <code>.claude/settings.json</code> permissions/hooks → updates <code>.codex/config.toml</code></li>
+<li>👤 <code>.claude/agents/&lt;x&gt;.md</code> → updates <code>.codex/agents/&lt;x&gt;.toml</code></li>
+<li>🧩 <code>.claude/skills/&lt;x&gt;/SKILL.md</code> → updates <code>.agents/skills/&lt;x&gt;/SKILL.md</code></li>
+</ul>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
+<h4 class="font-bold text-blue-400 mb-3">🔧 Manual tools</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li>• Pre-commit hook that warns about divergence</li>
+<li>• PR template checklist</li>
+<li>• Slash command <code>/sync-runtimes</code></li>
+<li>• Diff between the two files by the agent</li>
+</ul>
+</div>
+<div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6">
+<h4 class="font-bold text-teal-400 mb-3">🦜 Automatic solution (skills)</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li>• <strong>polyskill</strong> resolves for skills</li>
+<li>• Single source in <code>definition.md</code></li>
+<li>• Build emits both sides</li>
+<li>• Drift policy detects out-of-band edits</li>
+</ul>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span>Recommended hybrid setup</h3>
+<p class="text-neutral-300 text-sm">Use <strong>polyskill for skills</strong> (largest surface area and change) + <strong>manual discipline for CLAUDE.md/AGENTS.md/settings/agents</strong> (change little; doing it by hand is feasible). This is the practical balance.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-amber-400">Key concepts</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-amber-400">"Changed here, changed there"</strong><br/><span class="text-neutral-400 text-xs">Simple rule</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-amber-400">Pre-commit hook</strong><br/><span class="text-neutral-400 text-xs">Warns about divergence</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-amber-400">Polyskill automatically</strong><br/><span class="text-neutral-400 text-xs">For skills</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-amber-400">Manual for the rest</strong><br/><span class="text-neutral-400 text-xs">Settings/agents</span></div>
+</div>
+</div>
+</section>
+<!-- 6. Migração parcial -->
+<section class="mb-16" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">🤝 Partial migration — skills only</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">It's not all or nothing. You can keep Claude Code as your main agent and use Codex ONLY to run 2-3 critical skills (or vice versa). Share source code and keep only duplicate skills.</p>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3">When it makes sense</h3>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li>• Skill that ROCKS in Codex and is mediocre in Claude (or vice versa)</li>
+<li>• You want Codex only for a "second opinion" on tricky cases</li>
+<li>• Team has 1–2 developers who prefer the other runtime, but haven't migrated everything</li>
+<li>• Limited free plan, supplemented by the other one</li>
+</ul>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5">
+<div class="text-2xl mb-2">🎯</div>
+<h4 class="font-bold mb-1 text-amber-400">Minimum scope</h4>
+<p class="text-sm text-neutral-400">Port ONLY the 2-3 skills you use most. Keep the rest in the main agent only.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5">
+<div class="text-2xl mb-2">📂</div>
+<h4 class="font-bold mb-1 text-amber-400">Minimal AGENTS.md</h4>
+<p class="text-sm text-neutral-400">A simplified version of CLAUDE.md, focused on what these skills need to work.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5">
+<div class="text-2xl mb-2">🚫</div>
+<h4 class="font-bold mb-1 text-amber-400">No sub-agents</h4>
+<p class="text-sm text-neutral-400">Skip converting sub-agents if you don't use them regularly in this runtime.</p>
+</div>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-amber-400">Key concepts</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-amber-400">It's not all or nothing</strong><br/><span class="text-neutral-400 text-xs">Migrates what matters</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-amber-400">Primary agent</strong><br/><span class="text-neutral-400 text-xs">Still just one</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-amber-400">Critical skills</strong><br/><span class="text-neutral-400 text-xs">Choose a few</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-amber-400">Polyskill scope</strong><br/><span class="text-neutral-400 text-xs">Resolve these skills</span></div>
+</div>
+</div>
+</section>
+<!-- 7. Próximo: polyskill -->
+<section class="mb-16" id="topico-7">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">7</span>
+<h2 class="text-2xl font-bold">🚀 Next step — polyskill</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">After the initial migration and the experience of keeping both sides in sync manually, comes the “okay, I don’t want to do this by hand anymore.” That’s where the <strong class="text-teal-400">Track 5: polyskill</strong>.</p>
+<div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-teal-400 mb-3">What polyskill solves (and what it doesn’t)</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm mt-4">
+<div class="bg-emerald-900/20 rounded p-4 border border-emerald-500/30">
+<strong class="text-emerald-400">✓ Solves:</strong>
+<ul class="mt-2 space-y-1 text-neutral-300">
+<li>• Duplicate skills (single source)</li>
+<li>• Silent drift (file hash)</li>
+<li>• Codex description limit (auto front-load)</li>
+<li>• Backtick-bang → prose</li>
+<li>• Sidecar openai.yaml (auto-generates)</li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded p-4 border border-red-500/30">
+<strong class="text-red-400">✗ Does NOT solve:</strong>
+<ul class="mt-2 space-y-1 text-neutral-300">
+<li>• CLAUDE.md ↔ AGENTS.md (manual)</li>
+<li>• settings.json ↔ config.toml (manual)</li>
+<li>• Claude ↔ Codex sub-agents (manual)</li>
+<li>• Model differences between runtimes</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">🦜</span>Who benefits most</h3>
+<p class="text-neutral-300 text-sm">Those who benefit most from polyskill are people with 5+ regularly used skills. For 1-2 skills, maintaining them by hand is still manageable. For 10+, polyskill becomes indispensable.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-amber-400">Key concepts</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-amber-400">Canonical source</strong><br/><span class="text-neutral-400 text-xs">definition.md</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-amber-400">Runtime adapters</strong><br/><span class="text-neutral-400 text-xs">claude, codex, ...</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-amber-400">Drift policy</strong><br/><span class="text-neutral-400 text-xs">Hash + reconcile</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-amber-400">Threshold</strong><br/><span class="text-neutral-400 text-xs">~5 skills+</span></div>
+</div>
+</div>
+</section>
+<!-- RESUMO -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-amber-900/40 via-dark-800 to-dark-800 rounded-xl border border-amber-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">🎯</span>Module summary</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-amber-400 mt-1">✓</span><div><strong class="text-white">Agent migrates agent</strong><span class="text-neutral-400"> — don't do it by hand; ask the destination to do it.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-amber-400 mt-1">✓</span><div><strong class="text-white">Use the standardized prompt template</strong><span class="text-neutral-400"> — covers AGENTS.md, config.toml, agents, skills, commands.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-amber-400 mt-1">✓</span><div><strong class="text-white">5-minute post-migration checklist</strong><span class="text-neutral-400"> — structure, technique, smoke test, sanity check.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-amber-400 mt-1">✓</span><div><strong class="text-white">5 common pitfalls: path, bang, description, TOML, dispatch</strong><span class="text-neutral-400"> — when you know, you detect it immediately.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-amber-400 mt-1">✓</span><div><strong class="text-white">Maintenance = "changed here, changed there"</strong><span class="text-neutral-400"> — discipline + polyskill for skills.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-amber-400 mt-1">✓</span><div><strong class="text-white">Partial migration is valid</strong><span class="text-neutral-400"> — only critical skills, one primary agent.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-amber-400 mt-1">✓</span><div><strong class="text-white">Polyskill solves skills, not everything</strong><span class="text-neutral-400"> — clear limits on what it automates.</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-amber-400 mb-2">Next track:</h3>
+<p class="text-neutral-300">T5 — polyskill cross-runtime (spec, architecture, drift policy, complete CLI)</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Back to Track 4</a>
+<a class="flex-1 text-center px-6 py-3 bg-teal-600 text-white rounded-lg font-semibold hover:bg-teal-500 transition-colors" href="../trilha5-polyskill/index.html">Track 5: polyskill →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>PolySkills • Module 4.1 • <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+const themeToggle=document.getElementById('theme-toggle'),tDark=document.getElementById('theme-toggle-dark-icon'),tLight=document.getElementById('theme-toggle-light-icon'),html=document.documentElement;
+if(localStorage.getItem('theme')==='light'||(!localStorage.getItem('theme')&&!html.classList.contains('dark'))){tDark.classList.remove('hidden');html.classList.remove('dark')}else{tLight.classList.remove('hidden')}
+themeToggle.addEventListener('click',()=>{tDark.classList.toggle('hidden');tLight.classList.toggle('hidden');html.classList.toggle('dark');localStorage.setItem('theme',html.classList.contains('dark')?'dark':'light')});
+</script>
+</body>
+</html>

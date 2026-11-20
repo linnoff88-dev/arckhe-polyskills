@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>3.2 Skills in Codex and openai.yaml | PolySkills</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#FACC15',dark:{900:'#111827',800:'#1f2937',700:'#374151',600:'#4b5563'}}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+body{font-family:'Inter',sans-serif}code,pre,.font-mono{font-family:'JetBrains Mono',monospace}.dark body{background-color:#111827}
+html:not(.dark) body{background-color:#f8fafc}
+html:not(.dark) .bg-dark-900{background-color:#fff}html:not(.dark) .bg-dark-800{background-color:#f9fafb}html:not(.dark) .bg-dark-700{background-color:#f3f4f6}html:not(.dark) .bg-dark-600{background-color:#e5e7eb}
+html:not(.dark) .text-neutral-100{color:#111827}html:not(.dark) .text-neutral-300{color:#4b5563}html:not(.dark) .text-neutral-400{color:#6b7280}html:not(.dark) .text-neutral-500{color:#9ca3af}
+html:not(.dark) .border-dark-600{border-color:#d1d5db}html:not(.dark) .border-dark-700{border-color:#e5e7eb}
+html:not(.dark) .text-purple-400{color:#7c3aed}html:not(.dark) .bg-purple-500\/20{background-color:rgba(124,58,237,.12)}html:not(.dark) .bg-purple-500\/10{background-color:rgba(124,58,237,.08)}html:not(.dark) .border-purple-500\/30{border-color:rgba(124,58,237,.25)}html:not(.dark) .bg-purple-900\/20{background-color:rgba(124,58,237,.08)}html:not(.dark) .bg-purple-900\/30{background-color:rgba(124,58,237,.10)}html:not(.dark) .bg-purple-900\/40{background-color:rgba(124,58,237,.12)}html:not(.dark) .hover\:text-purple-400:hover{color:#7c3aed}html:not(.dark) .hover\:bg-purple-500\/10:hover{background-color:rgba(124,58,237,.08)}
+html:not(.dark) .hover\:text-emerald-400:hover{color:#059669}html:not(.dark) .hover\:bg-emerald-500\/10:hover{background-color:rgba(5,150,105,.08)}
+html:not(.dark) .hover\:text-blue-400:hover{color:#2563eb}html:not(.dark) .hover\:bg-blue-500\/10:hover{background-color:rgba(37,99,235,.08)}
+html:not(.dark) .hover\:text-amber-400:hover{color:#92400e}html:not(.dark) .hover\:bg-amber-500\/10:hover{background-color:rgba(217,119,6,.08)}
+html:not(.dark) .hover\:text-teal-400:hover{color:#0d9488}html:not(.dark) .hover\:bg-teal-500\/10:hover{background-color:rgba(13,148,136,.08)}
+html:not(.dark) .hover\:text-rose-400:hover{color:#9f1239}html:not(.dark) .hover\:bg-rose-500\/10:hover{background-color:rgba(225,29,72,.08)}
+html:not(.dark) .text-emerald-400{color:#059669}html:not(.dark) .bg-emerald-500\/20{background-color:rgba(5,150,105,.12)}html:not(.dark) .border-emerald-500\/30{border-color:rgba(5,150,105,.25)}html:not(.dark) .bg-emerald-900\/20{background-color:rgba(5,150,105,.06)}
+html:not(.dark) .text-blue-400{color:#2563eb}html:not(.dark) .bg-blue-500\/20{background-color:rgba(37,99,235,.12)}html:not(.dark) .border-blue-500\/30{border-color:rgba(37,99,235,.25)}html:not(.dark) .bg-blue-900\/20{background-color:rgba(37,99,235,.08)}
+html:not(.dark) .text-red-400{color:#b91c1c}html:not(.dark) .bg-red-900\/20{background-color:rgba(185,28,28,.06)}html:not(.dark) .border-red-500\/30{border-color:rgba(185,28,28,.25)}
+html:not(.dark) [class*="bg-gradient-to"]{background-image:none!important}
+html:not(.dark) .text-primary{color:#a16207}html:not(.dark) .bg-primary\/10{background-color:rgba(161,98,7,.08)}html:not(.dark) .border-primary\/30{border-color:rgba(161,98,7,.25)}html:not(.dark) .border-primary\/40{border-color:rgba(161,98,7,.25)}
+html:not(.dark) .text-sky-400{color:#0369a1}html:not(.dark) .text-yellow-400{color:#a16207}html:not(.dark) .hover\:text-sky-300:hover{color:#0284c7}html:not(.dark) .hover\:text-yellow-300:hover{color:#854d0e}
+html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
+.dark .border-dark-600{border-color:#374151}.dark .divide-dark-600>:not([hidden])~:not([hidden]){border-color:#374151}
+</style>
+<link href="https://inematds.github.io/polyskills/curso/trilha3-codex/modulo-3-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/polyskills/en/curso/trilha3-codex/modulo-3-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/polyskills/es/curso/trilha3-codex/modulo-3-2.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha3-codex/modulo-3-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-3-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha3-codex/modulo-3-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html"><span class="text-2xl">🦜</span><span class="font-bold text-lg hidden sm:inline">PolySkills</span></a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-fundamentos/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentals</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-claude-code/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Claude Code</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-purple-400 bg-purple-500/10" href="index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Codex</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-conversao/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Conversion</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5-polyskill/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">polyskill</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6-fluxos/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Workflows</span></a>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div></div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-purple-400" href="../../index.html">Start</a><span>/</span>
+<a class="hover:text-purple-400" href="index.html">Track 3</a><span>/</span>
+<span class="text-purple-400">Module 3.2</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-purple-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full mb-4">MODULE 3.2</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🎯 Skills in Codex and the openai.yaml sidecar</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">The peculiarity of <code>openai.yaml</code>, the hidden description limit, the lack of backtick-bang, and why <code>$skill</code> instead of <code>/skill</code>.</p>
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">7</div><div class="text-xs text-neutral-400">Topics</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">35</div><div class="text-xs text-neutral-400">Minutes</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Inter.</div><div class="text-xs text-neutral-400">Level</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Practical</div><div class="text-xs text-neutral-400">Type</div></div>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-12">
+<h3 class="text-lg font-semibold text-primary mb-2 flex items-center"><span class="mr-2">🎯</span>What you get here</h3>
+<p class="text-neutral-300">Understand exactly what changes in a skill when porting from Claude to Codex — where it goes, what needs adapting, and how the openai.yaml sidecar solves the MCP deps + branding problem.</p>
+</div>
+<h2 class="text-2xl font-bold mb-6">Detailed content</h2>
+<!-- 1. Onde mora -->
+<section class="mb-16" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">📦 Skill in Codex — .agents/skills/ not .codex/skills/</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">This is the first thing that causes confusion. People coming from Claude think: ".claude/skills/ in Claude → .codex/skills/ in Codex". <strong class="text-red-400">Wrong.</strong> Skill lives in <code class="text-purple-400">.agents/skills/</code>.</p>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-3">Why .agents/ and not .codex/</h3>
+<p class="text-neutral-300 text-sm mb-2"><code>.agents/</code> is the convention used by the open spec <strong>Agent Skills</strong> (agentskills.io). Any tool that follows the spec reads from there. Codex simply follows the convention instead of inventing its own path.</p>
+<p class="text-neutral-300 text-sm">Result: your skill in <code>.agents/skills/</code> works in Codex today, and will work in Cursor/Gemini/any compatible tool tomorrow, without moving the file.</p>
+</div>
+<div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-purple-400 mb-3">Correct paths</h3>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-4 overflow-x-auto">~/.agents/skills/&lt;nome&gt;/             ← global (suas skills)
+./.agents/skills/&lt;nome&gt;/             ← projeto (skills do repo)
+
+<span class="text-neutral-500"># NÃO existe:</span>
+<span class="text-red-400">.codex/skills/</span>                       <span class="text-red-400">← Codex não enxerga</span>
+<span class="text-red-400">.codex/agents/skills/</span>                <span class="text-red-400">← idem</span></pre>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span>Error symptom</h3>
+<p class="text-neutral-300 text-sm">"I added the skill, but $minha-skill doesn’t trigger." → Check the PATH first. It’s probably in <code>.codex/skills/</code>. Move to <code>.agents/skills/</code>, refresh Codex and it works again.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-purple-400">Key concepts</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">.agents/skills/</strong><br/><span class="text-neutral-400 text-xs">Required path</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">Open spec</strong><br/><span class="text-neutral-400 text-xs">agentskills.io</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">Portability</strong><br/><span class="text-neutral-400 text-xs">Other tools read</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">Manual refresh</strong><br/><span class="text-neutral-400 text-xs">Plugins → reload</span></div>
+</div>
+</div>
+</section>
+<!-- 2. SKILL.md quase igual -->
+<section class="mb-16" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">📝 SKILL.md — almost identical to Claude’s</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">The SKILL.md file itself is <strong class="text-purple-400">practically the same</strong>. That’s why the spec works: YAML frontmatter with <code>name</code> e <code>description</code>, Markdown body. These are the 4 things that always match.</p>
+<div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-purple-400 mb-3">SKILL.md in Codex</h3>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-4 overflow-x-auto">---
+<span class="text-emerald-400">name</span>: revisar-pr
+<span class="text-emerald-400">description</span>: Use when the user asks to review a PR or diff.
+---
+
+# Revisar PR
+
+## Passo a passo
+
+1. Identifica a PR
+2. Lê diff completo
+3. Verifica bugs/edge cases/security
+4. Retorna findings categorizados</pre>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-3">✓ What ALWAYS works</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li>• Frontmatter <code>name</code> + <code>description</code></li>
+<li>• Body in standard markdown</li>
+<li>• Folders <code>scripts/</code>, <code>references/</code>, <code>assets/</code></li>
+<li>• Relative references (<code>./references/x.md</code>)</li>
+<li>• Headings, lists, code blocks</li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-3">✗ What it does NOT port</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li>• <code>allowed-tools</code> in frontmatter (ignored)</li>
+<li>• <code>disable-model-invocation</code> (ignored)</li>
+<li>• Backtick-bang <code>`!cmd`</code> (becomes text)</li>
+<li>• Description &gt; 8KB (silently truncated)</li>
+<li>• <code>model: opus</code> in frontmatter (not respected)</li>
+</ul>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span>The 4 portable pillars</h3>
+<p class="text-neutral-300 text-sm">The Agent Skills spec defines exactly <strong>4 things in common</strong>: file name (SKILL.md), the name and description fields, Markdown body, folder convention. Keep your skill aligned with these 4 pillars and it will move to the other runtime without friction.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-purple-400">Key concepts</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">4 pillars</strong><br/><span class="text-neutral-400 text-xs">Common spec</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">Plain Markdown</strong><br/><span class="text-neutral-400 text-xs">No custom extension</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">Directory conventions</strong><br/><span class="text-neutral-400 text-xs">scripts/refs/assets</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">No extras</strong><br/><span class="text-neutral-400 text-xs">Which become sidecars</span></div>
+</div>
+</div>
+</section>
+<!-- 3. openai.yaml sidecar -->
+<section class="mb-16" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">📎 The agents/openai.yaml sidecar</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">This is where the detail that makes Codex most distinctive lives: everything that is <strong class="text-purple-400">runtime-specific</strong> (branding for the UI, MCP server dependencies, behavior flags) goes in a separate file — <code>agents/openai.yaml</code> inside the skill folder.</p>
+<div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-purple-400 mb-3">Complete structure with sidecar</h3>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-4 overflow-x-auto">
+.agents/skills/minha-skill/
+├── <span class="text-blue-400">SKILL.md</span>                ← obrigatório (spec)
+├── <span class="text-yellow-400">agents/</span>
+│   └── <span class="text-yellow-400">openai.yaml</span>         ← SIDECAR do Codex
+├── <span class="text-emerald-400">scripts/</span>
+├── <span class="text-emerald-400">references/</span>
+└── <span class="text-emerald-400">assets/</span></pre>
+</div>
+<div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-purple-400 mb-3">openai.yaml example</h3>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-4 overflow-x-auto"><span class="text-neutral-500"># Branding pra UI do Codex</span>
+branding:
+  display_name: "Revisar PR"
+  icon: "🔍"
+  category: "code-review"
+
+<span class="text-neutral-500"># MCP servers requeridos pela skill</span>
+mcp_servers:
+  - name: github
+    command: npx
+    args: ["-y", "@modelcontextprotocol/server-github"]
+    env:
+      GITHUB_TOKEN: "${GITHUB_TOKEN}"
+
+<span class="text-neutral-500"># Flags de comportamento</span>
+hidden: false
+require_confirmation: true</pre>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5">
+<div class="text-2xl mb-2">🎨</div>
+<h4 class="font-bold mb-1 text-purple-400">Branding</h4>
+<p class="text-sm text-neutral-400">Display name, icon, category. It appears in the UI. Without these, it looks generic.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5">
+<div class="text-2xl mb-2">🔌</div>
+<h4 class="font-bold mb-1 text-purple-400">MCP deps</h4>
+<p class="text-sm text-neutral-400">Skill declares the MCPs it needs. Installation is turnkey.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5">
+<div class="text-2xl mb-2">🎛️</div>
+<h4 class="font-bold mb-1 text-purple-400">Flags</h4>
+<p class="text-sm text-neutral-400">Hidden, require_confirmation, etc. Behavior per skill.</p>
+</div>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3">It’s optional</h3>
+<p class="text-neutral-300 text-sm">Without <code>openai.yaml</code> the skill <strong>works</strong>. You only lose refinements: no icon in the UI, generic branding, and MCP dependencies must be installed manually outside the skill. With a sidecar, the experience is polished.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-purple-400">Key concepts</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">Sidecar pattern</strong><br/><span class="text-neutral-400 text-xs">Separate metadata</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">Opt-in</strong><br/><span class="text-neutral-400 text-xs">Skill runs without</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">Turnkey MCP</strong><br/><span class="text-neutral-400 text-xs">Declares a dependency</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">UI branding</strong><br/><span class="text-neutral-400 text-xs">Icon, name</span></div>
+</div>
+</div>
+</section>
+<!-- 4. Limite description -->
+<section class="mb-16" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">📏 The hidden description limit (~8K)</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Codex has a <strong class="text-red-400">undocumented limit</strong> of about 8,000 characters for the description when indexed in the catalog. Above that, the description is truncated — and <strong>your skill loses the triggers at the end</strong>.</p>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">🚨</span>The dangerous scenario</h3>
+<ol class="space-y-2 text-neutral-300 text-sm list-decimal pl-6 marker:text-red-400">
+<li>You create a Claude skill with a long description (15KB)—it works well there</li>
+<li>Direct entry point to Codex</li>
+<li>Codex truncates at ~8K. The triggers at the end disappear.</li>
+<li>Skill seems to work (it still triggers on some prompts), but misses some cases</li>
+<li>You never find out because there’s no error—it’s silent</li>
+</ol>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3">Front-loading technique</h3>
+<p class="text-neutral-300 text-sm mb-3">Put <strong>the most important triggers and examples in the first 1–2KB</strong>. The rest can come later (and can be cut without a fuss).</p>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-3"><span class="text-emerald-400">// CERTO — triggers no topo</span>
+description: |
+  Use when reviewing PRs.
+  Triggers: "revisa PR", "review pull request", "code review".
+  Examples: "revisa PR #123", "review da branch atual".
+
+  More context (pode ser truncado): ...
+
+<span class="text-red-400">// ERRADO — triggers no fim</span>
+description: |
+  This skill specializes in deep technical code review with focus on
+  correctness, security, and edge cases. It analyzes pull requests
+  by reading the full diff and ... [muito mais texto] ...
+  Triggers: "revisa PR" ← <span class="text-red-400">truncado, nunca alcança</span></pre>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">🦜</span>Polyskill anticipates</h3>
+<p class="text-neutral-300 text-sm">The polyskill Codex adapter automatically front-loads the content: it takes the triggers from the portable description and moves them to the top when generating output for Codex. You don't have to think about it.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-purple-400">Key concepts</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">~8K limit</strong><br/><span class="text-neutral-400 text-xs">Undocumented</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">Silent truncation</strong><br/><span class="text-neutral-400 text-xs">No errors</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">Front-loading</strong><br/><span class="text-neutral-400 text-xs">Triggers at the top</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">Automatic polyskill</strong><br/><span class="text-neutral-400 text-xs">Resolve at build time</span></div>
+</div>
+</div>
+</section>
+<!-- 5. Sem bang -->
+<section class="mb-16" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">🚫 No native backtick-bang — how to work around it</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Codex doesn’t interpret <code>`!cmd`</code> (backtick-bang) as shell execution before the prompt. A skill that depends on this to inject dynamic context (git status, current log, branch) needs adaptation.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
+<h4 class="font-bold text-blue-400 mb-3">🔷 Claude (original)</h4>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-3">Branch: `!git branch --show-current`
+
+Último commit:
+`!git log -1 --oneline`
+
+Com base no acima, sugira...</pre>
+<p class="text-xs text-neutral-400 mt-2">The command RUNS. The result is already in the prompt.</p>
+</div>
+<div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6">
+<h4 class="font-bold text-purple-400 mb-3">🟣 Codex (fallback prose)</h4>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-3">Before you start, run:
+- `git branch --show-current`
+- `git log -1 --oneline`
+
+Based on the results, suggest...</pre>
+<p class="text-xs text-neutral-400 mt-2">The agent RUNS the commands when it reads the skill.</p>
+</div>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3">Alternative: delegated script</h3>
+<p class="text-neutral-300 text-sm mb-3">If you just want idempotent, structured output, put the logic in a script:</p>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-3 overflow-x-auto"><span class="text-neutral-500"># scripts/context.sh</span>
+#!/bin/bash
+echo "Branch: $(git branch --show-current)"
+echo "Commit: $(git log -1 --oneline)"
+
+<span class="text-neutral-500"># SKILL.md</span>
+Antes de começar, rode `./scripts/context.sh` e leia o output.</pre>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">🦜</span>Polyskill when porting</h3>
+<p class="text-neutral-300 text-sm">When you import a Claude skill with backtick-bang, the polyskill Codex adapter <strong>automatically rewrites as fallback prose</strong>. It’s not magic—it’s simple and it works. You trade a little elegance for portability.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-purple-400">Key concepts</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">No build-time injection</strong><br/><span class="text-neutral-400 text-xs">Codex doesn’t have</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">Fallback prose</strong><br/><span class="text-neutral-400 text-xs">"Run X and analyze"</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">Delegated script</strong><br/><span class="text-neutral-400 text-xs">Logic in sh</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">Polyskill rewrites</strong><br/><span class="text-neutral-400 text-xs">Automatic on import</span></div>
+</div>
+</div>
+</section>
+<!-- 6. MCP no Codex -->
+<section class="mb-16" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">🔌 MCP servers in Codex</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Same MCP spec. Same server runs. Only the declaration changes — <strong class="text-purple-400">TOML instead of JSON</strong>, inside the <code>config.toml</code> or in the sidecar <code>openai.yaml</code> of the skill (when MCP is a specific dependency).</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
+<h4 class="font-bold text-blue-400 mb-3">🔷 Claude (.mcp.json)</h4>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-3 overflow-x-auto">{
+  "mcpServers": {
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@mcp/github"],
+      "env": {
+        "TOKEN": "$GH_TOKEN"
+      }
+    }
+  }
+}</pre>
+</div>
+<div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6">
+<h4 class="font-bold text-purple-400 mb-3">🟣 Codex (config.toml)</h4>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-3 overflow-x-auto">[mcp_servers.github]
+command = "npx"
+args = ["-y", "@mcp/github"]
+
+[mcp_servers.github.env]
+TOKEN = "${GH_TOKEN}"</pre>
+</div>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3">Where to declare — config.toml × sidecar</h3>
+<div class="space-y-3 text-sm">
+<div class="flex items-start space-x-3"><span class="text-blue-400 font-bold">🌍</span><div><strong>config.toml (global or project):</strong> MCP that applies to ALL skills/agents. Github, database, etc.</div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 font-bold">📦</span><div><strong>openai.yaml (skill sidecar):</strong> MCP that ONLY that skill needs. Keeps the skill self-contained — install it alongside.</div></div>
+</div>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-purple-400">Key concepts</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">Same MCP spec</strong><br/><span class="text-neutral-400 text-xs">Shared server</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">JSON → TOML</strong><br/><span class="text-neutral-400 text-xs">Only the syntax changes</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">Global vs. skill</strong><br/><span class="text-neutral-400 text-xs">config.toml × sidecar</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">Self-contained</strong><br/><span class="text-neutral-400 text-xs">Sidecar installs MCP</span></div>
+</div>
+</div>
+</section>
+<!-- 7. $skill -->
+<section class="mb-16" id="topico-7">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">7</span>
+<h2 class="text-2xl font-bold">$ Skill invocation $skill — not /skill</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Codex uses the <strong class="text-purple-400">dollar sign</strong> for explicit skill invocation, leaving slash for built-in commands. <code>$nome-skill</code> instead of <code>/nome-skill</code>. A small detail that catches you on day one.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
+<h4 class="font-bold text-blue-400 mb-3">🔷 Claude Code</h4>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-3"><span class="text-blue-400">/review</span>             ← skill OU slash command
+<span class="text-blue-400">/plan</span>               ← built-in
+<span class="text-blue-400">/output-style x</span>     ← built-in</pre>
+<p class="text-xs text-neutral-400 mt-2">Everything is a slash command. No separation.</p>
+</div>
+<div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6">
+<h4 class="font-bold text-purple-400 mb-3">🟣 Codex</h4>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-3"><span class="text-purple-400">$review</span>            ← skill
+<span class="text-purple-400">/help</span>              ← built-in (Codex)
+<span class="text-purple-400">/model</span>             ← built-in (Codex)</pre>
+<p class="text-xs text-neutral-400 mt-2">Separation: $ for skills, / for built-ins.</p>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span>Autocomplete helps</h3>
+<p class="text-neutral-300 text-sm">Type <code>$</code> and Codex suggests the available skills. Even if you forget it’s a dollar sign, not a slash, autocomplete quickly corrects it.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-purple-400">Key concepts</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">$ = skill</strong><br/><span class="text-neutral-400 text-xs">Invocation sigil</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">/ = built-in</strong><br/><span class="text-neutral-400 text-xs">Reserved</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">kebab-case</strong><br/><span class="text-neutral-400 text-xs">Skill Name</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">Autocomplete</strong><br/><span class="text-neutral-400 text-xs">Lists skills</span></div>
+</div>
+</div>
+</section>
+<!-- RESUMO -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-purple-900/40 via-dark-800 to-dark-800 rounded-xl border border-purple-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">🎯</span>Module summary</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Skill in .agents/skills/</strong><span class="text-neutral-400"> — not .codex/skills/. Convention from the open spec.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">SKILL.md practically the same as Claude</strong><span class="text-neutral-400"> — 4 shared pillars; extras become sidecars.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">openai.yaml = branding + MCP + flags</strong><span class="text-neutral-400"> — opt-in, but it makes a difference in the experience.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Hidden ~8K description limit</strong><span class="text-neutral-400"> — manual front-loading or polyskill solves it.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">No backtick-bang</strong><span class="text-neutral-400"> — use fallback prose or a delegated script.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">MCP in TOML</strong><span class="text-neutral-400"> — global in config.toml, per skill in openai.yaml.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">$skill, not /skill</strong><span class="text-neutral-400"> — / is reserved for Codex built-ins.</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-purple-400 mb-2">Next track:</h3>
+<p class="text-neutral-300">T4 — Converting your project (prompt template + checklist + 5 pitfalls)</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-3-1.html">← Previous: 3.1</a>
+<a class="flex-1 text-center px-6 py-3 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-500 transition-colors" href="../trilha4-conversao/index.html">Track 4: Conversion →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>PolySkills • Module 3.2 • <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+const themeToggle=document.getElementById('theme-toggle'),tDark=document.getElementById('theme-toggle-dark-icon'),tLight=document.getElementById('theme-toggle-light-icon'),html=document.documentElement;
+if(localStorage.getItem('theme')==='light'||(!localStorage.getItem('theme')&&!html.classList.contains('dark'))){tDark.classList.remove('hidden');html.classList.remove('dark')}else{tLight.classList.remove('hidden')}
+themeToggle.addEventListener('click',()=>{tDark.classList.toggle('hidden');tLight.classList.toggle('hidden');html.classList.toggle('dark');localStorage.setItem('theme',html.classList.contains('dark')?'dark':'light')});
+</script>
+</body>
+</html>

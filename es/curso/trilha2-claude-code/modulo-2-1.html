@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>2.1 CLAUDE.md y la carpeta .claude/ | PolySkills</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#FACC15',dark:{900:'#111827',800:'#1f2937',700:'#374151',600:'#4b5563'}}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+body{font-family:'Inter',sans-serif}code,pre,.font-mono{font-family:'JetBrains Mono',monospace}.dark body{background-color:#111827}
+html:not(.dark) body{background-color:#f8fafc}
+html:not(.dark) .bg-dark-900{background-color:#fff}html:not(.dark) .bg-dark-800{background-color:#f9fafb}html:not(.dark) .bg-dark-700{background-color:#f3f4f6}html:not(.dark) .bg-dark-600{background-color:#e5e7eb}
+html:not(.dark) .text-neutral-100{color:#111827}html:not(.dark) .text-neutral-300{color:#4b5563}html:not(.dark) .text-neutral-400{color:#6b7280}html:not(.dark) .text-neutral-500{color:#9ca3af}
+html:not(.dark) .border-dark-600{border-color:#d1d5db}html:not(.dark) .border-dark-700{border-color:#e5e7eb}
+html:not(.dark) .text-blue-400{color:#2563eb}html:not(.dark) .bg-blue-500\/20{background-color:rgba(37,99,235,.12)}html:not(.dark) .bg-blue-500\/10{background-color:rgba(37,99,235,.08)}html:not(.dark) .border-blue-500\/30{border-color:rgba(37,99,235,.25)}html:not(.dark) .bg-blue-900\/20{background-color:rgba(37,99,235,.08)}html:not(.dark) .bg-blue-900\/30{background-color:rgba(37,99,235,.10)}html:not(.dark) .bg-blue-900\/40{background-color:rgba(37,99,235,.12)}html:not(.dark) .hover\:bg-blue-500\/30:hover{background-color:rgba(37,99,235,.18)}html:not(.dark) .hover\:text-blue-400:hover{color:#2563eb}html:not(.dark) .hover\:bg-blue-500\/10:hover{background-color:rgba(37,99,235,.08)}
+html:not(.dark) .hover\:text-emerald-400:hover{color:#059669}html:not(.dark) .hover\:bg-emerald-500\/10:hover{background-color:rgba(5,150,105,.08)}
+html:not(.dark) .hover\:text-purple-400:hover{color:#7c3aed}html:not(.dark) .hover\:bg-purple-500\/10:hover{background-color:rgba(124,58,237,.08)}
+html:not(.dark) .hover\:text-amber-400:hover{color:#92400e}html:not(.dark) .hover\:bg-amber-500\/10:hover{background-color:rgba(217,119,6,.08)}
+html:not(.dark) .hover\:text-teal-400:hover{color:#0d9488}html:not(.dark) .hover\:bg-teal-500\/10:hover{background-color:rgba(13,148,136,.08)}
+html:not(.dark) .hover\:text-rose-400:hover{color:#9f1239}html:not(.dark) .hover\:bg-rose-500\/10:hover{background-color:rgba(225,29,72,.08)}
+html:not(.dark) .text-emerald-400{color:#059669}html:not(.dark) .bg-emerald-500\/20{background-color:rgba(5,150,105,.12)}html:not(.dark) .border-emerald-500\/30{border-color:rgba(5,150,105,.25)}html:not(.dark) .bg-emerald-900\/20{background-color:rgba(5,150,105,.06)}
+html:not(.dark) .text-red-400{color:#b91c1c}html:not(.dark) .bg-red-900\/20{background-color:rgba(185,28,28,.06)}html:not(.dark) .border-red-500\/30{border-color:rgba(185,28,28,.25)}
+html:not(.dark) [class*="bg-gradient-to"]{background-image:none!important}
+html:not(.dark) .text-primary{color:#a16207}html:not(.dark) .bg-primary\/10{background-color:rgba(161,98,7,.08)}html:not(.dark) .border-primary\/30{border-color:rgba(161,98,7,.25)}html:not(.dark) .border-primary\/40{border-color:rgba(161,98,7,.25)}
+html:not(.dark) .text-sky-400{color:#0369a1}html:not(.dark) .text-yellow-400{color:#a16207}html:not(.dark) .hover\:text-sky-300:hover{color:#0284c7}html:not(.dark) .hover\:text-yellow-300:hover{color:#854d0e}
+html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
+.dark .border-dark-600{border-color:#374151}.dark .divide-dark-600>:not([hidden])~:not([hidden]){border-color:#374151}
+</style>
+<link href="https://inematds.github.io/polyskills/curso/trilha2-claude-code/modulo-2-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/polyskills/en/curso/trilha2-claude-code/modulo-2-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/polyskills/es/curso/trilha2-claude-code/modulo-2-1.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2-claude-code/modulo-2-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha2-claude-code/modulo-2-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-2-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html"><span class="text-2xl">🦜</span><span class="font-bold text-lg hidden sm:inline">PolySkills</span></a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-fundamentos/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-blue-400 bg-blue-500/10" href="index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Claude Code</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-codex/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Codex</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-conversao/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Conversión</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5-polyskill/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">polyskill</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6-fluxos/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Flujos</span></a>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div></div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-blue-400" href="../../index.html">Inicio</a><span>/</span>
+<a class="hover:text-blue-400" href="index.html">Ruta 2</a><span>/</span>
+<span class="text-blue-400">Módulo 2.1</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MÓDULO 2.1</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">📘 CLAUDE.md y la carpeta .claude/</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">El núcleo de la configuración de Claude Code en un proyecto: instrucciones, settings, hooks, slash commands, permisos.</p>
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">7</div><div class="text-xs text-neutral-400">Temas</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">35</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Inter.</div><div class="text-xs text-neutral-400">Nivel</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Práctico</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-12">
+<h3 class="text-lg font-semibold text-primary mb-2 flex items-center"><span class="mr-2">🎯</span>Lo que obtienes aquí</h3>
+<p class="text-neutral-300">Saber EXACTAMENTE dónde colocar cada parte de la configuración de Claude Code. Pasar de «lo puse todo en CLAUDE.md» a tener settings, hooks, slash commands y permisos en los lugares correctos, y que funcionen.</p>
+</div>
+<h2 class="text-2xl font-bold mb-6">Contenido detallado</h2>
+<!-- 1. CLAUDE.md hierarquia -->
+<section class="mb-16" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">📜 CLAUDE.md — jerarquía y alcance</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">CLAUDE.md existe en <strong class="text-blue-400">tres niveles</strong>, todos concatenados en el system prompt en orden. Si te equivocas en la jerarquía, las instrucciones del proyecto pueden sobrescribir las globales sin que te des cuenta, o peor aún: las instrucciones globales pueden ahogar las preferencias específicas del proyecto.</p>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3">Los 3 niveles (del más genérico al más específico)</h3>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-4 overflow-x-auto">~/.claude/CLAUDE.md         ← Global (você, todos os projetos)
+   ↓ concatena
+./CLAUDE.md                 ← Projeto (raiz)
+   ↓ concatena
+./src/api/CLAUDE.md         ← Subdir (escopo desta pasta)</pre>
+<p class="text-sm text-neutral-400 mt-3">Cuando Claude abre un archivo en <code>src/api/</code>, mira los 3 archivos. Cuando abres uno en <code>src/ui/</code>, solo ves los 2 primeros (global + proyecto).</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Buen CLAUDE.md</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li>• Comandos LITERALES de build/test/lint al principio</li>
+<li>• Convenciones poco obvias (no repetir lo que el linter ya exige)</li>
+<li>• Enlaces a ADRs/runbooks detallados</li>
+<li>• Tono preferido en las respuestas</li>
+<li>• &lt; 2KB (que quepa sin desplazarse)</li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ CLAUDE.md recargado</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li>• Repite toda la guía de estilo (que ya está en <code>.editorconfig</code>)</li>
+<li>• Historial del proyecto (irrelevante para el agente)</li>
+<li>• Política de RR. HH. (no es una instrucción de código)</li>
+<li>• Más de 50 KB de "buenas prácticas" genéricas</li>
+<li>• Documentación de bibliotecas internas</li>
+</ul>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span>Regla de oro</h3>
+<p class="text-neutral-300 text-sm">Si el contenido puede ser <strong>leído bajo demanda</strong> (referencia), ponlo en <code>references/</code> de una skill o en <code>docs/</code> del proyecto. Si es <strong>siempre necesario</strong> (build commands, convenciones centrales), ponlo en CLAUDE.md. Por defecto: todo en <code>references/</code>, salvo que haya pruebas en contrario.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-blue-400">Conceptos clave</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">3 niveles</strong><br/><span class="text-neutral-400 text-xs">Global, proyecto, subdirectorio</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">Concatenación</strong><br/><span class="text-neutral-400 text-xs">Todo entra en el prompt</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">Precedencia</strong><br/><span class="text-neutral-400 text-xs">Lo específico prevalece</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">regla de 2 KB</strong><br/><span class="text-neutral-400 text-xs">Que quepa sin desplazarse</span></div>
+</div>
+</div>
+</section>
+<!-- 2. Estrutura .claude/ -->
+<section class="mb-16" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">📂 Estructura completa de la carpeta .claude/</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">La convención es <strong>estricta</strong>: nombre correcto, carpeta correcta o Claude no lo encuentra. Aquí tienes el mapa que puedes imprimir y pegar junto al monitor:</p>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+<pre class="font-mono text-xs text-neutral-300 overflow-x-auto leading-relaxed">
+<span class="text-yellow-400">.claude/</span>                          ─ raiz do projeto (também ~/.claude/ global)
+├── <span class="text-blue-400">CLAUDE.md</span>                      ─ instruções (pode estar na raiz do projeto)
+├── <span class="text-blue-400">settings.json</span>                  ─ permissões, modelo, env, hooks
+├── <span class="text-blue-400">settings.local.json</span>            ─ override local (.gitignore)
+│
+├── <span class="text-emerald-400">agents/</span>                       ─ SUB-AGENTS em Markdown
+│   ├── code-reviewer.md
+│   └── doc-writer.md
+│
+├── <span class="text-emerald-400">skills/</span>                       ─ SKILLS (pastas com SKILL.md)
+│   └── my-skill/
+│       ├── SKILL.md             ─ frontmatter + body
+│       ├── scripts/             ─ scripts auxiliares
+│       ├── references/          ─ docs lazy-load
+│       └── assets/              ─ imagens/binários
+│
+├── <span class="text-emerald-400">commands/</span>                     ─ SLASH COMMANDS
+│   ├── review.md                ─ /review
+│   ├── ship.md                  ─ /ship
+│   └── plugin/sub.md            ─ /plugin:sub (namespaced)
+│
+├── <span class="text-emerald-400">hooks/</span>                        ─ scripts disparados em eventos
+│   ├── pre-commit.sh
+│   └── on-stop.sh
+│
+└── <span class="text-emerald-400">output-styles/</span>                ─ estilos de resposta
+    └── concise.md</pre>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3">Global vs. proyecto: misma estructura</h3>
+<p class="text-neutral-300 text-sm">Todo esto existe igual en <code>~/.claude/</code> (tus preferencias, se aplica a todos los proyectos) y en <code>./.claude/</code> (específico de ese proyecto, versionado en git). Las skills/agents del proyecto tienen precedencia sobre los globales cuando coinciden los nombres.</p>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span>Errores comunes de rutas</h3>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li>• Colocar la skill en <code>.claude/skill/</code> (singular) → Claude no ve</li>
+<li>• SKILL.md en minúsculas → no se reconoce</li>
+<li>• Sub-agent en <code>.claude/sub-agents/</code> → tiene que ser <code>agents/</code></li>
+<li>• Slash command sin <code>.md</code> → ignorado</li>
+</ul>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-blue-400">Conceptos clave</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">Convención</strong><br/><span class="text-neutral-400 text-xs">Nombre correcto, carpeta correcta</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">Mirror layout</strong><br/><span class="text-neutral-400 text-xs">Global = proyecto</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">Precedencia</strong><br/><span class="text-neutral-400 text-xs">Proyecto &gt; global</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">Gitignore parcial</strong><br/><span class="text-neutral-400 text-xs">.local.json fuera</span></div>
+</div>
+</div>
+</section>
+<!-- 3. settings.json -->
+<section class="mb-16" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">⚙️ settings.json — lo que controlas</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Archivo JSON con configuración de comportamiento. Aquí reduces la fricción de permisos, cambias de modelo e inyectas hooks. Sobrescritura en cascada: usuario (<code>~/.claude/</code>) → proyecto (<code>.claude/</code>) → local (<code>.claude/settings.local.json</code>).</p>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3">settings.json comentado (ejemplo real)</h3>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-4 overflow-x-auto">{
+  <span class="text-emerald-400">"model"</span>: "claude-opus-4-6",         <span class="text-neutral-500">// modelo padrão da sessão</span>
+  <span class="text-emerald-400">"includeCoAuthoredBy"</span>: true,         <span class="text-neutral-500">// Co-Authored-By em commits</span>
+
+  <span class="text-emerald-400">"permissions"</span>: {
+    <span class="text-emerald-400">"allow"</span>: [
+      "Bash(ls:*)", "Bash(cat:*)",           <span class="text-neutral-500">// libera leitura</span>
+      "Bash(git status:*)", "Bash(git log:*)", <span class="text-neutral-500">// git read-only</span>
+      "Read", "Grep", "Glob"                   <span class="text-neutral-500">// tools básicas</span>
+    ],
+    <span class="text-emerald-400">"deny"</span>: [
+      "Bash(rm -rf:*)",                       <span class="text-neutral-500">// nunca</span>
+      "Bash(curl:* | sh)"                     <span class="text-neutral-500">// pipe pra shell = não</span>
+    ],
+    <span class="text-emerald-400">"ask"</span>: [
+      "Bash(git push:*)",                     <span class="text-neutral-500">// sempre confirma</span>
+      "Write", "Edit"                          <span class="text-neutral-500">// escrita = confirma</span>
+    ]
+  },
+
+  <span class="text-emerald-400">"env"</span>: {
+    <span class="text-emerald-400">"CLAUDE_PROJECT_DIR"</span>: "${cwd}",
+    <span class="text-emerald-400">"NODE_ENV"</span>: "development"
+  },
+
+  <span class="text-emerald-400">"hooks"</span>: {
+    <span class="text-emerald-400">"PreToolUse"</span>: [{
+      <span class="text-emerald-400">"matcher"</span>: "Bash",
+      <span class="text-emerald-400">"hooks"</span>: [{
+        <span class="text-emerald-400">"type"</span>: "command",
+        <span class="text-emerald-400">"command"</span>: "./scripts/log-bash.sh"
+      }]
+    }]
+  }
+}</pre>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-4">
+<h4 class="font-bold text-yellow-400 mb-2">user</h4>
+<p class="text-xs text-neutral-400 mb-2 font-mono">~/.claude/settings.json</p>
+<p class="text-sm text-neutral-300">Tus preferencias en todos los proyectos. Modelo, tema, tono de voz.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-4">
+<h4 class="font-bold text-blue-400 mb-2">project</h4>
+<p class="text-xs text-neutral-400 mb-2 font-mono">.claude/settings.json</p>
+<p class="text-sm text-neutral-300">Va a git. Permisos y hooks que hereda todo el equipo.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-4">
+<h4 class="font-bold text-emerald-400 mb-2">local</h4>
+<p class="text-xs text-neutral-400 mb-2 font-mono">.claude/settings.local.json</p>
+<p class="text-sm text-neutral-300">Sobrescritura local (.gitignore). Credenciales, entorno de desarrollo.</p>
+</div>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-blue-400">Conceptos clave</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">Cascada usuario → proyecto → local</strong><br/><span class="text-neutral-400 text-xs">Cada uno sobrescribe</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">allow/deny/ask</strong><br/><span class="text-neutral-400 text-xs">3 verbos de permiso</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">Interpolación de variables de entorno</strong><br/><span class="text-neutral-400 text-xs">${cwd}, ${env}</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">Matchers</strong><br/><span class="text-neutral-400 text-xs">Glob por herramienta</span></div>
+</div>
+</div>
+</section>
+<!-- 4. Hooks -->
+<section class="mb-16" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">🪝 Hooks — la única forma de garantizar el comportamiento</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Los hooks son <strong class="text-blue-400">comandos de shell ejecutados por el harness</strong> en eventos del agente. Se EJECUTAN; no dependen de que Claude recuerde hacerlo. Es la única forma de garantizar el determinismo ("siempre ejecutar lint antes del commit").</p>
+<div class="space-y-6 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">⏮</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-blue-400 mb-2">PreToolUse — antes de cada tool</h4>
+<p class="text-sm text-neutral-400 mb-3">Ejecuta <em>antes</em> de que Claude ejecute una herramienta. Puede bloquear (exit ≠ 0) o solo registrar.</p>
+<p class="text-neutral-300 text-sm">Caso clásico: bloquear comandos peligrosos, registrar todo Bash, redirigir Read a un MCP indexado.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">⏭</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-blue-400 mb-2">PostToolUse — después de cada tool</h4>
+<p class="text-sm text-neutral-400 mb-3">Ejecuta <em>después</em>. Recibe el output de la tool y puede anotar contexto para las siguientes rondas.</p>
+<p class="text-neutral-300 text-sm">Caso clásico: ejecutar el formatter después de Edit, validar JSON después de Write, indexar el archivo modificado.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">⏹</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-blue-400 mb-2">Detenerse: cuando el agente decide parar</h4>
+<p class="text-sm text-neutral-400 mb-3">Ejecuta cuando Claude termina el turno. Permite una verificación final.</p>
+<p class="text-neutral-300 text-sm">Caso clásico: ejecutar pruebas, validar el diff antes de devolver el control, exigir una lista de verificación completa.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">🟢</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-blue-400 mb-2">SessionStart y UserPromptSubmit</h4>
+<p class="text-sm text-neutral-400 mb-3">SessionStart: se ejecuta al abrir una sesión. UserPromptSubmit: con cada mensaje tuyo.</p>
+<p class="text-neutral-300 text-sm">Caso clásico: SessionStart carga MCP, UserPromptSubmit inyecta contexto adicional (claude-mem, etc.).</p>
+</div>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span>Memory NO reemplaza a los hooks</h3>
+<p class="text-neutral-300 text-sm">Cuando pides «haz siempre X», Claude puede olvidarlo (no es determinístico). El hook SE EJECUTA. ¿Pediste ejecutar lint antes de cada commit? Hook. ¿Pediste registrar los comandos? Hook. La memoria de la skill ayuda, pero para garantizarlo, usa un hook.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-blue-400">Conceptos clave</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">Determinístico</strong><br/><span class="text-neutral-400 text-xs">Ejecuta siempre</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">Exit code</strong><br/><span class="text-neutral-400 text-xs">0 correcto, ≠0 bloquea</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">Fail-open vs close</strong><br/><span class="text-neutral-400 text-xs">Política de errores</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">Matchers</strong><br/><span class="text-neutral-400 text-xs">Filtro por tool</span></div>
+</div>
+</div>
+</section>
+<!-- 5. Slash commands -->
+<section class="mb-16" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">⚡ Slash commands personalizados</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Archivos markdown en <code>.claude/commands/</code> que se convierten en comandos slash automáticamente. ¿Una tarea que repites? Se convierte en <code>/comando</code> y desaparece.</p>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3">Ejemplo — .claude/commands/review.md</h3>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-4 overflow-x-auto">---
+description: Revisa o diff atual procurando bugs de correção
+allowed-tools: Bash(git diff:*), Read, Grep
+---
+
+Revise o diff atual da branch.
+
+Procure:
+- Bugs de correção (não estilo)
+- Casos não tratados (null, vazio, edge)
+- Vulnerabilidades comuns (SQLi, XSS, path traversal)
+
+Use \`$ARGUMENTS\` se passado para focar em arquivo específico.
+
+Retorne uma lista numerada de findings + severity.</pre>
+<p class="text-sm text-neutral-400 mt-3">Uso: <code class="text-blue-400">/review</code> o <code class="text-blue-400">/review src/api/auth.ts</code></p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-3">✓ Buenos casos de slash</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li>• <code>/review</code> — revisa el diff actual</li>
+<li>• <code>/ship</code> — checklist previo al merge</li>
+<li>• <code>/test</code> — genera pruebas para el archivo abierto</li>
+<li>• <code>/explain</code> — explica el fragmento seleccionado</li>
+<li>• <code>/changelog</code> — genera una entrada del CHANGELOG</li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-3">✗ Mal uso de slash</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li>• Contenido enorme que debería ser una skill</li>
+<li>• Comando que solo tiene sentido para ti (usa el nivel de usuario, no el proyecto)</li>
+<li>• Sin allowed-tools (puede hacer todo)</li>
+<li>• Sin description (solo lo descubres al leer el archivo)</li>
+</ul>
+</div>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-blue-400">Conceptos clave</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">$ARGUMENTS</strong><br/><span class="text-neutral-400 text-xs">Argumentos del comando</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">allowed-tools</strong><br/><span class="text-neutral-400 text-xs">Restringe la superficie</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">Namespace</strong><br/><span class="text-neutral-400 text-xs">/plugin:sub</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">Usuario vs. proyecto</strong><br/><span class="text-neutral-400 text-xs">Ámbito del slash</span></div>
+</div>
+</div>
+</section>
+<!-- 6. Permissões -->
+<section class="mb-16" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">🔐 Sistema de permisos — fricción vs. seguridad</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Tres verbos: <code class="text-emerald-400">allow</code> (libera), <code class="text-red-400">deny</code> (bloquea), <code class="text-amber-400">ask</code> (pregunta). Una configuración mal calibrada genera fricción (preguntar por todo) o riesgo (permitir demasiado).</p>
+<div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden mb-6">
+<div class="grid grid-cols-3 gap-0 text-sm">
+<div class="p-4 bg-dark-700/50 font-semibold text-neutral-300 border-b border-dark-600">Categoría</div>
+<div class="p-4 bg-dark-700/50 font-semibold text-emerald-400 border-b border-dark-600 border-l border-dark-600">Recomendado</div>
+<div class="p-4 bg-dark-700/50 font-semibold text-neutral-300 border-b border-dark-600 border-l border-dark-600">Ejemplo</div>
+<div class="p-4 text-neutral-400 border-b border-dark-600">Lectura/análisis</div>
+<div class="p-4 text-emerald-400 border-b border-dark-600 border-l border-dark-600">allow</div>
+<div class="p-4 font-mono text-xs text-neutral-300 border-b border-dark-600 border-l border-dark-600">Read, Grep, Glob, Bash(ls:*)</div>
+<div class="p-4 text-neutral-400 border-b border-dark-600">Git de solo lectura</div>
+<div class="p-4 text-emerald-400 border-b border-dark-600 border-l border-dark-600">allow</div>
+<div class="p-4 font-mono text-xs text-neutral-300 border-b border-dark-600 border-l border-dark-600">Bash(git status:*), Bash(git log:*)</div>
+<div class="p-4 text-neutral-400 border-b border-dark-600">Edición</div>
+<div class="p-4 text-amber-400 border-b border-dark-600 border-l border-dark-600">ask</div>
+<div class="p-4 font-mono text-xs text-neutral-300 border-b border-dark-600 border-l border-dark-600">Edit, Write</div>
+<div class="p-4 text-neutral-400 border-b border-dark-600">Push/merge</div>
+<div class="p-4 text-amber-400 border-b border-dark-600 border-l border-dark-600">ask</div>
+<div class="p-4 font-mono text-xs text-neutral-300 border-b border-dark-600 border-l border-dark-600">Bash(git push:*), Bash(gh pr merge:*)</div>
+<div class="p-4 text-neutral-400 border-b border-dark-600">Destructivo</div>
+<div class="p-4 text-red-400 border-b border-dark-600 border-l border-dark-600">deny</div>
+<div class="p-4 font-mono text-xs text-neutral-300 border-b border-dark-600 border-l border-dark-600">Bash(rm -rf:*), Bash(git push --force:*)</div>
+<div class="p-4 text-neutral-400">Curl con pipe</div>
+<div class="p-4 text-red-400 border-l border-dark-600">deny</div>
+<div class="p-4 font-mono text-xs text-neutral-300 border-l border-dark-600">Bash(curl:* | sh)</div>
+</div>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3">Modos de sesión</h3>
+<p class="text-neutral-300 text-sm mb-2">Independiente de los permisos de <code>settings.json</code>, puedes cambiar el MODO en vivo:</p>
+<ul class="text-sm text-neutral-300 space-y-1 pl-4 list-disc marker:text-blue-400">
+<li><strong>default</strong>: usa exactamente el settings</li>
+<li><strong>acceptEdits</strong>: acepta Edit/Write sin preguntar (útil en refactor)</li>
+<li><strong>plan</strong>: solo planifica, nunca edita (útil en arquitectura)</li>
+<li><strong>bypassPermissions</strong>: ignora todo (peligroso — solo para un entorno sandbox)</li>
+</ul>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-blue-400">Conceptos clave</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">3 verbos</strong><br/><span class="text-neutral-400 text-xs">allow/deny/ask</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">Patrones glob</strong><br/><span class="text-neutral-400 text-xs">Bash(cmd:*)</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">Modes</strong><br/><span class="text-neutral-400 text-xs">plan, acceptEdits</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">Allowlist de MCP</strong><br/><span class="text-neutral-400 text-xs">mcp__server__</span></div>
+</div>
+</div>
+</section>
+<!-- 7. Plan mode + output styles -->
+<section class="mb-16" id="topico-7">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">7</span>
+<h2 class="text-2xl font-bold">🧪 Plan mode y output styles</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Dos mecanismos para cambiar el comportamiento en vivo sin editar la configuración. <strong>Plan mode</strong> congela la edición (Claude planea, no actúa). <strong>Estilos de output</strong> cambian el tono de respuesta (conciso, detallado, explicativo, etc.).</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
+<h4 class="font-bold text-blue-400 mb-3">📋 Modo Plan</h4>
+<p class="text-sm text-neutral-300 mb-3">Se activa con <code>/plan</code> o flag <code>--plan</code>. Claude lee, piensa, propone, pero no escribe ni ejecuta nada destructivo hasta que salgas del modo.</p>
+<p class="text-sm text-neutral-300"><strong class="text-blue-400">Cuándo usar:</strong> refactorización grande, decisión de arquitectura, hipótesis de bug. Quieres alinearte antes de actuar.</p>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
+<h4 class="font-bold text-blue-400 mb-3">🎨 Estilos de salida</h4>
+<p class="text-sm text-neutral-300 mb-3">Se activa con <code>/output-style concise</code>. Se encuentran en <code>.claude/output-styles/&lt;nome&gt;.md</code>. Cambian el tono sin modificar el system prompt.</p>
+<p class="text-sm text-neutral-300"><strong class="text-blue-400">Built-in:</strong> concise (objetivo), verbose (detallado), explanatory (didáctico). Personalízalo creando el tuyo.</p>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span>Combo práctico</h3>
+<p class="text-neutral-300 text-sm">¿Nueva tarea de arquitectura? Entra en <code>/plan</code> + <code>/output-style verbose</code>. Claude diseña todo, tú lo revisas y luego sales del plan mode para que lo ejecute.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-blue-400">Conceptos clave</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">Modo de la sesión</strong><br/><span class="text-neutral-400 text-xs">No hace falta editar settings</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">/plan</strong><br/><span class="text-neutral-400 text-xs">Solo lee, no escribe</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">/output-style</strong><br/><span class="text-neutral-400 text-xs">Tono de respuesta</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">Personalización</strong><br/><span class="text-neutral-400 text-xs">.md en output-styles/</span></div>
+</div>
+</div>
+</section>
+<!-- RESUMO -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-blue-900/40 via-dark-800 to-dark-800 rounded-xl border border-blue-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">🎯</span>Resumen del módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">CLAUDE.md tiene 3 niveles</strong><span class="text-neutral-400"> — global, proyecto, subdirectorio; todo concatenado.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">.claude/ tiene una convención rígida</strong><span class="text-neutral-400"> — agents/, skills/, commands/, hooks/, output-styles/.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">settings.json en cascada</strong><span class="text-neutral-400"> — user → project → local.json (gitignore).</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Los hooks son deterministas</strong><span class="text-neutral-400"> — única forma de GARANTIZAR el comportamiento.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Comandos slash = una tarea repetida se convierte en un comando</strong><span class="text-neutral-400"> — .md en .claude/commands/.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">allow lectura, ask escritura, deny destructivo</strong><span class="text-neutral-400"> — calibración predeterminada.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Plan mode + output styles se ajustan en tiempo real</strong><span class="text-neutral-400"> — sin editar settings.</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-blue-400 mb-2">Siguiente módulo:</h3>
+<p class="text-neutral-300">2.2 — Skills, sub-agentes y MCP en Claude Code</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Volver a la Ruta 2</a>
+<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="modulo-2-2.html">Siguiente: 2.2 →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>PolySkills • Módulo 2.1 • <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+const themeToggle=document.getElementById('theme-toggle'),tDark=document.getElementById('theme-toggle-dark-icon'),tLight=document.getElementById('theme-toggle-light-icon'),html=document.documentElement;
+if(localStorage.getItem('theme')==='light'||(!localStorage.getItem('theme')&&!html.classList.contains('dark'))){tDark.classList.remove('hidden');html.classList.remove('dark')}else{tLight.classList.remove('hidden')}
+themeToggle.addEventListener('click',()=>{tDark.classList.toggle('hidden');tLight.classList.toggle('hidden');html.classList.toggle('dark');localStorage.setItem('theme',html.classList.contains('dark')?'dark':'light')});
+</script>
+</body>
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PolySkills | Claude Code y Codex lado a lado</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: {
+        primary: '#FACC15',
+        dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+      }}}
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    code, pre, .font-mono { font-family: 'JetBrains Mono', monospace; }
+    .dark body { background-color: #111827; }
+
+    /* Light mode base */
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+
+    /* Light mode - cores de todas as trilhas */
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,0.12); }
+    html:not(.dark) .bg-emerald-500\/10 { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5,150,105,0.25); }
+    html:not(.dark) .hover\:text-emerald-400:hover { color: #059669; }
+    html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .group:hover .group-hover\:text-emerald-400 { color: #059669; }
+
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37,99,235,0.12); }
+    html:not(.dark) .bg-blue-500\/10 { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .border-blue-500\/30 { border-color: rgba(37,99,235,0.25); }
+    html:not(.dark) .hover\:text-blue-400:hover { color: #2563eb; }
+    html:not(.dark) .hover\:bg-blue-500\/10:hover { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .group:hover .group-hover\:text-blue-400 { color: #2563eb; }
+
+    html:not(.dark) .text-purple-400 { color: #7c3aed; }
+    html:not(.dark) .bg-purple-500\/20 { background-color: rgba(124,58,237,0.12); }
+    html:not(.dark) .bg-purple-500\/10 { background-color: rgba(124,58,237,0.08); }
+    html:not(.dark) .border-purple-500\/30 { border-color: rgba(124,58,237,0.25); }
+    html:not(.dark) .hover\:text-purple-400:hover { color: #7c3aed; }
+    html:not(.dark) .hover\:bg-purple-500\/10:hover { background-color: rgba(124,58,237,0.08); }
+    html:not(.dark) .group:hover .group-hover\:text-purple-400 { color: #7c3aed; }
+
+    html:not(.dark) .text-amber-400 { color: #92400e; }
+    html:not(.dark) .bg-amber-500\/20 { background-color: rgba(217,119,6,0.12); }
+    html:not(.dark) .bg-amber-500\/10 { background-color: rgba(217,119,6,0.08); }
+    html:not(.dark) .border-amber-500\/30 { border-color: rgba(217,119,6,0.25); }
+    html:not(.dark) .hover\:text-amber-400:hover { color: #92400e; }
+    html:not(.dark) .hover\:bg-amber-500\/10:hover { background-color: rgba(217,119,6,0.08); }
+    html:not(.dark) .group:hover .group-hover\:text-amber-400 { color: #92400e; }
+
+    html:not(.dark) .text-teal-400 { color: #0d9488; }
+    html:not(.dark) .bg-teal-500\/20 { background-color: rgba(13,148,136,0.12); }
+    html:not(.dark) .bg-teal-500\/10 { background-color: rgba(13,148,136,0.08); }
+    html:not(.dark) .border-teal-500\/30 { border-color: rgba(13,148,136,0.25); }
+    html:not(.dark) .hover\:text-teal-400:hover { color: #0d9488; }
+    html:not(.dark) .hover\:bg-teal-500\/10:hover { background-color: rgba(13,148,136,0.08); }
+    html:not(.dark) .group:hover .group-hover\:text-teal-400 { color: #0d9488; }
+
+    html:not(.dark) .text-rose-400 { color: #9f1239; }
+    html:not(.dark) .bg-rose-500\/20 { background-color: rgba(225,29,72,0.12); }
+    html:not(.dark) .bg-rose-500\/10 { background-color: rgba(225,29,72,0.08); }
+    html:not(.dark) .border-rose-500\/30 { border-color: rgba(225,29,72,0.25); }
+    html:not(.dark) .hover\:text-rose-400:hover { color: #9f1239; }
+    html:not(.dark) .hover\:bg-rose-500\/10:hover { background-color: rgba(225,29,72,0.08); }
+    html:not(.dark) .group:hover .group-hover\:text-rose-400 { color: #9f1239; }
+
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161,98,7,0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161,98,7,0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,0.95); }
+
+    /* Dark - bordas suavizadas */
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+  </style>
+<link href="https://inematds.github.io/polyskills/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/polyskills/en/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/polyskills/es/" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../en/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="./" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="index.html">
+<span class="text-2xl">🦜</span>
+<span class="font-bold text-lg hidden sm:inline">PolySkills</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="curso/trilha1-fundamentos/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="curso/trilha2-claude-code/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Claude Code</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="curso/trilha3-codex/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Codex</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="curso/trilha4-conversao/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Conversión</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="curso/trilha5-polyskill/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">polyskill</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="curso/trilha6-fluxos/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Flujos</span></a>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<!-- HERO -->
+<header class="relative bg-gradient-to-br from-teal-900/30 via-dark-900 to-dark-900 py-20 border-b border-dark-600 overflow-hidden">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<span class="inline-block px-3 py-1 bg-primary/10 text-primary border border-primary/40 text-xs font-semibold rounded-full mb-6">CURSO COMPLETO • PT-BR</span>
+<h1 class="text-4xl sm:text-6xl font-bold mb-6 leading-tight">
+<span class="text-yellow-400">PolySkills</span><br/>
+<span class="text-neutral-300">Claude Code y</span>
+<span class="text-teal-400">Codex</span>
+<span class="text-neutral-300">lado a lado</span>
+</h1>
+<p class="text-xl text-neutral-400 max-w-3xl mb-8 leading-relaxed">
+        Aprende la anatomía de los dos principales agentes de programación del mercado, cómo ejecutar ambos en el <strong class="text-neutral-300">mismo proyecto sin duplicar contenido</strong>, y cómo escribir skills <strong class="text-teal-400">multiplataforma</strong> con el <code class="text-sm bg-dark-800 px-2 py-0.5 rounded">polyskill</code>.
+      </p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mb-8">
+<div class="bg-dark-800/70 rounded-lg p-4 border border-dark-600">
+<div class="text-2xl font-bold text-teal-400">6</div>
+<div class="text-xs text-neutral-400">Rutas</div>
+</div>
+<div class="bg-dark-800/70 rounded-lg p-4 border border-dark-600">
+<div class="text-2xl font-bold text-teal-400">10</div>
+<div class="text-xs text-neutral-400">Módulos</div>
+</div>
+<div class="bg-dark-800/70 rounded-lg p-4 border border-dark-600">
+<div class="text-2xl font-bold text-teal-400">60+</div>
+<div class="text-xs text-neutral-400">Temas</div>
+</div>
+<div class="bg-dark-800/70 rounded-lg p-4 border border-dark-600">
+<div class="text-2xl font-bold text-teal-400">~6h</div>
+<div class="text-xs text-neutral-400">Duración</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-3">
+<a class="px-6 py-3 bg-teal-600 hover:bg-teal-500 text-white rounded-lg font-semibold transition-colors" href="curso/index.html">Empezar por el overview →</a>
+<a class="px-6 py-3 bg-dark-700 hover:bg-dark-600 text-neutral-200 rounded-lg font-semibold transition-colors border border-dark-600" href="curso/trilha1-fundamentos/index.html">Ruta 1: Fundamentos</a>
+<a class="px-6 py-3 bg-dark-700 hover:bg-dark-600 text-neutral-200 rounded-lg font-semibold transition-colors border border-dark-600" href="curso/trilha5-polyskill/index.html">🦜 Conocer polyskill</a>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+<!-- O QUE VOCE VAI APRENDER -->
+<section class="mb-16">
+<h2 class="text-3xl font-bold mb-2">Lo que vas a aprender</h2>
+<p class="text-neutral-400 mb-8">Desde la terminología básica hasta los flujos avanzados de quienes trabajan con ambos agentes en paralelo.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5">
+<div class="text-2xl mb-2">🧭</div>
+<h3 class="font-semibold mb-1">Mapa mental claro</h3>
+<p class="text-sm text-neutral-400">La diferencia real entre <code class="text-xs">CLAUDE.md</code> e <code class="text-xs">AGENTS.md</code>, <code class="text-xs">.claude/</code> e <code class="text-xs">.codex/</code>, sin tener que memorizarlo.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5">
+<div class="text-2xl mb-2">⚙️</div>
+<h3 class="font-semibold mb-1">Anatomía de cada runtime</h3>
+<p class="text-sm text-neutral-400">Skills, agents, hooks, settings, MCP: dónde reside cada pieza en cada ecosistema.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5">
+<div class="text-2xl mb-2">🔄</div>
+<h3 class="font-semibold mb-1">Conversión sin perder nada</h3>
+<p class="text-sm text-neutral-400">Prompt-template para migrar un proyecto de Claude Code a Codex (y viceversa) en minutos.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5">
+<div class="text-2xl mb-2">🦜</div>
+<h3 class="font-semibold mb-1">polyskill en la práctica</h3>
+<p class="text-sm text-neutral-400">Una fuente canónica, dos outputs optimizados. CLI completo: <code class="text-xs">init</code>, <code class="text-xs">build</code>, <code class="text-xs">import</code>, <code class="text-xs">reconcile</code>.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5">
+<div class="text-2xl mb-2">🤝</div>
+<h3 class="font-semibold mb-1">Workflow en paralelo</h3>
+<p class="text-sm text-neutral-400">Dos terminales, un proyecto. Cómo pasar el contexto de un agente a otro sin perder el hilo.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5">
+<div class="text-2xl mb-2">🛡️</div>
+<h3 class="font-semibold mb-1">Independiente de las herramientas</h3>
+<p class="text-sm text-neutral-400">No te quedes atado a un ecosistema. Si uno falla, el otro sigue. Si uno se traba, el otro lo destraba.</p>
+</div>
+</div>
+</section>
+<!-- TRILHAS -->
+<section class="mb-16">
+<h2 class="text-3xl font-bold mb-2">Rutas del curso</h2>
+<p class="text-neutral-400 mb-8">6 rutas independientes — elige la que tenga más sentido para tu situación.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<a class="group bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 rounded-xl border border-emerald-500/30 p-6 transition-all hover:border-emerald-500/50" href="curso/trilha1-fundamentos/index.html">
+<div class="flex items-center justify-between mb-3">
+<span class="px-2 py-0.5 bg-emerald-500/20 text-emerald-400 text-xs font-bold rounded">RUTA 1</span>
+<span class="text-xs text-neutral-500">2 módulos • ~60 min</span>
+</div>
+<h3 class="text-2xl font-bold mb-2 group-hover:text-emerald-400 transition-colors">🧱 Fundamentos</h3>
+<p class="text-sm text-neutral-400 mb-4">Qué es Claude Code, qué es Codex, por qué usar ambos y nunca depender de uno solo.</p>
+<span class="text-emerald-400 text-sm font-semibold group-hover:underline">Empezar la trilha →</span>
+</a>
+<a class="group bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 rounded-xl border border-blue-500/30 p-6 transition-all hover:border-blue-500/50" href="curso/trilha2-claude-code/index.html">
+<div class="flex items-center justify-between mb-3">
+<span class="px-2 py-0.5 bg-blue-500/20 text-blue-400 text-xs font-bold rounded">RUTA 2</span>
+<span class="text-xs text-neutral-500">2 módulos • ~70 min</span>
+</div>
+<h3 class="text-2xl font-bold mb-2 group-hover:text-blue-400 transition-colors">🔷 Anatomía de Claude Code</h3>
+<p class="text-sm text-neutral-400 mb-4"><code class="text-xs">CLAUDE.md</code>, <code class="text-xs">.claude/</code>, skills con YAML, subagentes, hooks y settings.</p>
+<span class="text-blue-400 text-sm font-semibold group-hover:underline">Empezar la trilha →</span>
+</a>
+<a class="group bg-gradient-to-br from-purple-900/30 via-dark-800 to-dark-800 rounded-xl border border-purple-500/30 p-6 transition-all hover:border-purple-500/50" href="curso/trilha3-codex/index.html">
+<div class="flex items-center justify-between mb-3">
+<span class="px-2 py-0.5 bg-purple-500/20 text-purple-400 text-xs font-bold rounded">RUTA 3</span>
+<span class="text-xs text-neutral-500">2 módulos • ~70 min</span>
+</div>
+<h3 class="text-2xl font-bold mb-2 group-hover:text-purple-400 transition-colors">🟣 Anatomía de Codex</h3>
+<p class="text-sm text-neutral-400 mb-4"><code class="text-xs">AGENTS.md</code>, <code class="text-xs">.codex/</code>, <code class="text-xs">.agents/</code>, agentes en TOML y <code class="text-xs">openai.yaml</code>.</p>
+<span class="text-purple-400 text-sm font-semibold group-hover:underline">Empezar la trilha →</span>
+</a>
+<a class="group bg-gradient-to-br from-amber-900/30 via-dark-800 to-dark-800 rounded-xl border border-amber-500/30 p-6 transition-all hover:border-amber-500/50" href="curso/trilha4-conversao/index.html">
+<div class="flex items-center justify-between mb-3">
+<span class="px-2 py-0.5 bg-amber-500/20 text-amber-400 text-xs font-bold rounded">RUTA 4</span>
+<span class="text-xs text-neutral-500">1 módulo • ~40 min</span>
+</div>
+<h3 class="text-2xl font-bold mb-2 group-hover:text-amber-400 transition-colors">🟡 Convirtiendo tu proyecto</h3>
+<p class="text-sm text-neutral-400 mb-4">Prompt-template, mantenimiento sincronizado y errores comunes al usar ambos.</p>
+<span class="text-amber-400 text-sm font-semibold group-hover:underline">Empezar la trilha →</span>
+</a>
+<a class="group bg-gradient-to-br from-teal-900/30 via-dark-800 to-dark-800 rounded-xl border border-teal-500/30 p-6 transition-all hover:border-teal-500/50 md:col-span-2" href="curso/trilha5-polyskill/index.html">
+<div class="flex items-center justify-between mb-3">
+<span class="px-2 py-0.5 bg-teal-500/20 text-teal-400 text-xs font-bold rounded">RUTA 5 • DESTACADO</span>
+<span class="text-xs text-neutral-500">2 módulos • ~90 min</span>
+</div>
+<h3 class="text-2xl font-bold mb-2 group-hover:text-teal-400 transition-colors">🦜 polyskill — skills cross-runtime</h3>
+<p class="text-sm text-neutral-400 mb-4">Una definición source, outputs optimizados para cada runtime. Round-trip Claude ↔ Codex, política de drift, CLI completo.</p>
+<span class="text-teal-400 text-sm font-semibold group-hover:underline">Empezar la trilha →</span>
+</a>
+<a class="group bg-gradient-to-br from-rose-900/30 via-dark-800 to-dark-800 rounded-xl border border-rose-500/30 p-6 transition-all hover:border-rose-500/50 md:col-span-2" href="curso/trilha6-fluxos/index.html">
+<div class="flex items-center justify-between mb-3">
+<span class="px-2 py-0.5 bg-rose-500/20 text-rose-400 text-xs font-bold rounded">RUTA 6</span>
+<span class="text-xs text-neutral-500">1 módulo • ~50 min</span>
+</div>
+<h3 class="text-2xl font-bold mb-2 group-hover:text-rose-400 transition-colors">🌹 Flujos avanzados</h3>
+<p class="text-sm text-neutral-400 mb-4">Session handoff, dos terminales en el mismo proyecto, MCP compartido y gobernanza.</p>
+<span class="text-rose-400 text-sm font-semibold group-hover:underline">Empezar la trilha →</span>
+</a>
+</div>
+</section>
+<!-- COMPARATIVO RAPIDO -->
+<section class="mb-16">
+<h2 class="text-3xl font-bold mb-2">Guía rápida — Claude Code vs Codex</h2>
+<p class="text-neutral-400 mb-8">El mismo conocimiento, nombres diferentes. Este es el cuadro que aparece en casi todas las clases.</p>
+<div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+<div class="grid grid-cols-3 gap-0 text-sm">
+<div class="p-4 bg-dark-700/50 font-semibold text-neutral-300 border-b border-dark-600">Concepto</div>
+<div class="p-4 bg-dark-700/50 font-semibold text-blue-400 border-b border-dark-600 border-l border-dark-600">Claude Code</div>
+<div class="p-4 bg-dark-700/50 font-semibold text-purple-400 border-b border-dark-600 border-l border-dark-600">Codex</div>
+<div class="p-4 text-neutral-400 border-b border-dark-600">Instrucciones principales del proyecto</div>
+<div class="p-4 font-mono text-blue-400 border-b border-dark-600 border-l border-dark-600">CLAUDE.md</div>
+<div class="p-4 font-mono text-purple-400 border-b border-dark-600 border-l border-dark-600">AGENTS.md</div>
+<div class="p-4 text-neutral-400 border-b border-dark-600">Carpeta de configuración</div>
+<div class="p-4 font-mono text-blue-400 border-b border-dark-600 border-l border-dark-600">.claude/</div>
+<div class="p-4 font-mono text-purple-400 border-b border-dark-600 border-l border-dark-600">.codex/</div>
+<div class="p-4 text-neutral-400 border-b border-dark-600">Carpeta de skills</div>
+<div class="p-4 font-mono text-blue-400 border-b border-dark-600 border-l border-dark-600">.claude/skills/</div>
+<div class="p-4 font-mono text-purple-400 border-b border-dark-600 border-l border-dark-600">.agents/skills/</div>
+<div class="p-4 text-neutral-400 border-b border-dark-600">Formato de los agents</div>
+<div class="p-4 font-mono text-blue-400 border-b border-dark-600 border-l border-dark-600">Markdown (.md)</div>
+<div class="p-4 font-mono text-purple-400 border-b border-dark-600 border-l border-dark-600">TOML (.toml)</div>
+<div class="p-4 text-neutral-400 border-b border-dark-600">Subagentes invocables automáticamente</div>
+<div class="p-4 text-blue-400 border-b border-dark-600 border-l border-dark-600">✓ Sí</div>
+<div class="p-4 text-purple-400 border-b border-dark-600 border-l border-dark-600">✗ Invocación explícita</div>
+<div class="p-4 text-neutral-400 border-b border-dark-600">Especificación de Skill</div>
+<div class="p-4 font-mono text-blue-400 border-b border-dark-600 border-l border-dark-600">SKILL.md + YAML</div>
+<div class="p-4 font-mono text-purple-400 border-b border-dark-600 border-l border-dark-600">SKILL.md + openai.yaml</div>
+<div class="p-4 text-neutral-400 border-b border-dark-600">Settings globales</div>
+<div class="p-4 font-mono text-blue-400 border-b border-dark-600 border-l border-dark-600">~/.claude/settings.json</div>
+<div class="p-4 font-mono text-purple-400 border-b border-dark-600 border-l border-dark-600">~/.codex/config.toml</div>
+<div class="p-4 text-neutral-400">Invocación de skill</div>
+<div class="p-4 font-mono text-blue-400 border-l border-dark-600">/nombre-skill</div>
+<div class="p-4 font-mono text-purple-400 border-l border-dark-600">$nome-skill</div>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mt-6">
+<h3 class="text-lg font-semibold text-primary mb-2 flex items-center"><span class="mr-2">💡</span>La gran idea</h3>
+<p class="text-neutral-300">El conocimiento del proyecto es <strong>compartido</strong> — documentos, scripts, referencias. Solo los archivos de <strong>configuración</strong> cambian de nombre y formato. Quien entiende este mapa migra entre runtimes en minutos, no en días.</p>
+</div>
+</section>
+<!-- PARA QUEM -->
+<section class="mb-16">
+<h2 class="text-3xl font-bold mb-8">Para quién es este curso</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Es para ti si…</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Ya usas Claude Code (o Codex) y quieres aprender el otro sin tener que reaprender todo</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Quieres ejecutar ambos agentes en el mismo proyecto sin duplicar contenido</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Crea skills/sub-agents y se cansa de mantener dos versiones a mano</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Quieres dejar de depender de un solo ecosistema y no atarte a una herramienta</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ No es para ti si…</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Busca un tutorial introductorio sobre "qué es un LLM"</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Quieres una comparación de modelos (GPT vs Claude). Aquí se habla del runtime, no del modelo.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Esperas que el curso decida por ti qué herramienta es «mejor»</span></li>
+</ul>
+</div>
+</div>
+</section>
+<!-- CTA FINAL -->
+<section>
+<div class="bg-gradient-to-br from-teal-900/40 via-dark-800 to-dark-800 rounded-xl border border-teal-500/30 p-8 text-center">
+<h2 class="text-3xl font-bold mb-4">¿Listo para empezar?</h2>
+<p class="text-neutral-300 mb-6 max-w-2xl mx-auto">Si nunca has visto ninguno de los dos, empieza por <strong class="text-emerald-400">Ruta 1</strong>. Si ya dominas ambos, ve directamente a <strong class="text-teal-400">Ruta 5 (polyskill)</strong> — ese es el truco.</p>
+<div class="flex flex-wrap justify-center gap-3">
+<a class="px-6 py-3 bg-teal-600 hover:bg-teal-500 text-white rounded-lg font-semibold transition-colors" href="curso/index.html">Descripción general del curso</a>
+<a class="px-6 py-3 bg-dark-700 hover:bg-dark-600 text-neutral-200 rounded-lg font-semibold transition-colors border border-dark-600" href="curso/trilha1-fundamentos/index.html">Ruta 1 →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>PolySkills • Curso INEMA.CLUB • 2026 • Basado en el proyecto de código abierto <a class="text-teal-400 hover:text-teal-300" href="https://github.com/inematds/pollyskill" target="_blank">inematds/pollyskill</a></p>
+</div>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const html = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !html.classList.contains('dark'))) {
+      themeToggleDarkIcon.classList.remove('hidden'); html.classList.remove('dark');
+    } else { themeToggleLightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+      html.classList.toggle('dark');
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

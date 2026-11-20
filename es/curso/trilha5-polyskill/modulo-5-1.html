@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>5.1 Agent Skills, dolor y arquitectura polyskill | PolySkills</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#FACC15',dark:{900:'#111827',800:'#1f2937',700:'#374151',600:'#4b5563'}}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+body{font-family:'Inter',sans-serif}code,pre,.font-mono{font-family:'JetBrains Mono',monospace}.dark body{background-color:#111827}
+html:not(.dark) body{background-color:#f8fafc}
+html:not(.dark) .bg-dark-900{background-color:#fff}html:not(.dark) .bg-dark-800{background-color:#f9fafb}html:not(.dark) .bg-dark-700{background-color:#f3f4f6}html:not(.dark) .bg-dark-600{background-color:#e5e7eb}
+html:not(.dark) .text-neutral-100{color:#111827}html:not(.dark) .text-neutral-300{color:#4b5563}html:not(.dark) .text-neutral-400{color:#6b7280}html:not(.dark) .text-neutral-500{color:#9ca3af}
+html:not(.dark) .border-dark-600{border-color:#d1d5db}html:not(.dark) .border-dark-700{border-color:#e5e7eb}
+html:not(.dark) .text-teal-400{color:#0d9488}html:not(.dark) .bg-teal-500\/20{background-color:rgba(13,148,136,.12)}html:not(.dark) .bg-teal-500\/10{background-color:rgba(13,148,136,.08)}html:not(.dark) .border-teal-500\/30{border-color:rgba(13,148,136,.25)}html:not(.dark) .bg-teal-900\/20{background-color:rgba(13,148,136,.08)}html:not(.dark) .bg-teal-900\/30{background-color:rgba(13,148,136,.10)}html:not(.dark) .bg-teal-900\/40{background-color:rgba(13,148,136,.12)}html:not(.dark) .hover\:text-teal-400:hover{color:#0d9488}html:not(.dark) .hover\:bg-teal-500\/10:hover{background-color:rgba(13,148,136,.08)}
+html:not(.dark) .hover\:text-emerald-400:hover{color:#059669}html:not(.dark) .hover\:bg-emerald-500\/10:hover{background-color:rgba(5,150,105,.08)}
+html:not(.dark) .hover\:text-blue-400:hover{color:#2563eb}html:not(.dark) .hover\:bg-blue-500\/10:hover{background-color:rgba(37,99,235,.08)}
+html:not(.dark) .hover\:text-purple-400:hover{color:#7c3aed}html:not(.dark) .hover\:bg-purple-500\/10:hover{background-color:rgba(124,58,237,.08)}
+html:not(.dark) .hover\:text-amber-400:hover{color:#92400e}html:not(.dark) .hover\:bg-amber-500\/10:hover{background-color:rgba(217,119,6,.08)}
+html:not(.dark) .hover\:text-rose-400:hover{color:#9f1239}html:not(.dark) .hover\:bg-rose-500\/10:hover{background-color:rgba(225,29,72,.08)}
+html:not(.dark) .text-emerald-400{color:#059669}html:not(.dark) .bg-emerald-500\/20{background-color:rgba(5,150,105,.12)}html:not(.dark) .border-emerald-500\/30{border-color:rgba(5,150,105,.25)}html:not(.dark) .bg-emerald-900\/20{background-color:rgba(5,150,105,.06)}
+html:not(.dark) .text-blue-400{color:#2563eb}html:not(.dark) .bg-blue-500\/20{background-color:rgba(37,99,235,.12)}html:not(.dark) .border-blue-500\/30{border-color:rgba(37,99,235,.25)}html:not(.dark) .bg-blue-900\/20{background-color:rgba(37,99,235,.08)}
+html:not(.dark) .text-purple-400{color:#7c3aed}html:not(.dark) .bg-purple-500\/20{background-color:rgba(124,58,237,.12)}html:not(.dark) .border-purple-500\/30{border-color:rgba(124,58,237,.25)}html:not(.dark) .bg-purple-900\/20{background-color:rgba(124,58,237,.08)}
+html:not(.dark) .text-red-400{color:#b91c1c}html:not(.dark) .bg-red-900\/20{background-color:rgba(185,28,28,.06)}html:not(.dark) .border-red-500\/30{border-color:rgba(185,28,28,.25)}
+html:not(.dark) [class*="bg-gradient-to"]{background-image:none!important}
+html:not(.dark) .text-primary{color:#a16207}html:not(.dark) .bg-primary\/10{background-color:rgba(161,98,7,.08)}html:not(.dark) .border-primary\/30{border-color:rgba(161,98,7,.25)}html:not(.dark) .border-primary\/40{border-color:rgba(161,98,7,.25)}
+html:not(.dark) .text-sky-400{color:#0369a1}html:not(.dark) .text-yellow-400{color:#a16207}html:not(.dark) .hover\:text-sky-300:hover{color:#0284c7}html:not(.dark) .hover\:text-yellow-300:hover{color:#854d0e}
+html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
+.dark .border-dark-600{border-color:#374151}.dark .divide-dark-600>:not([hidden])~:not([hidden]){border-color:#374151}
+</style>
+<link href="https://inematds.github.io/polyskills/curso/trilha5-polyskill/modulo-5-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/polyskills/en/curso/trilha5-polyskill/modulo-5-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/polyskills/es/curso/trilha5-polyskill/modulo-5-1.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha5-polyskill/modulo-5-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha5-polyskill/modulo-5-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-5-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html"><span class="text-2xl">🦜</span><span class="font-bold text-lg hidden sm:inline">PolySkills</span></a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-fundamentos/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-claude-code/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Claude Code</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-codex/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Codex</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-conversao/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Conversión</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-teal-400 bg-teal-500/10" href="index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">polyskill</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6-fluxos/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Flujos</span></a>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div></div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-teal-400" href="../../index.html">Inicio</a><span>/</span>
+<a class="hover:text-teal-400" href="index.html">Ruta 5</a><span>/</span>
+<span class="text-teal-400">Módulo 5.1</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-teal-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-teal-500/20 text-teal-400 text-xs font-semibold rounded-full mb-4">MÓDULO 5.1</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🏛️ El estándar Agent Skills, el problema y la arquitectura de polyskill</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Antes del CLI, el concepto. Por qué existe polyskill, qué problema resuelve y cómo su arquitectura de 3 piezas (IR + adaptadores + CLI) escala a nuevos runtimes sin reescrituras.</p>
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">7</div><div class="text-xs text-neutral-400">Temas</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">45</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">Avanz.</div><div class="text-xs text-neutral-400">Nivel</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">Teoría</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-12">
+<h3 class="text-lg font-semibold text-primary mb-2 flex items-center"><span class="mr-2">🎯</span>Lo que obtienes aquí</h3>
+<p class="text-neutral-300">Mapa mental completo de polyskill: por qué existe, qué problema aborda y cómo funciona internamente. Sin esto, el CLI de la próxima clase se convierte en «comandos memorizados». Con esto, es una arquitectura clara.</p>
+</div>
+<h2 class="text-2xl font-bold mb-6">Contenido detallado</h2>
+<!-- 1. Spec Agent Skills -->
+<section class="mb-16" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">📐 La especificación abierta Agent Skills (agentskills.io)</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Estándar originado en Anthropic y <strong class="text-teal-400">liberado como especificación abierta</strong>. Hoy lo adoptan más de 40 herramientas. Define el formato canónico de una skill: SKILL.md + frontmatter YAML + cuerpo en markdown + convención de carpetas.</p>
+<div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-teal-400 mb-3">Los 4 pilares: en qué coinciden TODOS los runtimes</h3>
+<div class="space-y-3">
+<div class="flex items-start space-x-3"><span class="text-teal-400 font-bold mt-0.5 text-lg">1</span><div><strong>Nombre del archivo:</strong> <code class="text-sm">SKILL.md</code> — no inventes variaciones</div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 font-bold mt-0.5 text-lg">2</span><div><strong>Frontmatter YAML</strong> con al menos <code class="text-sm">name</code> e <code class="text-sm">description</code></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 font-bold mt-0.5 text-lg">3</span><div><strong>Cuerpo</strong> en Markdown estándar</div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 font-bold mt-0.5 text-lg">4</span><div><strong>Carpetas convencionadas:</strong> <code class="text-sm">scripts/</code>, <code class="text-sm">references/</code>, <code class="text-sm">assets/</code></div></div>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span>Por qué esto importa</h3>
+<p class="text-neutral-300 text-sm">Todo lo que escribes <strong>dentro de estos 4 pilares</strong> funciona en cualquier runtime compatible. Todo lo que queda AFUERA (allowed-tools, backtick-bang, openai.yaml, model override) te ata a un runtime específico; ahí está el trabajo de polyskill.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-teal-400">Conceptos clave</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">Especificación abierta</strong><br/><span class="text-neutral-400 text-xs">agentskills.io</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">Más de 40 runtimes</strong><br/><span class="text-neutral-400 text-xs">Adopción amplia</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">4 pilares</strong><br/><span class="text-neutral-400 text-xs">Núcleo portable</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">Extras = lo atan todo</strong><br/><span class="text-neutral-400 text-xs">Fuera de los 4 = runtime</span></div>
+</div>
+</div>
+</section>
+<!-- 2. A dor -->
+<section class="mb-16" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">😩 El problema — mantener dos skills divergentes</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Sin entender el problema, polyskill parece excesivo. Esta es la historia que vive TODO el mundo que usa ambos runtimes:</p>
+<div class="space-y-4 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">D1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600">
+<h4 class="font-semibold text-teal-400 mb-1">Día 1 — Crea una skill en Claude</h4>
+<p class="text-sm text-neutral-300">Funciona perfecto. Estás contento.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">D2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600">
+<h4 class="font-semibold text-teal-400 mb-1">Día 2 — Copia/adapta para Codex</h4>
+<p class="text-sm text-neutral-300">Muévela a .agents/skills/, elimina backtick-bang, ajusta la descripción. Funciona en ambos. Sigues conforme.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center"><span class="text-amber-400 font-bold">S2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-amber-500/30">
+<h4 class="font-semibold text-amber-400 mb-1">Semana 2 — Mejora la de Claude (olvídate de la de Codex)</h4>
+<p class="text-sm text-neutral-300">Encuentra un caso de uso nuevo, agrega instrucciones en Claude. Olvida propagarlas.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center"><span class="text-amber-400 font-bold">S3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-amber-500/30">
+<h4 class="font-semibold text-amber-400 mb-1">Semana 3 — Mejora la de Codex (olvídate de la de Claude)</h4>
+<p class="text-sm text-neutral-300">Estaba en Codex, vio un bug y lo corrigió. Se olvida de llevarlo a Claude.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-red-500/20 flex items-center justify-center"><span class="text-red-400 font-bold">M1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-red-500/30">
+<h4 class="font-semibold text-red-400 mb-1">Mes 1 — Dos skills DIFERENTES</h4>
+<p class="text-sm text-neutral-300">Las versiones divergieron en 4 puntos. No recuerdas cuál es la correcta. Cada vez que mejoras una, descartas la mejora de la otra. <strong>Fuente de verdad ambigua.</strong></p>
+</div>
+</div>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">💀</span>Costos invisibles de la deriva</h3>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li>• Tiempo perdido decidiendo «qué versión es la buena»</li>
+<li>• Los bugs vuelven (lo corregiste en una versión, lo olvidaste en la otra)</li>
+<li>• La función funciona en un agente, pero no en el otro</li>
+<li>• El equipo se confunde (la skill se comporta de forma diferente)</li>
+<li>• La documentación queda desactualizada en ambos lados</li>
+</ul>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-teal-400">Conceptos clave</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">Drift orgánico</strong><br/><span class="text-neutral-400 text-xs">Inevitable sin tooling</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">Fork accidental</strong><br/><span class="text-neutral-400 text-xs">Versiones divergentes</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">Source ambigua</strong><br/><span class="text-neutral-400 text-xs">¿Cuál conviene?</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">Costo cognitivo</strong><br/><span class="text-neutral-400 text-xs">Decisión constante</span></div>
+</div>
+</div>
+</section>
+<!-- 3. Ideia central -->
+<section class="mb-16" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">💡 La idea central — una fuente, varios destinos</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Polyskill resuelve el problema como <strong class="text-teal-400">un compilador resuelve el "código portable"</strong>. Escribes la skill UNA sola vez en el formato canónico portable (<code>definition.md</code>). El polyskill compila para <code>dist/claude/</code> e <code>dist/codex/</code>, cada uno optimizado para el runtime de destino.</p>
+<div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-teal-400 mb-3">Analogía directa: Babel/TypeScript</h3>
+<div class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-4 leading-relaxed">
+<div><span class="text-teal-400">TypeScript:</span></div>
+<div>  source.ts → tsc → source.js (ES5) + source.js (ES2020)</div>
+<div></div>
+<div><span class="text-teal-400">Babel:</span></div>
+<div>  source.jsx → babel → source.js (target: ie11) + source.js (modern)</div>
+<div></div>
+<div><span class="text-teal-400">Polyskill:</span></div>
+<div>  definition.md → polyskill build → dist/claude/SKILL.md + dist/codex/SKILL.md</div>
+</div>
+<p class="text-sm text-neutral-400 mt-3">La misma metáfora: fuente canónica, compilación selectiva por destino, output optimizado.</p>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3">Cómo queda la estructura</h3>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-4 overflow-x-auto"><span class="text-yellow-400">minha-skill/</span>
+├── <span class="text-teal-400">definition.md</span>          ← SOURCE canônica (você edita aqui)
+├── scripts/
+├── references/
+├── assets/
+└── dist/                  ← OUTPUTS (gerados pelo polyskill build)
+    ├── claude/
+    │   └── minha-skill/
+    │       └── SKILL.md  ← versão Claude (com allowed-tools, backtick-bang...)
+    └── codex/
+        └── minha-skill/
+            ├── SKILL.md  ← versão Codex (sem bang, description front-loaded)
+            └── agents/
+                └── openai.yaml  ← sidecar gerado automaticamente</pre>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">🎯</span>El «momento ajá»</h3>
+<p class="text-neutral-300 text-sm">Nunca editas <code>dist/</code>. Solo edita <code>definition.md</code>. Ejecuta <code>polyskill build</code>. O <code>dist/</code> refleja. Ejecuta <code>polyskill install</code>. Ambos runtimes tienen la versión más reciente. <strong>Una única fuente de verdad.</strong></p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-teal-400">Conceptos clave</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">Source canónica</strong><br/><span class="text-neutral-400 text-xs">definition.md</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">Compilación</strong><br/><span class="text-neutral-400 text-xs">polyskill build</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">dist/ generada</strong><br/><span class="text-neutral-400 text-xs">No editar a mano</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">Optimización/objetivo</strong><br/><span class="text-neutral-400 text-xs">Por adaptador</span></div>
+</div>
+</div>
+</section>
+<!-- 4. 3 peças -->
+<section class="mb-16" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">🧱 Las 3 piezas — IR, adapters, CLI</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Por dentro, polyskill tiene tres piezas. Al entender esto, ves que <strong class="text-teal-400">agregar Gemini/Cursor/Copilot es UN archivo</strong> — el adapter. No reescribas.</p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+<div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6">
+<div class="text-2xl mb-2">🏛️</div>
+<h4 class="font-bold text-teal-400 mb-2">1. IR (Representación Interna)</h4>
+<p class="text-sm text-neutral-300">Versión neutral de todo lo que una skill necesita ser, SIN atarse a un runtime específico. Es el esperanto de polyskill.</p>
+</div>
+<div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6">
+<div class="text-2xl mb-2">🔌</div>
+<h4 class="font-bold text-teal-400 mb-2">2. Adaptadores</h4>
+<p class="text-sm text-neutral-300">Un archivo TypeScript por runtime. Cada adapter implementa <code>parse()</code> + <code>emit()</code> + <code>validate()</code>. Instalar → es compatible. Quitar → desaparece.</p>
+</div>
+<div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6">
+<div class="text-2xl mb-2">⚡</div>
+<h4 class="font-bold text-teal-400 mb-2">3. CLI</h4>
+<p class="text-sm text-neutral-300">Lo que ejecutas en la terminal. Orquesta los adapters mediante el registry. No conoce los detalles del runtime: le pregunta al adapter.</p>
+</div>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3">Arquitectura visual</h3>
+<div class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-4 leading-relaxed">
+<div>┌──────────────────┐</div>
+<div>│  definition.md   │  ← TÚ editas</div>
+<div>└────────┬─────────┘</div>
+<div>         │</div>
+<div>         ▼</div>
+<div>┌──────────────────┐    ┌─ portable adapter ─┐</div>
+<div>│  Parse (portable)│ ──▶│  parse() / emit()  │</div>
+<div>└────────┬─────────┘    └────────────────────┘</div>
+<div>         │</div>
+<div>         ▼</div>
+<div>┌──────────────────┐</div>
+<div>│  IR (neutral)    │  ← representación interna</div>
+<div>└────────┬─────────┘</div>
+<div>         │ dividir por target</div>
+<div>         ├──────────────┬──────────────┐</div>
+<div>         ▼              ▼              ▼</div>
+<div>┌──────────────┐ ┌──────────────┐ ┌──────────────┐</div>
+<div>│claude adapter│ │codex adapter │ │gemini adapter│ ← 1 archivo cada uno</div>
+<div>│   emit()     │ │   emit()     │ │   emit()     │</div>
+<div>└──────┬───────┘ └──────┬───────┘ └──────┬───────┘</div>
+<div>       ▼                ▼                ▼</div>
+<div> dist/claude/    dist/codex/      dist/gemini/</div>
+</div>
+</div>
+<div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-teal-400 mb-3">La interfaz Adapter</h3>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-4 overflow-x-auto"><span class="text-blue-400">interface</span> Adapter {
+  name: string;
+
+  <span class="text-neutral-500">// Lê o formato do runtime e devolve IR</span>
+  parse(path: string): IR;
+
+  <span class="text-neutral-500">// Pega IR e escreve no formato do runtime</span>
+  emit(ir: IR, outputDir: string): void;
+
+  <span class="text-neutral-500">// Roda regras específicas do runtime (lint)</span>
+  validate(ir: IR): ValidationResult;
+}
+
+<span class="text-neutral-500">// Registrar é literalmente uma linha:</span>
+register(<span class="text-blue-400">new</span> CodexAdapter());</pre>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">🚀</span>Por qué esto escala</h3>
+<p class="text-neutral-300 text-sm">Cuando Gemini CLI gane tracción, alguien implementará <code>src/adapters/gemini.ts</code> con parse/emit/validate, registra en el registry, abre un PR. Polyskill gana soporte para Gemini <strong>sin cambiar una línea del core</strong>. Lo mismo para Cursor, Copilot, lo-que-venga.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-teal-400">Conceptos clave</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">IR neutra</strong><br/><span class="text-neutral-400 text-xs">Sin ataduras al runtime</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">parse+emit+validate</strong><br/><span class="text-neutral-400 text-xs">Contrato del adapter</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">Patrón Registry</strong><br/><span class="text-neutral-400 text-xs">Plugin dinámico</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">Open core</strong><br/><span class="text-neutral-400 text-xs">Adaptar mediante PR</span></div>
+</div>
+</div>
+</section>
+<!-- 5. Round-trip -->
+<section class="mb-16" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">🔁 Round-trip — Claude ↔ portable ↔ Codex</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Adapter "lee Y escribe". Puedes importar una skill existente de Claude (<code>--from claude</code>), convertirlo en portable y luego emitirlo para ambos. <strong class="text-teal-400">No hace falta empezar desde cero</strong>.</p>
+<div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-teal-400 mb-3">Flujos de round-trip</h3>
+<div class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-4 leading-relaxed">
+<div><span class="text-teal-400"># Caso 1: empezaste en Claude y quieres que sea portable</span></div>
+<div>~/.claude/skills/x/  ──▶ <span class="text-blue-400">claude.parse()</span> ──▶ IR ──▶ <span class="text-blue-400">portable.emit()</span> ──▶ ./x/definition.md</div>
+<div></div>
+<div><span class="text-teal-400"># Caso 2: empezaste en Codex y quieres que sea portable</span></div>
+<div>~/.agents/skills/x/  ──▶ <span class="text-purple-400">codex.parse()</span> ──▶ IR ──▶ <span class="text-blue-400">portable.emit()</span> ──▶ ./x/definition.md</div>
+<div></div>
+<div><span class="text-teal-400"># Caso 3: tienes algo portable y lo quieres para ambos</span></div>
+<div>./x/definition.md ──▶ <span class="text-blue-400">portable.parse()</span> ──▶ IR ──▶ <span class="text-blue-400">claude.emit()</span> + <span class="text-purple-400">codex.emit()</span></div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
+<h4 class="font-bold text-blue-400 mb-3">Importación Claude → portable</h4>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-3 mb-2">$ polyskill import \
+  ~/.claude/skills/x \
+  --from claude</pre>
+<p class="text-xs text-neutral-400">Lee SKILL.md + scripts + references. Genera definition.md preservándolo todo.</p>
+</div>
+<div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6">
+<h4 class="font-bold text-purple-400 mb-3">Importación Codex → portable</h4>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-3 mb-2">$ polyskill import \
+  ~/.agents/skills/x \
+  --from codex</pre>
+<p class="text-xs text-neutral-400">Lee SKILL.md + sidecar openai.yaml. Normaliza a portable.</p>
+</div>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3">Lossless cuando sea posible, lossy cuando sea necesario</h3>
+<p class="text-neutral-300 text-sm mb-2">El round-trip conserva casi todo:</p>
+<ul class="text-sm text-neutral-300 space-y-1">
+<li>✓ <code>scripts/</code>, <code>references/</code>, <code>assets/</code> pasan intactos en ambos sentidos</li>
+<li>✓ Conserva el frontmatter portable (name, description)</li>
+<li>✓ Conserva el cuerpo en markdown</li>
+</ul>
+<p class="text-neutral-300 text-sm mt-3 mb-1">Las cosas específicas del runtime se convierten en <strong>marcadores en la IR</strong>:</p>
+<ul class="text-sm text-neutral-300 space-y-1">
+<li>⚠️ Backtick-bang de Claude → IR lo marca como "dynamic injection" → al emitir para Codex se convierte en prosa</li>
+<li>⚠️ Sidecar openai.yaml de Codex → IR lo marca como "mcp deps" + "branding" → al emitir para Claude se convierte en <code>allowed-tools</code></li>
+</ul>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-teal-400">Conceptos clave</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">Bidireccional</strong><br/><span class="text-neutral-400 text-xs">Lee Y escribe</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">--from claude/codex</strong><br/><span class="text-neutral-400 text-xs">Flag de origen</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">Directorios lossless</strong><br/><span class="text-neutral-400 text-xs">scripts/refs/assets</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">Lossy semántico</strong><br/><span class="text-neutral-400 text-xs">Bang → prosa</span></div>
+</div>
+</div>
+</section>
+<!-- 6. Drift policy -->
+<section class="mb-16" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">🛡️ Política de drift — el seguro contra pisar cambios</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Cada vez que haces un build, polyskill <strong class="text-teal-400">calcula el hash de los archivos de output</strong>. En el siguiente build, si algún archivo de destino se editó a mano fuera de polyskill, el build ABORTA con un error. Tú decides.</p>
+<div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-teal-400 mb-3">El flujo de drift</h3>
+<div class="space-y-3">
+<div class="flex items-start space-x-3"><span class="text-teal-400 font-bold">1.</span><div><code>polyskill build</code> → genera <code>dist/claude/x/SKILL.md</code>, guarda el hash en <code>.polyskill-hashes</code></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 font-bold">2.</span><div>Editas a mano <code>~/.claude/skills/x/SKILL.md</code> (ajuste específico)</div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 font-bold">3.</span><div>Días después: <code>polyskill build</code> de nuevo</div></div>
+<div class="flex items-start space-x-3"><span class="text-red-400 font-bold">4.</span><div>Polyskill compara el hash: <strong class="text-red-400">desajuste detectado</strong>. Aborta con un mensaje claro.</div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 font-bold">5.</span><div>Eliges: <code>--force</code> (sobrescribe, se pierde el ajuste) O <code>polyskill reconcile</code> (inspecciona, decide).</div></div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-3">✓ Por qué es seguro</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li>• Nunca sobrescribe tu trabajo silenciosamente</li>
+<li>• El drift se VE, no se oculta</li>
+<li>• Siempre tienes la opción de force O reconcile</li>
+<li>• Las ediciones en producción se pueden detectar en el próximo build</li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-3">✗ Sin una política de control de divergencias sería…</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li>• El ajuste manual desaparecería en la siguiente compilación</li>
+<li>• Nunca lo sabrías (sin error)</li>
+<li>• La confianza en la herramienta bajaría</li>
+<li>• De todos modos volverías al mantenimiento manual</li>
+</ul>
+</div>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3">Ejemplo de output</h3>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-4 overflow-x-auto">$ polyskill build
+<span class="text-red-400">✗ Drift detected!</span>
+
+The following targets have been modified outside polyskill:
+  - ~/.claude/skills/x/SKILL.md (last hash: a3f9...; current: 8d2b...)
+
+Options:
+  - Run <span class="text-emerald-400">`polyskill build --force`</span> to overwrite (loses local edits)
+  - Run <span class="text-emerald-400">`polyskill reconcile`</span> to inspect and merge
+
+Build aborted.</pre>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-teal-400">Conceptos clave</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">Archivo hash</strong><br/><span class="text-neutral-400 text-xs">.polyskill-hashes</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">No silent loss</strong><br/><span class="text-neutral-400 text-xs">Aborta antes</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">--force</strong><br/><span class="text-neutral-400 text-xs">Sobrescritura opt-in</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">reconcile</strong><br/><span class="text-neutral-400 text-xs">Fusión interactiva</span></div>
+</div>
+</div>
+</section>
+<!-- 7. Meta-skill -->
+<section class="mb-16" id="topico-7">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">7</span>
+<h2 class="text-2xl font-bold">🦜 La meta-skill — polyskill como skill</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Detalle poético: el polyskill <strong class="text-teal-400">si se distribuye usando a sí mismo</strong>. Se ofrece como skill instalable en ambos runtimes. La invocas en lenguaje natural; la skill llama al CLI por debajo y traduce tu pedido en comandos.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
+<h4 class="font-bold text-blue-400 mb-3">🔷 Claude Code</h4>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-3 mb-3">/polyskill convierte mi skill
+y-compare para que funcione en ambos
+runtimes</pre>
+<p class="text-xs text-neutral-400">Skill recibe NL y lo traduce a:</p>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-3 mt-2">$ polyskill import \
+    ~/.claude/skills/y-compare \
+    --from claude
+$ polyskill build</pre>
+</div>
+<div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6">
+<h4 class="font-bold text-purple-400 mb-3">🟣 Codex</h4>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-3 mb-3">$polyskill converte minha skill
+y-compare pra funcionar nos dois
+runtimes</pre>
+<p class="text-xs text-neutral-400">La misma skill, la misma traducción:</p>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-3 mt-2">$ polyskill import \
+    ~/.agents/skills/y-compare \
+    --from codex
+$ polyskill build</pre>
+</div>
+</div>
+<div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-teal-400 mb-3">Rutas de instalación — A vs B</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+<div class="bg-dark-800 rounded p-4">
+<strong class="text-teal-400">Camino A — arrastrar y soltar</strong>
+<p class="text-neutral-300 mt-2">Copia <code>skill/dist/claude/polyskill</code> para <code>~/.claude/skills/</code> e <code>skill/dist/codex/polyskill</code> para <code>~/.agents/skills/</code>. <strong>Sin CLI.</strong> Solo funciona la metahabilidad; los comandos que necesita ejecutar fallan.</p>
+</div>
+<div class="bg-dark-800 rounded p-4">
+<strong class="text-teal-400">Camino B — source + CLI</strong>
+<p class="text-neutral-300 mt-2">Clona el repo, <code>npm install &amp;&amp; npm run build &amp;&amp; npm link</code>. CLI completo en el PATH. Para crear tus propias skills, B es obligatorio.</p>
+</div>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span>El dogfooding completo</h3>
+<p class="text-neutral-300 text-sm">Polyskill resuelve el problema de las "skills entre runtimes" usando una skill entre runtimes generada por sí misma. Si la metaskill funciona en ambos runtimes, polyskill demuestra que sirve. Si falla en uno, demuestra lo contrario. Honestidad arquitectónica.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-teal-400">Conceptos clave</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">Meta-skill</strong><br/><span class="text-neutral-400 text-xs">Polyskill como skill</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">NL interface</strong><br/><span class="text-neutral-400 text-xs">Sin tener que memorizar flags</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">Camino A vs B</strong><br/><span class="text-neutral-400 text-xs">Sin CLI / con</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">Uso interno</strong><br/><span class="text-neutral-400 text-xs">Usa la propia herramienta</span></div>
+</div>
+</div>
+</section>
+<!-- RESUMO -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-teal-900/40 via-dark-800 to-dark-800 rounded-xl border border-teal-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">🎯</span>Resumen del módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Agent Skills es una especificación abierta con 4 pilares portables</strong><span class="text-neutral-400"> — SKILL.md, name+description, body en markdown, directorios convencionales.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">El drift sin herramientas es inevitable</strong><span class="text-neutral-400"> — una semana basta para que diverjan.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Source canónica → destinos compilados</strong><span class="text-neutral-400"> — analogía directa con Babel/TypeScript.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">3 piezas: IR + Adapters + CLI</strong><span class="text-neutral-400"> — agregar un runtime requiere UN archivo.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Round-trip bidireccional</strong><span class="text-neutral-400"> — empieza desde Claude o Codex y llega a ambos.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Política de drift = hash + reconciliación</strong><span class="text-neutral-400"> — nunca sobrescribe en silencio.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">La meta-skill usa polyskill en su propio desarrollo</strong><span class="text-neutral-400"> — usa su propio formato para distribuirse.</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-teal-400 mb-2">Siguiente módulo:</h3>
+<p class="text-neutral-300">5.2 — CLI polyskill en la práctica (init, import, build, install, validate, reconcile)</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Volver a la Ruta 5</a>
+<a class="flex-1 text-center px-6 py-3 bg-teal-600 text-white rounded-lg font-semibold hover:bg-teal-500 transition-colors" href="modulo-5-2.html">Siguiente: 5.2 →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>PolySkills • Módulo 5.1 • <a class="text-teal-400 hover:text-teal-300" href="https://github.com/inematds/pollyskill" target="_blank">inematds/pollyskill</a> • <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+const themeToggle=document.getElementById('theme-toggle'),tDark=document.getElementById('theme-toggle-dark-icon'),tLight=document.getElementById('theme-toggle-light-icon'),html=document.documentElement;
+if(localStorage.getItem('theme')==='light'||(!localStorage.getItem('theme')&&!html.classList.contains('dark'))){tDark.classList.remove('hidden');html.classList.remove('dark')}else{tLight.classList.remove('hidden')}
+themeToggle.addEventListener('click',()=>{tDark.classList.toggle('hidden');tLight.classList.toggle('hidden');html.classList.toggle('dark');localStorage.setItem('theme',html.classList.contains('dark')?'dark':'light')});
+</script>
+</body>
+</html>

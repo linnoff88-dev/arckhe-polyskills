@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Descripción general del curso | PolySkills</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: {
+      primary: '#FACC15',
+      dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+    }}}}
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    code, pre, .font-mono { font-family: 'JetBrains Mono', monospace; }
+    .dark body { background-color: #111827; }
+
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,0.12); }
+    html:not(.dark) .bg-emerald-500\/10 { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5,150,105,0.25); }
+    html:not(.dark) .hover\:text-emerald-400:hover { color: #059669; }
+    html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37,99,235,0.12); }
+    html:not(.dark) .bg-blue-500\/10 { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .border-blue-500\/30 { border-color: rgba(37,99,235,0.25); }
+    html:not(.dark) .hover\:text-blue-400:hover { color: #2563eb; }
+    html:not(.dark) .hover\:bg-blue-500\/10:hover { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .text-purple-400 { color: #7c3aed; }
+    html:not(.dark) .bg-purple-500\/20 { background-color: rgba(124,58,237,0.12); }
+    html:not(.dark) .bg-purple-500\/10 { background-color: rgba(124,58,237,0.08); }
+    html:not(.dark) .border-purple-500\/30 { border-color: rgba(124,58,237,0.25); }
+    html:not(.dark) .hover\:text-purple-400:hover { color: #7c3aed; }
+    html:not(.dark) .hover\:bg-purple-500\/10:hover { background-color: rgba(124,58,237,0.08); }
+    html:not(.dark) .text-amber-400 { color: #92400e; }
+    html:not(.dark) .bg-amber-500\/20 { background-color: rgba(217,119,6,0.12); }
+    html:not(.dark) .bg-amber-500\/10 { background-color: rgba(217,119,6,0.08); }
+    html:not(.dark) .border-amber-500\/30 { border-color: rgba(217,119,6,0.25); }
+    html:not(.dark) .hover\:text-amber-400:hover { color: #92400e; }
+    html:not(.dark) .hover\:bg-amber-500\/10:hover { background-color: rgba(217,119,6,0.08); }
+    html:not(.dark) .text-teal-400 { color: #0d9488; }
+    html:not(.dark) .bg-teal-500\/20 { background-color: rgba(13,148,136,0.12); }
+    html:not(.dark) .bg-teal-500\/10 { background-color: rgba(13,148,136,0.08); }
+    html:not(.dark) .border-teal-500\/30 { border-color: rgba(13,148,136,0.25); }
+    html:not(.dark) .hover\:text-teal-400:hover { color: #0d9488; }
+    html:not(.dark) .hover\:bg-teal-500\/10:hover { background-color: rgba(13,148,136,0.08); }
+    html:not(.dark) .text-rose-400 { color: #9f1239; }
+    html:not(.dark) .bg-rose-500\/20 { background-color: rgba(225,29,72,0.12); }
+    html:not(.dark) .bg-rose-500\/10 { background-color: rgba(225,29,72,0.08); }
+    html:not(.dark) .border-rose-500\/30 { border-color: rgba(225,29,72,0.25); }
+    html:not(.dark) .hover\:text-rose-400:hover { color: #9f1239; }
+    html:not(.dark) .hover\:bg-rose-500\/10:hover { background-color: rgba(225,29,72,0.08); }
+
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161,98,7,0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161,98,7,0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,0.95); }
+
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+  </style>
+<link href="https://inematds.github.io/polyskills/curso/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/polyskills/en/curso/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/polyskills/es/curso/" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../curso/" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../en/curso/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="./" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../index.html">
+<span class="text-2xl">🦜</span>
+<span class="font-bold text-lg hidden sm:inline">PolySkills</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="trilha1-fundamentos/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="trilha2-claude-code/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Claude Code</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="trilha3-codex/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Codex</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="trilha4-conversao/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Conversión</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="trilha5-polyskill/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">polyskill</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="trilha6-fluxos/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Flujos</span></a>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-teal-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-teal-500/20 text-teal-400 text-xs font-semibold rounded-full mb-4">DESCRIPCIÓN GENERAL DEL CURSO</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🗺️ Mapa completo de las 6 rutas</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Vista general de todo el curso. Usa esta página como brújula: elige la ruta que tenga sentido para tu situación.</p>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<!-- COMO ESTUDAR -->
+<section class="mb-12">
+<h2 class="text-2xl font-bold mb-6">Cómo estudiar este curso</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5">
+<div class="text-2xl mb-2">🌱</div>
+<h3 class="font-semibold mb-1 text-emerald-400">Principiante absoluto</h3>
+<p class="text-sm text-neutral-400 mb-3">Nunca usó Claude Code ni Codex.</p>
+<p class="text-xs text-neutral-500">Camino: <strong class="text-neutral-300">T1 → T2 → T3 → T4</strong></p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5">
+<div class="text-2xl mb-2">🚀</div>
+<h3 class="font-semibold mb-1 text-blue-400">Ya uso Claude Code</h3>
+<p class="text-sm text-neutral-400 mb-3">Quieres aprender Codex y migrar proyectos.</p>
+<p class="text-xs text-neutral-500">Camino: <strong class="text-neutral-300">T3 → T4 → T5 → T6</strong></p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5">
+<div class="text-2xl mb-2">🦜</div>
+<h3 class="font-semibold mb-1 text-teal-400">Fluido en ambos</h3>
+<p class="text-sm text-neutral-400 mb-3">Quieres dejar de mantener skills duplicadas.</p>
+<p class="text-xs text-neutral-500">Camino: <strong class="text-neutral-300">T5 → T6</strong> (directo)</p>
+</div>
+</div>
+</section>
+<!-- MAPA DETALHADO -->
+<section class="mb-12">
+<h2 class="text-2xl font-bold mb-6">Mapa detallado de las rutas</h2>
+<div class="space-y-4">
+<!-- T1 -->
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<div class="flex flex-wrap items-center justify-between gap-3 mb-3">
+<div class="flex items-center gap-3">
+<span class="px-2 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-bold rounded">T1</span>
+<h3 class="text-xl font-bold">🧱 Fundamentos</h3>
+</div>
+<a class="text-sm text-emerald-400 hover:underline" href="trilha1-fundamentos/index.html">Abrir ruta →</a>
+</div>
+<p class="text-sm text-neutral-400 mb-3">Vocabulario común. Quién es quién. Por qué ambos.</p>
+<ul class="text-sm text-neutral-300 space-y-1 pl-4 list-disc marker:text-emerald-400">
+<li>1.1 — Claude Code vs Codex: terminología, filosofía, diferencias reales</li>
+<li>1.2 — Por qué usar ambos juntos: complementariedad y tool-agnostic</li>
+</ul>
+</div>
+<!-- T2 -->
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<div class="flex flex-wrap items-center justify-between gap-3 mb-3">
+<div class="flex items-center gap-3">
+<span class="px-2 py-1 bg-blue-500/20 text-blue-400 text-xs font-bold rounded">T2</span>
+<h3 class="text-xl font-bold">🔷 Anatomía de Claude Code</h3>
+</div>
+<a class="text-sm text-blue-400 hover:underline" href="trilha2-claude-code/index.html">Abrir ruta →</a>
+</div>
+<p class="text-sm text-neutral-400 mb-3">Todo lo que vive en <code class="text-xs">CLAUDE.md</code> e <code class="text-xs">.claude/</code>.</p>
+<ul class="text-sm text-neutral-300 space-y-1 pl-4 list-disc marker:text-blue-400">
+<li>2.1 — CLAUDE.md, settings.json, hooks, comandos de barra</li>
+<li>2.2 — Skills, sub-agentes, servidores MCP y permisos</li>
+</ul>
+</div>
+<!-- T3 -->
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<div class="flex flex-wrap items-center justify-between gap-3 mb-3">
+<div class="flex items-center gap-3">
+<span class="px-2 py-1 bg-purple-500/20 text-purple-400 text-xs font-bold rounded">T3</span>
+<h3 class="text-xl font-bold">🟣 Anatomía de Codex</h3>
+</div>
+<a class="text-sm text-purple-400 hover:underline" href="trilha3-codex/index.html">Abrir ruta →</a>
+</div>
+<p class="text-sm text-neutral-400 mb-3">AGENTS.md, .codex/, .agents/ y la particularidad del <code class="text-xs">openai.yaml</code>.</p>
+<ul class="text-sm text-neutral-300 space-y-1 pl-4 list-disc marker:text-purple-400">
+<li>3.1 — AGENTS.md, config.toml y agents en TOML</li>
+<li>3.2 — Skills en Codex, sidecar openai.yaml, dependencias MCP</li>
+</ul>
+</div>
+<!-- T4 -->
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<div class="flex flex-wrap items-center justify-between gap-3 mb-3">
+<div class="flex items-center gap-3">
+<span class="px-2 py-1 bg-amber-500/20 text-amber-400 text-xs font-bold rounded">T4</span>
+<h3 class="text-xl font-bold">🟡 Convirtiendo tu proyecto</h3>
+</div>
+<a class="text-sm text-amber-400 hover:underline" href="trilha4-conversao/index.html">Abrir ruta →</a>
+</div>
+<p class="text-sm text-neutral-400 mb-3">Desde la migración asistida por IA hasta el mantenimiento en paralelo.</p>
+<ul class="text-sm text-neutral-300 space-y-1 pl-4 list-disc marker:text-amber-400">
+<li>4.1 — Prompt de conversión automática y lista de verificación posterior a la migración</li>
+</ul>
+</div>
+<!-- T5 -->
+<div class="bg-gradient-to-br from-teal-900/30 to-dark-800 rounded-xl border border-teal-500/30 p-6">
+<div class="flex flex-wrap items-center justify-between gap-3 mb-3">
+<div class="flex items-center gap-3">
+<span class="px-2 py-1 bg-teal-500/20 text-teal-400 text-xs font-bold rounded">T5 • DESTACADO</span>
+<h3 class="text-xl font-bold">🦜 polyskill — skills cross-runtime</h3>
+</div>
+<a class="text-sm text-teal-400 hover:underline" href="trilha5-polyskill/index.html">Abrir ruta →</a>
+</div>
+<p class="text-sm text-neutral-400 mb-3">El corazón del curso. Una fuente canónica, dos outputs optimizados.</p>
+<ul class="text-sm text-neutral-300 space-y-1 pl-4 list-disc marker:text-teal-400">
+<li>5.1 — El patrón Agent Skills, el problema del drift, la arquitectura de adapters</li>
+<li>5.2 — CLI polyskill en la práctica: init, import, build, install, validate, reconcile</li>
+</ul>
+</div>
+<!-- T6 -->
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<div class="flex flex-wrap items-center justify-between gap-3 mb-3">
+<div class="flex items-center gap-3">
+<span class="px-2 py-1 bg-rose-500/20 text-rose-400 text-xs font-bold rounded">T6</span>
+<h3 class="text-xl font-bold">🌹 Flujos avanzados</h3>
+</div>
+<a class="text-sm text-rose-400 hover:underline" href="trilha6-fluxos/index.html">Abrir ruta →</a>
+</div>
+<p class="text-sm text-neutral-400 mb-3">Cómo orquestan el día a día quienes usan ambos agentes.</p>
+<ul class="text-sm text-neutral-300 space-y-1 pl-4 list-disc marker:text-rose-400">
+<li>6.1 — Session handoff, dos terminales, MCP compartido y gobernanza</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- PRE REQUISITOS -->
+<section class="mb-12">
+<h2 class="text-2xl font-bold mb-6">Requisitos previos</h2>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
+<ul class="space-y-2 text-neutral-300">
+<li>✓ Comodidad con la terminal (bash, npm, git)</li>
+<li>✓ Ya instalaste al menos uno de los dos: Claude Code (<code class="text-xs">npm i -g @anthropic-ai/claude-code</code>) o OpenAI Codex CLI</li>
+<li>✓ Cuenta activa en al menos uno de los proveedores (Anthropic, OpenAI). Lo ideal es tener ambas.</li>
+<li>✓ Editor con integración de terminal (VS Code, Cursor o similar) — opcional, pero recomendado.</li>
+</ul>
+</div>
+</section>
+<!-- NAV -->
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="../index.html">← Volver a la landing</a>
+<a class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors" href="trilha1-fundamentos/index.html">Empezar por la Trilha 1 →</a>
+</div>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>PolySkills • Descripción general • <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const html = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !html.classList.contains('dark'))) {
+      themeToggleDarkIcon.classList.remove('hidden'); html.classList.remove('dark');
+    } else { themeToggleLightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+      html.classList.toggle('dark');
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>1.1 Mapa mental — Claude Code vs Codex | PolySkills</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#FACC15',dark:{900:'#111827',800:'#1f2937',700:'#374151',600:'#4b5563'}}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+body{font-family:'Inter',sans-serif}code,pre,.font-mono{font-family:'JetBrains Mono',monospace}.dark body{background-color:#111827}
+html:not(.dark) body{background-color:#f8fafc}
+html:not(.dark) .bg-dark-900{background-color:#fff}html:not(.dark) .bg-dark-800{background-color:#f9fafb}html:not(.dark) .bg-dark-700{background-color:#f3f4f6}html:not(.dark) .bg-dark-600{background-color:#e5e7eb}
+html:not(.dark) .text-neutral-100{color:#111827}html:not(.dark) .text-neutral-300{color:#4b5563}html:not(.dark) .text-neutral-400{color:#6b7280}html:not(.dark) .text-neutral-500{color:#9ca3af}
+html:not(.dark) .border-dark-600{border-color:#d1d5db}html:not(.dark) .border-dark-700{border-color:#e5e7eb}
+html:not(.dark) .text-emerald-400{color:#059669}html:not(.dark) .bg-emerald-500\/20{background-color:rgba(5,150,105,.12)}html:not(.dark) .bg-emerald-500\/10{background-color:rgba(5,150,105,.08)}html:not(.dark) .border-emerald-500\/30{border-color:rgba(5,150,105,.25)}html:not(.dark) .hover\:bg-emerald-500\/30:hover{background-color:rgba(5,150,105,.18)}html:not(.dark) .hover\:text-emerald-400:hover{color:#059669}html:not(.dark) .hover\:bg-emerald-500\/10:hover{background-color:rgba(5,150,105,.08)}
+html:not(.dark) .hover\:text-blue-400:hover{color:#2563eb}html:not(.dark) .hover\:bg-blue-500\/10:hover{background-color:rgba(37,99,235,.08)}
+html:not(.dark) .hover\:text-purple-400:hover{color:#7c3aed}html:not(.dark) .hover\:bg-purple-500\/10:hover{background-color:rgba(124,58,237,.08)}
+html:not(.dark) .hover\:text-amber-400:hover{color:#92400e}html:not(.dark) .hover\:bg-amber-500\/10:hover{background-color:rgba(217,119,6,.08)}
+html:not(.dark) .hover\:text-teal-400:hover{color:#0d9488}html:not(.dark) .hover\:bg-teal-500\/10:hover{background-color:rgba(13,148,136,.08)}
+html:not(.dark) .hover\:text-rose-400:hover{color:#9f1239}html:not(.dark) .hover\:bg-rose-500\/10:hover{background-color:rgba(225,29,72,.08)}
+html:not(.dark) .text-blue-400{color:#2563eb}html:not(.dark) .bg-blue-500\/20{background-color:rgba(37,99,235,.12)}html:not(.dark) .bg-blue-500\/10{background-color:rgba(37,99,235,.08)}html:not(.dark) .border-blue-500\/30{border-color:rgba(37,99,235,.25)}html:not(.dark) .bg-blue-900\/20{background-color:rgba(37,99,235,.08)}
+html:not(.dark) .text-purple-400{color:#7c3aed}html:not(.dark) .bg-purple-500\/20{background-color:rgba(124,58,237,.12)}html:not(.dark) .border-purple-500\/30{border-color:rgba(124,58,237,.25)}
+html:not(.dark) .text-red-400{color:#b91c1c}html:not(.dark) .bg-red-500\/20{background-color:rgba(185,28,28,.10)}html:not(.dark) .bg-red-900\/20{background-color:rgba(185,28,28,.06)}html:not(.dark) .border-red-500\/30{border-color:rgba(185,28,28,.25)}
+html:not(.dark) .bg-emerald-900\/20{background-color:rgba(5,150,105,.06)}html:not(.dark) .bg-emerald-900\/30{background-color:rgba(5,150,105,.08)}html:not(.dark) .bg-emerald-900\/40{background-color:rgba(5,150,105,.10)}
+html:not(.dark) [class*="bg-gradient-to"]{background-image:none!important}
+html:not(.dark) .text-primary{color:#a16207}html:not(.dark) .bg-primary\/10{background-color:rgba(161,98,7,.08)}html:not(.dark) .border-primary\/30{border-color:rgba(161,98,7,.25)}html:not(.dark) .border-primary\/40{border-color:rgba(161,98,7,.25)}
+html:not(.dark) .text-sky-400{color:#0369a1}html:not(.dark) .text-yellow-400{color:#a16207}html:not(.dark) .hover\:text-sky-300:hover{color:#0284c7}html:not(.dark) .hover\:text-yellow-300:hover{color:#854d0e}
+html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
+.dark .border-dark-600{border-color:#374151}.dark .divide-dark-600>:not([hidden])~:not([hidden]){border-color:#374151}
+</style>
+<link href="https://inematds.github.io/polyskills/curso/trilha1-fundamentos/modulo-1-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/polyskills/en/curso/trilha1-fundamentos/modulo-1-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/polyskills/es/curso/trilha1-fundamentos/modulo-1-1.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1-fundamentos/modulo-1-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha1-fundamentos/modulo-1-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-1-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html"><span class="text-2xl">🦜</span><span class="font-bold text-lg hidden sm:inline">PolySkills</span></a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10" href="index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-claude-code/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Claude Code</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-codex/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Codex</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-conversao/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Conversión</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5-polyskill/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">polyskill</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6-fluxos/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Flujos</span></a>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div></div>
+</nav>
+<!-- BREADCRUMB -->
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-emerald-400" href="../../index.html">Inicio</a><span>/</span>
+<a class="hover:text-emerald-400" href="index.html">Ruta 1</a><span>/</span>
+<span class="text-emerald-400">Módulo 1.1</span>
+</div>
+</nav>
+<!-- HEADER -->
+<header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÓDULO 1.1</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🧭 Mapa mental — Claude Code vs Codex</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">La misma carrera, distintas reglas de pista. Antes de instalar cualquier cosa, alinea el vocabulario y la anatomía de los dos agentes.</p>
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">6</div><div class="text-xs text-neutral-400">Temas</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">30</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Básico</div><div class="text-xs text-neutral-400">Nivel</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Teoría</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<!-- INTRO -->
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-12">
+<h3 class="text-lg font-semibold text-primary mb-2 flex items-center"><span class="mr-2">🎯</span>Lo que obtienes en este módulo</h3>
+<p class="text-neutral-300">Salir de aquí sabiendo qué significa cada parte (CLAUDE.md, AGENTS.md, skills, sub-agents, MCP) en cada runtime. Nunca más te perderás al leer la documentación de uno sin tener una referencia mental del otro.</p>
+</div>
+<h2 class="text-2xl font-bold mb-6">Contenido detallado</h2>
+<!-- TOPICO 1 -->
+<section class="mb-16" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">🤖 Qué es un coding agent (y qué NO es)</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Un agente de programación es un <strong class="text-emerald-400">LLM que ejecuta un loop autónomo</strong>: lee código, planifica una acción, edita archivos, ejecuta comandos en el terminal, observa el resultado y decide el siguiente paso — todo sin que tengas que indicarle cada movimiento. No es autocompletar ni un chatbot. Es un colaborador iterativo.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Es un coding agent</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Ejecuta la tarea de principio a fin (leer, planificar, actuar, revisar)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Tiene acceso a tools (shell, edición de archivos, web, MCP)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Mantén el contexto de la sesión e itera</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Puedes delegar en subagentes especializados</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Ejecuta hooks de eventos (PreToolUse, Stop, etc.)</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ No es un coding agent</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Autocompletado (Copilot inline): sugiere una línea</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Chatbot puro (ChatGPT estándar) — sin tools</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Linter/formatter — regla estática</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Expansor de fragmentos: plantilla fija</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Code search — solo consulta, no actúa</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">🔬</span>El loop ReAct (Reason + Act)</h3>
+<p class="text-neutral-300 mb-3 text-sm">Es el motor de cualquier coding agent. Se ejecuta en ciclos cortos:</p>
+<div class="font-mono text-sm bg-dark-900/50 rounded p-4 text-neutral-300 space-y-1">
+<div><span class="text-blue-400">1.</span> Observa — lee el mensaje, las herramientas disponibles y el contexto</div>
+<div><span class="text-blue-400">2.</span> Think — ¿cuál es la siguiente acción que más te acerca al objetivo?</div>
+<div><span class="text-blue-400">3.</span> Act  — ejecuta la acción (read file, run bash, edit, etc.)</div>
+<div><span class="text-blue-400">4.</span> Observa — resultado de la acción. Volver al paso 2 o detenerse.</div>
+</div>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-emerald-400">Conceptos clave</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Bucle ReAct</strong><br/><span class="text-neutral-400 text-xs">Razonar + actuar de forma iterativa</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Uso de herramientas</strong><br/><span class="text-neutral-400 text-xs">Bash, Edit, Read, Web, MCP</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Permisos</strong><br/><span class="text-neutral-400 text-xs">Permitir/denegar/preguntar por herramienta</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Hooks</strong><br/><span class="text-neutral-400 text-xs">Eventos del harness</span></div>
+</div>
+</div>
+</section>
+<!-- TOPICO 2 -->
+<section class="mb-16" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">📘 CLAUDE.md vs AGENTS.md — el «system prompt del proyecto»</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Los dos agentes leen un archivo markdown en la raíz del proyecto en <strong>inicio de cada sesión</strong> y se inyectan en el system prompt. Misma función, dos nombres:</p>
+<div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden mb-6">
+<div class="grid grid-cols-3 gap-0 text-sm">
+<div class="p-4 bg-dark-700/50 font-semibold text-neutral-300 border-b border-dark-600">Aspecto</div>
+<div class="p-4 bg-dark-700/50 font-semibold text-blue-400 border-b border-dark-600 border-l border-dark-600">Claude Code</div>
+<div class="p-4 bg-dark-700/50 font-semibold text-purple-400 border-b border-dark-600 border-l border-dark-600">Codex</div>
+<div class="p-4 text-neutral-400 border-b border-dark-600">Archivo en la raíz</div>
+<div class="p-4 font-mono text-blue-400 border-b border-dark-600 border-l border-dark-600">CLAUDE.md</div>
+<div class="p-4 font-mono text-purple-400 border-b border-dark-600 border-l border-dark-600">AGENTS.md</div>
+<div class="p-4 text-neutral-400 border-b border-dark-600">Versión global</div>
+<div class="p-4 font-mono text-blue-400 border-b border-dark-600 border-l border-dark-600">~/.claude/CLAUDE.md</div>
+<div class="p-4 font-mono text-purple-400 border-b border-dark-600 border-l border-dark-600">~/.codex/AGENTS.md</div>
+<div class="p-4 text-neutral-400 border-b border-dark-600">Versión por carpeta</div>
+<div class="p-4 text-blue-400 border-b border-dark-600 border-l border-dark-600">✓ Sí, concatenado</div>
+<div class="p-4 text-purple-400 border-b border-dark-600 border-l border-dark-600">✓ Sí, similar</div>
+<div class="p-4 text-neutral-400 border-b border-dark-600">Inyección dinámica (backtick-bang)</div>
+<div class="p-4 text-blue-400 border-b border-dark-600 border-l border-dark-600">✓ Compatible</div>
+<div class="p-4 text-purple-400 border-b border-dark-600 border-l border-dark-600">✗ No es compatible</div>
+<div class="p-4 text-neutral-400">Tamaño ideal</div>
+<div class="p-4 text-blue-400 border-l border-dark-600">~2-3 KB</div>
+<div class="p-4 text-purple-400 border-l border-dark-600">~1-2 KB (más conservador)</div>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span>Consejo práctico</h3>
+<p class="text-neutral-300 text-sm mb-2">Mantén el CLAUDE.md/AGENTS.md enfocado en <strong>3 cosas</strong>:</p>
+<ul class="text-sm text-neutral-300 space-y-1 pl-4 list-disc marker:text-primary">
+<li>Comandos de build/test/lint en la parte superior (formato literal para copiar)</li>
+<li>Convenciones de código que no sean obvias (no repetir lo que el linter ya impone)</li>
+<li>Enlaces a documentación interna detallada (ADRs, runbooks)</li>
+</ul>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-emerald-400">Conceptos clave</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Jerarquía</strong><br/><span class="text-neutral-400 text-xs">Global → proyecto → subdirectorio</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Concatenación</strong><br/><span class="text-neutral-400 text-xs">Todo entra en el system prompt</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Precedencia</strong><br/><span class="text-neutral-400 text-xs">Lo específico prevalece sobre lo genérico</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Tamaño</strong><br/><span class="text-neutral-400 text-xs">Cuidado con la inflación</span></div>
+</div>
+</div>
+</section>
+<!-- TOPICO 3 -->
+<section class="mb-16" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">📁 .claude/ vs .codex/ vs .agents/ — la anatomía</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Carpeta oculta del proyecto donde reside la personalización del agente. Claude usa una sola carpeta. Codex usa <strong>dos</strong> carpetas con responsabilidades separadas. Esta es la diferencia estructural más importante:</p>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3">Claude Code — una sola carpeta</h3>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-4 overflow-x-auto">.claude/
+├── CLAUDE.md            ← também pode ficar na raiz
+├── settings.json        ← permissões, modelo, env, hooks
+├── settings.local.json  ← override local (.gitignore)
+├── agents/              ← sub-agents em Markdown
+│   ├── code-reviewer.md
+│   └── doc-writer.md
+├── skills/              ← skills auto-invocáveis
+│   └── my-skill/
+│       ├── SKILL.md
+│       ├── scripts/
+│       └── references/
+├── commands/            ← slash commands
+│   └── review.md
+└── hooks/               ← scripts de evento</pre>
+</div>
+<div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-purple-400 mb-3">Codex — dos carpetas, responsabilidades distintas</h3>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-4 overflow-x-auto">.codex/                  ← config específica do Codex
+├── config.toml          ← settings em TOML
+├── agents/              ← sub-agents em TOML
+│   ├── code-reviewer.toml
+│   └── doc-writer.toml
+└── commands/            ← slash commands específicos
+
+.agents/                 ← spec ABERTA (compartilhada)
+└── skills/
+    └── my-skill/
+        ├── SKILL.md
+        ├── agents/openai.yaml  ← sidecar Codex
+        ├── scripts/
+        └── references/
+
+AGENTS.md                ← na raiz, system prompt do projeto</pre>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span>Trampa #1 de la migración</h3>
+<p class="text-neutral-300 text-sm">Quien viene de Claude coloca la skill en <code>.codex/skills/</code> pensando que es el equivalente directo de <code>.claude/skills/</code>. <strong>Se equivoca.</strong> La skill de Codex está en <code>.agents/skills/</code> — porque <code>.agents/</code> es la convención de la spec abierta Agent Skills, y Codex la respeta.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-emerald-400">Conceptos clave</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Carpeta oculta</strong><br/><span class="text-neutral-400 text-xs">. al inicio = oculta</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Convención</strong><br/><span class="text-neutral-400 text-xs">Nombre correcto, carpeta correcta</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Separación config × ext</strong><br/><span class="text-neutral-400 text-xs">.codex vs .agents</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Gitignore parcial</strong><br/><span class="text-neutral-400 text-xs">Hacer commit de la skill, ignorar lo local</span></div>
+</div>
+</div>
+</section>
+<!-- TOPICO 4 -->
+<section class="mb-16" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">🧩 Skills — el concepto común, con pequeñas diferencias</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Skill es una <strong class="text-emerald-400">"competencia empaquetada"</strong>: carpeta con <code>SKILL.md</code> + frontmatter YAML + cuerpo Markdown + carpetas convencionales. Ambos runtimes implementan el estándar Agent Skills (agentskills.io), así que <strong>el núcleo es portable</strong>. En qué difieren:</p>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+<h3 class="text-lg font-semibold mb-4">Los 4 pilares que SIEMPRE coinciden</h3>
+<div class="space-y-3">
+<div class="flex items-start space-x-3"><span class="text-emerald-400 font-bold mt-0.5">1</span><div><strong>Nombre del archivo</strong> <code class="text-xs">SKILL.md</code> — siempre</div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 font-bold mt-0.5">2</span><div><strong>Campos del frontmatter</strong> <code class="text-xs">name</code> e <code class="text-xs">description</code> en YAML</div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 font-bold mt-0.5">3</span><div><strong>Cuerpo</strong> en Markdown estándar</div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 font-bold mt-0.5">4</span><div><strong>Convención de carpetas</strong> <code class="text-xs">scripts/</code>, <code class="text-xs">references/</code>, <code class="text-xs">assets/</code></div></div>
+</div>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3">SKILL.md mínimo</h3>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-4 overflow-x-auto">---
+name: minha-skill
+description: Úsala cuando necesites procesar X. Triggers comunes: "procesa X", "limpia Y".
+---
+
+# Minha Skill
+
+Instrucciones en markdown que explican cómo ejecutar la tarea.
+
+Puede hacer referencia a archivos relativos: consulta `references/exemplo.md` para más detalles.
+</pre>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
+<h4 class="font-bold text-blue-400 mb-4">🔷 Claude Code agrega</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li>• <code>allowed-tools</code> en el frontmatter</li>
+<li>• <code>disable-model-invocation</code> (opt-in explícito)</li>
+<li>• Inyección dinámica con <code>`!comando`</code> (backtick-bang)</li>
+<li>• Invocación automática por descripción</li>
+<li>• Slash: <code>/nome-skill</code></li>
+</ul>
+</div>
+<div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6">
+<h4 class="font-bold text-purple-400 mb-4">🟣 Codex agrega</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li>• Sidecar <code>agents/openai.yaml</code> (branding, MCP)</li>
+<li>• Límite oculto de ~8K caracteres en la description</li>
+<li>• Sin inyección dinámica nativa (usar prosa como alternativa)</li>
+<li>• Invocación automática por descripción (también)</li>
+<li>• Dollar: <code>$nome-skill</code></li>
+</ul>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">🦜</span>Es exactamente aquí donde entra polyskill</h3>
+<p class="text-neutral-300 text-sm">Escribes UNA skill en el formato portable. polyskill genera dos versiones: una con las particularidades de Claude y otra con las de Codex (incluidos el sidecar y el ajuste de description). Consulta la <a class="text-teal-400 hover:underline" href="../trilha5-polyskill/index.html">Ruta 5</a> para los detalles.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-emerald-400">Conceptos clave</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">SKILL.md</strong><br/><span class="text-neutral-400 text-xs">Archivo canónico</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Frontmatter YAML</strong><br/><span class="text-neutral-400 text-xs">name + description</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Coincidencia semántica</strong><br/><span class="text-neutral-400 text-xs">Activación por descripción</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Sidecar</strong><br/><span class="text-neutral-400 text-xs">Metadatos específicos</span></div>
+</div>
+</div>
+</section>
+<!-- TOPICO 5 -->
+<section class="mb-16" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">👥 Sub-agents — dos filosofías opuestas</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Un subagente es un <strong>"persona especializada"</strong> que el agente principal puede delegar tareas. Aquí está la diferencia más engañosa entre Claude Code y Codex — afecta a casi todos los que migran:</p>
+<div class="space-y-6 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">🔷</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-blue-500/30">
+<h4 class="font-semibold text-blue-400 mb-2">Claude Code — invocación automática</h4>
+<p class="text-sm text-neutral-400 mb-3">Formato Markdown en <code>.claude/agents/</code>. El agente principal LEE la descripción y decide por sí solo si delega.</p>
+<p class="text-neutral-300 text-sm">Escribes una description rica en disparadores ("Úsala de forma proactiva cuando..."), y Claude, como agente principal, detecta el sub-agent cuando el contexto coincide. Puede ejecutar varios en paralelo mediante la herramienta Task.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">🟣</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-purple-500/30">
+<h4 class="font-semibold text-purple-400 mb-2">Codex — invocación explícita</h4>
+<p class="text-sm text-neutral-400 mb-3">Formato TOML en <code>.codex/agents/</code>. TIENES que mencionarlo por su nombre en el prompt.</p>
+<p class="text-neutral-300 text-sm">Description te ayuda a recordar, pero no se activa automáticamente. «Usa el agent code-reviewer para revisar X» — sin eso, no se ejecuta. Desventaja: más predecible, menos ergonómico.</p>
+</div>
+</div>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">🚨</span>El error #1 de quienes migran de Claude a Codex</h3>
+<p class="text-neutral-300 text-sm">Copia el sub-agent, tradúcelo a TOML y espera que se active solo como en Claude. <strong>No se activa.</strong> Pasas horas pensando "está fallando"; no es así. Codex requiere invocación explícita por diseño.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-emerald-400">Conceptos clave</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Auto-dispatch</strong><br/><span class="text-neutral-400 text-xs">Claude lee la descripción y decide</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Explicit call</strong><br/><span class="text-neutral-400 text-xs">Codex exige un nombre</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Aislamiento</strong><br/><span class="text-neutral-400 text-xs">Contexto separado</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Paralelismo</strong><br/><span class="text-neutral-400 text-xs">Varios simultáneos</span></div>
+</div>
+</div>
+</section>
+<!-- TOPICO 6 -->
+<section class="mb-16" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">🔌 MCP — el protocolo que ambos hablan</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Model Context Protocol (MCP) es el <strong class="text-emerald-400">denominador común</strong> de la pila. Patrón abierto para conectar LLM a herramientas externas (Slack, Gmail, GitHub, base de datos). El servidor MCP se ejecuta como un proceso independiente: Claude y Codex hablan el mismo protocolo.</p>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3">La arquitectura MCP</h3>
+<div class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-4 leading-relaxed">
+<div>┌──────────────┐         ┌──────────────┐</div>
+<div>│ Claude Code  │────┐    │   MCP Server │</div>
+<div>└──────────────┘    │    │  (slack-api) │</div>
+<div>                    ├──→ │              │</div>
+<div>┌──────────────┐    │    │  Expone tools │</div>
+<div>│ Codex CLI    │────┘    │  via stdio   │</div>
+<div>└──────────────┘         └──────────────┘</div>
+<div></div>
+<div>Los dos clients consumen el MISMO server.</div>
+<div>El server es independiente y se declara en la config del cliente.</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
+<h4 class="font-bold text-blue-400 mb-3">🔷 Declaración en Claude Code</h4>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-3 overflow-x-auto">// .mcp.json
+{
+  "mcpServers": {
+    "slack": {
+      "command": "npx",
+      "args": ["-y", "@mcp/slack"],
+      "env": { "TOKEN": "$SLACK_TOKEN" }
+    }
+  }
+}</pre>
+</div>
+<div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6">
+<h4 class="font-bold text-purple-400 mb-3">🟣 Declaración en Codex</h4>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-3 overflow-x-auto"># config.toml
+[mcp_servers.slack]
+command = "npx"
+args = ["-y", "@mcp/slack"]
+
+[mcp_servers.slack.env]
+TOKEN = "${SLACK_TOKEN}"</pre>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span>La buena noticia</h3>
+<p class="text-neutral-300 text-sm">¿Configuraste un MCP server una vez? Los dos runtimes pueden usarlo. Solo cambia el formato de declaración (JSON×TOML). Server, env, herramientas expuestas: todo igual. Es la parte de la pila que MÁS sobrevive entre runtimes.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-emerald-400">Conceptos clave</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Estándar abierto</strong><br/><span class="text-neutral-400 text-xs">MCP es una especificación, no es propietario</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Server independiente</strong><br/><span class="text-neutral-400 text-xs">Proceso separado</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">stdio vs HTTP</strong><br/><span class="text-neutral-400 text-xs">Dos transports</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">mcp__server__tool</strong><br/><span class="text-neutral-400 text-xs">Naming convention</span></div>
+</div>
+</div>
+</section>
+<!-- RESUMO -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 rounded-xl border border-emerald-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">🎯</span>Resumen del módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Agente de programación = ciclo ReAct</strong><span class="text-neutral-400"> — no es autocompletado ni chatbot. Es un colaborador iterativo.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">CLAUDE.md ≡ AGENTS.md</strong><span class="text-neutral-400"> — misma función, dos nombres. Jerarquía global → proyecto → subdirectorio.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">.claude/ una carpeta; .codex/ + .agents/ dos</strong><span class="text-neutral-400"> — Codex separa la configuración propietaria de la spec abierta.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Skills = SKILL.md + YAML + body</strong><span class="text-neutral-400"> — 4 pilares comunes; el resto es específico del runtime.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Subagentes: Claude los invoca automáticamente, Codex exige el nombre</strong><span class="text-neutral-400"> — error #1 de la migración.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">MCP es el denominador común</strong><span class="text-neutral-400"> — el server es independiente, solo cambia la declaración.</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-emerald-400 mb-2">Siguiente módulo:</h3>
+<p class="text-neutral-300">1.2 — Por qué usar ambos juntos (complementariedad, redundancia, tool-agnostic)</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Volver a la Ruta 1</a>
+<a class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors" href="modulo-1-2.html">Siguiente: 1.2 →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>PolySkills • Módulo 1.1 • <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+const themeToggle=document.getElementById('theme-toggle'),tDark=document.getElementById('theme-toggle-dark-icon'),tLight=document.getElementById('theme-toggle-light-icon'),html=document.documentElement;
+if(localStorage.getItem('theme')==='light'||(!localStorage.getItem('theme')&&!html.classList.contains('dark'))){tDark.classList.remove('hidden');html.classList.remove('dark')}else{tLight.classList.remove('hidden')}
+themeToggle.addEventListener('click',()=>{tDark.classList.toggle('hidden');tLight.classList.toggle('hidden');html.classList.toggle('dark');localStorage.setItem('theme',html.classList.contains('dark')?'dark':'light')});
+</script>
+</body>
+</html>

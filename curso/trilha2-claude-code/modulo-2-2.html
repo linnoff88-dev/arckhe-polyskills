@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>2.2 Skills, sub-agents e MCP no Claude Code | PolySkills</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#FACC15',dark:{900:'#111827',800:'#1f2937',700:'#374151',600:'#4b5563'}}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+body{font-family:'Inter',sans-serif}code,pre,.font-mono{font-family:'JetBrains Mono',monospace}.dark body{background-color:#111827}
+html:not(.dark) body{background-color:#f8fafc}
+html:not(.dark) .bg-dark-900{background-color:#fff}html:not(.dark) .bg-dark-800{background-color:#f9fafb}html:not(.dark) .bg-dark-700{background-color:#f3f4f6}html:not(.dark) .bg-dark-600{background-color:#e5e7eb}
+html:not(.dark) .text-neutral-100{color:#111827}html:not(.dark) .text-neutral-300{color:#4b5563}html:not(.dark) .text-neutral-400{color:#6b7280}html:not(.dark) .text-neutral-500{color:#9ca3af}
+html:not(.dark) .border-dark-600{border-color:#d1d5db}html:not(.dark) .border-dark-700{border-color:#e5e7eb}
+html:not(.dark) .text-blue-400{color:#2563eb}html:not(.dark) .bg-blue-500\/20{background-color:rgba(37,99,235,.12)}html:not(.dark) .bg-blue-500\/10{background-color:rgba(37,99,235,.08)}html:not(.dark) .border-blue-500\/30{border-color:rgba(37,99,235,.25)}html:not(.dark) .bg-blue-900\/20{background-color:rgba(37,99,235,.08)}html:not(.dark) .bg-blue-900\/30{background-color:rgba(37,99,235,.10)}html:not(.dark) .bg-blue-900\/40{background-color:rgba(37,99,235,.12)}html:not(.dark) .hover\:text-blue-400:hover{color:#2563eb}html:not(.dark) .hover\:bg-blue-500\/10:hover{background-color:rgba(37,99,235,.08)}
+html:not(.dark) .hover\:text-emerald-400:hover{color:#059669}html:not(.dark) .hover\:bg-emerald-500\/10:hover{background-color:rgba(5,150,105,.08)}
+html:not(.dark) .hover\:text-purple-400:hover{color:#7c3aed}html:not(.dark) .hover\:bg-purple-500\/10:hover{background-color:rgba(124,58,237,.08)}
+html:not(.dark) .hover\:text-amber-400:hover{color:#92400e}html:not(.dark) .hover\:bg-amber-500\/10:hover{background-color:rgba(217,119,6,.08)}
+html:not(.dark) .hover\:text-teal-400:hover{color:#0d9488}html:not(.dark) .hover\:bg-teal-500\/10:hover{background-color:rgba(13,148,136,.08)}
+html:not(.dark) .hover\:text-rose-400:hover{color:#9f1239}html:not(.dark) .hover\:bg-rose-500\/10:hover{background-color:rgba(225,29,72,.08)}
+html:not(.dark) .text-emerald-400{color:#059669}html:not(.dark) .bg-emerald-500\/20{background-color:rgba(5,150,105,.12)}html:not(.dark) .border-emerald-500\/30{border-color:rgba(5,150,105,.25)}html:not(.dark) .bg-emerald-900\/20{background-color:rgba(5,150,105,.06)}
+html:not(.dark) .text-purple-400{color:#7c3aed}html:not(.dark) .bg-purple-500\/20{background-color:rgba(124,58,237,.12)}html:not(.dark) .border-purple-500\/30{border-color:rgba(124,58,237,.25)}html:not(.dark) .bg-purple-900\/20{background-color:rgba(124,58,237,.06)}
+html:not(.dark) .text-red-400{color:#b91c1c}html:not(.dark) .bg-red-900\/20{background-color:rgba(185,28,28,.06)}html:not(.dark) .border-red-500\/30{border-color:rgba(185,28,28,.25)}
+html:not(.dark) [class*="bg-gradient-to"]{background-image:none!important}
+html:not(.dark) .text-primary{color:#a16207}html:not(.dark) .bg-primary\/10{background-color:rgba(161,98,7,.08)}html:not(.dark) .border-primary\/30{border-color:rgba(161,98,7,.25)}html:not(.dark) .border-primary\/40{border-color:rgba(161,98,7,.25)}
+html:not(.dark) .text-sky-400{color:#0369a1}html:not(.dark) .text-yellow-400{color:#a16207}html:not(.dark) .hover\:text-sky-300:hover{color:#0284c7}html:not(.dark) .hover\:text-yellow-300:hover{color:#854d0e}
+html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
+.dark .border-dark-600{border-color:#374151}.dark .divide-dark-600>:not([hidden])~:not([hidden]){border-color:#374151}
+</style>
+<link href="https://inematds.github.io/polyskills/curso/trilha2-claude-code/modulo-2-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/polyskills/en/curso/trilha2-claude-code/modulo-2-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/polyskills/es/curso/trilha2-claude-code/modulo-2-2.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-2-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha2-claude-code/modulo-2-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha2-claude-code/modulo-2-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html"><span class="text-2xl">🦜</span><span class="font-bold text-lg hidden sm:inline">PolySkills</span></a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-fundamentos/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-blue-400 bg-blue-500/10" href="index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Claude Code</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-codex/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Codex</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-conversao/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Conversão</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5-polyskill/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">polyskill</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6-fluxos/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Fluxos</span></a>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div></div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-blue-400" href="../../index.html">Início</a><span>/</span>
+<a class="hover:text-blue-400" href="index.html">Trilha 2</a><span>/</span>
+<span class="text-blue-400">Módulo 2.2</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MÓDULO 2.2</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🧩 Skills, sub-agents e MCP no Claude Code</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Onde mora a inteligência customizada do agente — skills bem escritas, sub-agents que disparam sozinhos, MCP servers e a injeção dinâmica que só o Claude tem.</p>
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">7</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">35</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Inter.</div><div class="text-xs text-neutral-400">Nível</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Prático</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-12">
+<h3 class="text-lg font-semibold text-primary mb-2 flex items-center"><span class="mr-2">🎯</span>O que você ganha aqui</h3>
+<p class="text-neutral-300">Sair sabendo escrever skill que dispara sozinha, sub-agent que o Claude principal delega na hora certa, e entender as features exclusivas do Claude Code (injeção dinâmica, allowed-tools) que NÃO existem no Codex.</p>
+</div>
+<h2 class="text-2xl font-bold mb-6">Conteúdo detalhado</h2>
+<!-- 1. Anatomia da skill -->
+<section class="mb-16" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">📦 Anatomia de uma skill</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Skill no Claude Code é uma <strong class="text-blue-400">pasta em <code>.claude/skills/&lt;nome&gt;/</code></strong> com estrutura convencionada. O coração é SKILL.md, mas tem mais peças com função clara.</p>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3">Estrutura completa</h3>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-4 overflow-x-auto">
+<span class="text-yellow-400">.claude/skills/minha-skill/</span>
+├── <span class="text-blue-400">SKILL.md</span>              ← obrigatório (frontmatter + body)
+├── <span class="text-emerald-400">scripts/</span>             ← scripts auxiliares chamáveis
+│   ├── check.sh
+│   └── format.py
+├── <span class="text-emerald-400">references/</span>          ← docs profundas (lazy-load)
+│   ├── api-spec.md
+│   └── examples.md
+└── <span class="text-emerald-400">assets/</span>              ← imagens, binários, templates
+    └── template.html</pre>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3">SKILL.md completo (exemplo real)</h3>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-4 overflow-x-auto">---
+<span class="text-emerald-400">name</span>: revisar-pr
+<span class="text-emerald-400">description</span>: Use quando o usuário pedir pra revisar uma PR ou diff. Triggers: "revisa PR", "review pull request", "olha o diff".
+<span class="text-emerald-400">allowed-tools</span>: Bash(git diff:*), Bash(gh pr:*), Read, Grep, Glob
+<span class="text-emerald-400">disable-model-invocation</span>: false
+---
+
+# Revisar PR
+
+## Passo a passo
+
+1. Identifica a PR (número via $ARGUMENTS ou \`gh pr list\`)
+2. Lê diff completo com \`gh pr diff &lt;numero&gt;\`
+3. Para cada arquivo mudado, verifica:
+   - Bugs de correção (não estilo)
+   - Edge cases não tratados
+   - Vulnerabilidades comuns
+4. Consulta \`references/security-checklist.md\` se tocar em auth
+5. Retorna findings categorizados por severity (high/med/low)
+
+## Referências
+- Checklist completo: \`references/security-checklist.md\`
+- Padrões do repo: \`references/repo-conventions.md\`</pre>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-3">✓ Skill bem feita</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li>• Body curto e direto (passo-a-passo)</li>
+<li>• Detalhes em <code>references/</code> (lazy)</li>
+<li>• <code>allowed-tools</code> restrito ao necessário</li>
+<li>• description com triggers do mundo real</li>
+<li>• Scripts pra ações determinísticas</li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-3">✗ Anti-pattern</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li>• Body de 200KB com TUDO inline</li>
+<li>• description só repetindo o nome</li>
+<li>• Sem allowed-tools (pode tudo)</li>
+<li>• Scripts no body em vez de <code>scripts/</code></li>
+<li>• Misturar várias responsabilidades</li>
+</ul>
+</div>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-blue-400">Conceitos-chave</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">Frontmatter</strong><br/><span class="text-neutral-400 text-xs">name + description min</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">Body curto</strong><br/><span class="text-neutral-400 text-xs">Passo-a-passo, &lt; 5KB</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">references/ lazy</strong><br/><span class="text-neutral-400 text-xs">Carregado on-demand</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">scripts/ determ.</strong><br/><span class="text-neutral-400 text-xs">Ações sem LLM</span></div>
+</div>
+</div>
+</section>
+<!-- 2. Description como gatilho -->
+<section class="mb-16" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">🎯 Description — a arte do gatilho</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">A maior causa de "skill não funciona" é <strong class="text-blue-400">description ruim</strong>. Não é bug — é match semântico falhando. Claude lê descriptions de todas skills e escolhe a melhor pro contexto atual. Sua description compete por atenção.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-3">✗ Description ruim</h4>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-3 mb-2">description: Skill de revisão</pre>
+<p class="text-xs text-neutral-400">→ Vaga. Não diz quando usar. Não tem gatilho. Skill morre invisível.</p>
+</div>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-3">✓ Description boa</h4>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-3 mb-2">description: Use quando o usuário pedir
+pra revisar PR/diff. Triggers: "revisa
+PR #123", "review da branch", "olha o
+diff", "code review".</pre>
+<p class="text-xs text-neutral-400">→ Diz quando. Lista triggers reais. Match acerta.</p>
+</div>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3">Receita pra description de qualidade</h3>
+<div class="space-y-3 text-sm">
+<div class="flex items-start space-x-3"><span class="text-blue-400 font-bold">1.</span><div><strong>"Use when..."</strong> — começa pelo gatilho situacional</div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 font-bold">2.</span><div><strong>Lista trigger phrases reais</strong> — frases que o usuário REALMENTE escreve</div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 font-bold">3.</span><div><strong>Exemplos</strong> — 1-2 cenários concretos</div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 font-bold">4.</span><div><strong>Evita repetir o nome</strong> — description "skill X faz X" é desperdício</div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 font-bold">5.</span><div><strong>Diz NÃO usar quando</strong> — se útil, deixa claro o anti-caso</div></div>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span>Teste empírico</h3>
+<p class="text-neutral-300 text-sm">Depois de escrever, abre Claude Code e <strong>simula 5 prompts reais</strong> que deveriam ativar a skill. Se ativa em 4/5, ok. Se ativa em 2/5, description está fraca. Itera.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-blue-400">Conceitos-chave</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">Semantic match</strong><br/><span class="text-neutral-400 text-xs">Claude lê e decide</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">"Use when..."</strong><br/><span class="text-neutral-400 text-xs">Padrão de gatilho</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">Trigger phrases</strong><br/><span class="text-neutral-400 text-xs">Frases do usuário</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">Teste empírico</strong><br/><span class="text-neutral-400 text-xs">5 prompts reais</span></div>
+</div>
+</div>
+</section>
+<!-- 3. Sub-agents -->
+<section class="mb-16" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">👤 Sub-agents auto-invocáveis</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Sub-agent é uma <strong class="text-blue-400">persona especializada</strong> com system prompt próprio, tool surface restrita e contexto isolado. Claude principal lê a description e DELEGA — sozinho, sem você pedir nominal. É a feature que mais diferencia Claude do Codex.</p>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3">Exemplo — .claude/agents/code-reviewer.md</h3>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-4 overflow-x-auto">---
+<span class="text-emerald-400">name</span>: code-reviewer
+<span class="text-emerald-400">description</span>: Use proactively when the user finishes implementing a feature or before merging a PR. Specializes in catching correctness bugs.
+<span class="text-emerald-400">tools</span>: Read, Grep, Glob, Bash(git diff:*)
+<span class="text-emerald-400">model</span>: claude-opus-4-6
+---
+
+You are a senior code reviewer focused on correctness.
+
+## Your role
+- Read the diff carefully
+- Flag correctness bugs (NOT style — linter handles that)
+- Check edge cases (null, empty, off-by-one, race conditions)
+- Note security risks (SQLi, XSS, path traversal, auth bypass)
+
+## Output format
+A numbered list of findings:
+1. **[severity]** file:line — what's wrong, why, suggested fix
+
+Be terse. No fluff.</pre>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5">
+<div class="text-2xl mb-2">🎯</div>
+<h4 class="font-bold mb-1 text-blue-400">Isolamento de contexto</h4>
+<p class="text-sm text-neutral-400">Sub-agent abre janela própria — não polui contexto do principal. Devolve só o resultado.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5">
+<div class="text-2xl mb-2">⚡</div>
+<h4 class="font-bold mb-1 text-blue-400">Paralelismo</h4>
+<p class="text-sm text-neutral-400">Claude pode disparar vários sub-agents em paralelo (Task tool). Útil pra research em ângulos múltiplos.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5">
+<div class="text-2xl mb-2">🔬</div>
+<h4 class="font-bold mb-1 text-blue-400">Modelo dedicado</h4>
+<p class="text-sm text-neutral-400">Cada sub-agent pode usar modelo diferente. Haiku pra busca, Opus pra análise. Economia + qualidade.</p>
+</div>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3">Description com "proactively" — o segredo</h3>
+<p class="text-neutral-300 text-sm mb-2">A palavra "proactively" na description é um sinal forte pro Claude principal: "use isto SEM o usuário pedir, quando o contexto bater". Sem ela, o sub-agent quase nunca dispara sozinho.</p>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-3">description: Use <span class="text-emerald-400">proactively</span> when... <span class="text-neutral-500">// dispara sozinho</span>
+description: Use when the user explicitly asks... <span class="text-neutral-500">// só sob pedido</span></pre>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-blue-400">Conceitos-chave</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">Auto-dispatch</strong><br/><span class="text-neutral-400 text-xs">Por description</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">Task tool</strong><br/><span class="text-neutral-400 text-xs">Mecanismo de delega</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">Tool subset</strong><br/><span class="text-neutral-400 text-xs">tools: [a, b, c]</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">"proactively"</strong><br/><span class="text-neutral-400 text-xs">Palavra-chave</span></div>
+</div>
+</div>
+</section>
+<!-- 4. MCP servers -->
+<section class="mb-16" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">🔌 MCP servers — declaração e uso</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">MCP server expõe ferramentas externas ao Claude. Declarado em <code>.mcp.json</code> (projeto, vai pro git) ou <code>~/.claude.json</code> (global). Cada tool exposta vira <code>mcp__servidor__nome-tool</code>.</p>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3">.mcp.json (projeto)</h3>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-4 overflow-x-auto">{
+  "mcpServers": {
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": { "GITHUB_TOKEN": "${GITHUB_TOKEN}" }
+    },
+    "postgres": {
+      "command": "uvx",
+      "args": ["mcp-server-postgres", "--db-url", "${DATABASE_URL}"]
+    },
+    "linear": {
+      "type": "http",
+      "url": "https://mcp.linear.app/sse",
+      "headers": { "Authorization": "Bearer ${LINEAR_TOKEN}" }
+    }
+  }
+}</pre>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3">Allowlist em settings.json</h3>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-4 overflow-x-auto">{
+  "enabledMcpjsonServers": ["github", "postgres"],   <span class="text-neutral-500">// só estes ativam</span>
+  "permissions": {
+    "allow": [
+      "mcp__github",                          <span class="text-neutral-500">// libera tudo do server</span>
+      "mcp__postgres__query"                  <span class="text-neutral-500">// libera tool específica</span>
+    ]
+  }
+}</pre>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h4 class="font-bold mb-3 text-blue-400">📦 stdio transport</h4>
+<p class="text-sm text-neutral-300 mb-2">Server roda como processo filho via stdin/stdout. Mais comum pra MCP local.</p>
+<p class="text-xs text-neutral-400">Exemplo: npm/uvx que sobe processo, Claude conversa via pipe.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h4 class="font-bold mb-3 text-blue-400">🌐 HTTP/SSE transport</h4>
+<p class="text-sm text-neutral-300 mb-2">Server roda como service remoto. Claude conecta via HTTP com Server-Sent Events.</p>
+<p class="text-xs text-neutral-400">Exemplo: Linear, Slack, serviços SaaS com endpoint MCP oficial.</p>
+</div>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-blue-400">Conceitos-chave</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">.mcp.json</strong><br/><span class="text-neutral-400 text-xs">Projeto, vai pro git</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">~/.claude.json</strong><br/><span class="text-neutral-400 text-xs">Global</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">stdio vs HTTP</strong><br/><span class="text-neutral-400 text-xs">Dois transports</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">Naming</strong><br/><span class="text-neutral-400 text-xs">mcp__server__tool</span></div>
+</div>
+</div>
+</section>
+<!-- 5. Injeção dinâmica -->
+<section class="mb-16" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">🎨 Injeção dinâmica (backtick-bang) — exclusiva do Claude</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Sintaxe específica do Claude Code: dentro de SKILL.md ou commands, código entre <strong>crase-bang</strong> (<code>`!comando`</code>) é executado pelo shell ANTES da skill chegar no LLM. O resultado entra direto no prompt — sem tool call adicional.</p>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3">Exemplo prático</h3>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-4 overflow-x-auto">---
+name: branch-status
+description: Mostra contexto da branch atual antes de propor próxima ação
+---
+
+# Status da branch
+
+Branch atual: <span class="text-emerald-400">`!git branch --show-current`</span>
+Último commit: <span class="text-emerald-400">`!git log -1 --oneline`</span>
+
+Diff vs main:
+<span class="text-emerald-400">`!git diff main...HEAD --stat`</span>
+
+Com base no acima, sugira o próximo passo.</pre>
+<p class="text-sm text-neutral-400 mt-3">Quando você invoca <code>/branch-status</code>, Claude já recebe um SKILL.md preenchido com os outputs reais. Não precisa pedir "rode git status" — já está lá.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-3">✓ Bons usos</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li>• Snapshot do estado (git, versão, ENV)</li>
+<li>• Listar arquivos/branches relevantes</li>
+<li>• Pegar último log/erro</li>
+<li>• Injetar timestamp/data</li>
+<li>• Resultado de comando idempotente</li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-3">✗ Cuidado</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li>• Comandos destrutivos (rm, drop)</li>
+<li>• Input do usuário interpolado direto (injection)</li>
+<li>• Comandos lentos (segura skill por segundos)</li>
+<li>• Output gigante (estoura contexto)</li>
+<li>• Side effects que mudam estado</li>
+</ul>
+</div>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span>Cuidado portabilidade</h3>
+<p class="text-neutral-300 text-sm">Backtick-bang NÃO existe no Codex. Skill que depende disso vai falhar lá. Polyskill reescreve como prosa de fallback ("rode <code>git status</code> e analise o resultado") quando compila pro Codex — mas perde a injeção real.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-blue-400">Conceitos-chave</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">Build-time</strong><br/><span class="text-neutral-400 text-xs">Roda antes do prompt</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">Sem tool call</strong><br/><span class="text-neutral-400 text-xs">Já vem no contexto</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">Não portável</strong><br/><span class="text-neutral-400 text-xs">Só Claude tem</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">Polyskill cobre</strong><br/><span class="text-neutral-400 text-xs">Prosa de fallback</span></div>
+</div>
+</div>
+</section>
+<!-- 6. disable-model-invocation -->
+<section class="mb-16" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">🚦 disable-model-invocation e allowed-tools</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Dois campos do frontmatter que dão <strong class="text-blue-400">controle fino</strong> sobre quando e como a skill roda. Essencial pra skills perigosas ou focadas.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
+<h4 class="font-bold text-blue-400 mb-3">🔒 disable-model-invocation</h4>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-3 mb-3">disable-model-invocation: true</pre>
+<p class="text-sm text-neutral-300 mb-2">Impede auto-trigger. Só roda quando você invoca explicitamente (<code>/nome-skill</code>).</p>
+<p class="text-xs text-neutral-400"><strong>Quando usar:</strong> skills destrutivas (drop, deploy, push), skills que custam (chamam API paga), skills que SÓ você invoca consciente.</p>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
+<h4 class="font-bold text-blue-400 mb-3">🛡️ allowed-tools</h4>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-3 mb-3">allowed-tools: Read, Grep, Bash(git:*)</pre>
+<p class="text-sm text-neutral-300 mb-2">Restringe quais ferramentas a skill pode usar. Princípio do menor privilégio.</p>
+<p class="text-xs text-neutral-400"><strong>Quando usar:</strong> skill de leitura nunca deveria escrever, skill de análise nunca deveria abrir terminal. Restringe.</p>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span>Combo de segurança</h3>
+<p class="text-neutral-300 text-sm">Pra skill perigosa: <code>disable-model-invocation: true</code> + <code>allowed-tools</code> ultra-restrito + descrição com aviso explícito. Garantia tripla.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-blue-400">Conceitos-chave</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">Opt-in invoke</strong><br/><span class="text-neutral-400 text-xs">disable-model-invoke</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">Tool surface</strong><br/><span class="text-neutral-400 text-xs">allowed-tools</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">Least privilege</strong><br/><span class="text-neutral-400 text-xs">Mínimo necessário</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">Model override</strong><br/><span class="text-neutral-400 text-xs">model: haiku</span></div>
+</div>
+</div>
+</section>
+<!-- 7. Plugins -->
+<section class="mb-16" id="topico-7">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">7</span>
+<h2 class="text-2xl font-bold">🛍️ Plugins e marketplace</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Plugin é um <strong class="text-blue-400">pacote distribuível</strong>: agrupa skills + agents + commands + hooks em um único bundle versionado. É como você consome trabalho dos outros (claude-mem, context-mode, superpowers, etc.) e publica o seu.</p>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3">plugin.json — manifesto</h3>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-4 overflow-x-auto">{
+  "name": "meu-plugin",
+  "version": "1.2.0",
+  "description": "Conjunto de skills pra refatorar TypeScript",
+  "author": "@meu-handle",
+  "skills": ["./skills/ts-refactor", "./skills/ts-test-gen"],
+  "agents": ["./agents/ts-reviewer.md"],
+  "commands": ["./commands/refactor.md"],
+  "hooks": [{ "event": "PostToolUse", "matcher": "Edit", "command": "./scripts/format.sh" }]
+}</pre>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5">
+<div class="text-2xl mb-2">📦</div>
+<h4 class="font-bold mb-1 text-blue-400">Namespace</h4>
+<p class="text-sm text-neutral-400">Skills do plugin viram <code>plugin:skill-name</code> pra evitar colisão.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5">
+<div class="text-2xl mb-2">🏪</div>
+<h4 class="font-bold mb-1 text-blue-400">Marketplace</h4>
+<p class="text-sm text-neutral-400">Index de plugins (marketplace.json). Instala via <code>/plugins</code>.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5">
+<div class="text-2xl mb-2">🔄</div>
+<h4 class="font-bold mb-1 text-blue-400">Versionamento</h4>
+<p class="text-sm text-neutral-400">npm-style semver. Atualiza via marketplace.</p>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">🦜</span>Polyskill como plugin</h3>
+<p class="text-neutral-300 text-sm">Polyskill se distribui como plugin. Você instala uma vez, ganha o CLI + a meta-skill que dirige o CLI por linguagem natural. Plugin é a forma moderna de distribuir.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-blue-400">Conceitos-chave</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">plugin.json</strong><br/><span class="text-neutral-400 text-xs">Manifesto do bundle</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">marketplace.json</strong><br/><span class="text-neutral-400 text-xs">Index público</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">plugin:skill</strong><br/><span class="text-neutral-400 text-xs">Namespace</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-blue-400">Semver</strong><br/><span class="text-neutral-400 text-xs">Versionamento</span></div>
+</div>
+</div>
+</section>
+<!-- RESUMO -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-blue-900/40 via-dark-800 to-dark-800 rounded-xl border border-blue-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">🎯</span>Resumo do módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Skill = SKILL.md + scripts/ + references/ + assets/</strong><span class="text-neutral-400"> — body curto, detalhe lazy.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Description boa = "use when" + triggers reais</strong><span class="text-neutral-400"> — testa empiricamente.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Sub-agents auto-disparam com "proactively"</strong><span class="text-neutral-400"> — contexto isolado, modelo dedicado.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">MCP via .mcp.json (projeto) ou ~/.claude.json (global)</strong><span class="text-neutral-400"> — stdio ou HTTP.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Backtick-bang injeta output de shell no prompt</strong><span class="text-neutral-400"> — exclusivo Claude, NÃO portável.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">disable-model-invocation + allowed-tools = controle fino</strong><span class="text-neutral-400"> — combo de segurança.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Plugins distribuem skills + agents + commands + hooks</strong><span class="text-neutral-400"> — versionados, namespaced.</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-blue-400 mb-2">Próxima trilha:</h3>
+<p class="text-neutral-300">T3 — Anatomia do Codex (AGENTS.md, .codex/, .agents/, openai.yaml)</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-2-1.html">← Anterior: 2.1</a>
+<a class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors" href="../trilha3-codex/index.html">Trilha 3: Codex →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>PolySkills • Módulo 2.2 • <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+const themeToggle=document.getElementById('theme-toggle'),tDark=document.getElementById('theme-toggle-dark-icon'),tLight=document.getElementById('theme-toggle-light-icon'),html=document.documentElement;
+if(localStorage.getItem('theme')==='light'||(!localStorage.getItem('theme')&&!html.classList.contains('dark'))){tDark.classList.remove('hidden');html.classList.remove('dark')}else{tLight.classList.remove('hidden')}
+themeToggle.addEventListener('click',()=>{tDark.classList.toggle('hidden');tLight.classList.toggle('hidden');html.classList.toggle('dark');localStorage.setItem('theme',html.classList.contains('dark')?'dark':'light')});
+</script>
+</body>
+</html>

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>1.2 Por que usar os dois juntos | PolySkills</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#FACC15',dark:{900:'#111827',800:'#1f2937',700:'#374151',600:'#4b5563'}}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+body{font-family:'Inter',sans-serif}code,pre,.font-mono{font-family:'JetBrains Mono',monospace}.dark body{background-color:#111827}
+html:not(.dark) body{background-color:#f8fafc}
+html:not(.dark) .bg-dark-900{background-color:#fff}html:not(.dark) .bg-dark-800{background-color:#f9fafb}html:not(.dark) .bg-dark-700{background-color:#f3f4f6}html:not(.dark) .bg-dark-600{background-color:#e5e7eb}
+html:not(.dark) .text-neutral-100{color:#111827}html:not(.dark) .text-neutral-300{color:#4b5563}html:not(.dark) .text-neutral-400{color:#6b7280}html:not(.dark) .text-neutral-500{color:#9ca3af}
+html:not(.dark) .border-dark-600{border-color:#d1d5db}html:not(.dark) .border-dark-700{border-color:#e5e7eb}
+html:not(.dark) .text-emerald-400{color:#059669}html:not(.dark) .bg-emerald-500\/20{background-color:rgba(5,150,105,.12)}html:not(.dark) .bg-emerald-500\/10{background-color:rgba(5,150,105,.08)}html:not(.dark) .border-emerald-500\/30{border-color:rgba(5,150,105,.25)}html:not(.dark) .hover\:bg-emerald-500\/30:hover{background-color:rgba(5,150,105,.18)}html:not(.dark) .hover\:text-emerald-400:hover{color:#059669}html:not(.dark) .hover\:bg-emerald-500\/10:hover{background-color:rgba(5,150,105,.08)}
+html:not(.dark) .hover\:text-blue-400:hover{color:#2563eb}html:not(.dark) .hover\:bg-blue-500\/10:hover{background-color:rgba(37,99,235,.08)}
+html:not(.dark) .hover\:text-purple-400:hover{color:#7c3aed}html:not(.dark) .hover\:bg-purple-500\/10:hover{background-color:rgba(124,58,237,.08)}
+html:not(.dark) .hover\:text-amber-400:hover{color:#92400e}html:not(.dark) .hover\:bg-amber-500\/10:hover{background-color:rgba(217,119,6,.08)}
+html:not(.dark) .hover\:text-teal-400:hover{color:#0d9488}html:not(.dark) .hover\:bg-teal-500\/10:hover{background-color:rgba(13,148,136,.08)}
+html:not(.dark) .hover\:text-rose-400:hover{color:#9f1239}html:not(.dark) .hover\:bg-rose-500\/10:hover{background-color:rgba(225,29,72,.08)}
+html:not(.dark) .text-blue-400{color:#2563eb}html:not(.dark) .bg-blue-500\/20{background-color:rgba(37,99,235,.12)}html:not(.dark) .bg-blue-500\/10{background-color:rgba(37,99,235,.08)}html:not(.dark) .border-blue-500\/30{border-color:rgba(37,99,235,.25)}html:not(.dark) .bg-blue-900\/20{background-color:rgba(37,99,235,.08)}
+html:not(.dark) .text-purple-400{color:#7c3aed}html:not(.dark) .bg-purple-500\/20{background-color:rgba(124,58,237,.12)}html:not(.dark) .border-purple-500\/30{border-color:rgba(124,58,237,.25)}
+html:not(.dark) .text-red-400{color:#b91c1c}html:not(.dark) .bg-red-900\/20{background-color:rgba(185,28,28,.06)}html:not(.dark) .border-red-500\/30{border-color:rgba(185,28,28,.25)}
+html:not(.dark) .bg-emerald-900\/20{background-color:rgba(5,150,105,.06)}html:not(.dark) .bg-emerald-900\/30{background-color:rgba(5,150,105,.08)}html:not(.dark) .bg-emerald-900\/40{background-color:rgba(5,150,105,.10)}
+html:not(.dark) [class*="bg-gradient-to"]{background-image:none!important}
+html:not(.dark) .text-primary{color:#a16207}html:not(.dark) .bg-primary\/10{background-color:rgba(161,98,7,.08)}html:not(.dark) .border-primary\/30{border-color:rgba(161,98,7,.25)}html:not(.dark) .border-primary\/40{border-color:rgba(161,98,7,.25)}
+html:not(.dark) .text-sky-400{color:#0369a1}html:not(.dark) .text-yellow-400{color:#a16207}html:not(.dark) .hover\:text-sky-300:hover{color:#0284c7}html:not(.dark) .hover\:text-yellow-300:hover{color:#854d0e}
+html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
+.dark .border-dark-600{border-color:#374151}.dark .divide-dark-600>:not([hidden])~:not([hidden]){border-color:#374151}
+</style>
+<link href="https://inematds.github.io/polyskills/curso/trilha1-fundamentos/modulo-1-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/polyskills/en/curso/trilha1-fundamentos/modulo-1-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/polyskills/es/curso/trilha1-fundamentos/modulo-1-2.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-1-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha1-fundamentos/modulo-1-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha1-fundamentos/modulo-1-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html"><span class="text-2xl">🦜</span><span class="font-bold text-lg hidden sm:inline">PolySkills</span></a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10" href="index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-claude-code/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Claude Code</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-codex/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Codex</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-conversao/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Conversão</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5-polyskill/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">polyskill</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6-fluxos/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Fluxos</span></a>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div></div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-emerald-400" href="../../index.html">Início</a><span>/</span>
+<a class="hover:text-emerald-400" href="index.html">Trilha 1</a><span>/</span>
+<span class="text-emerald-400">Módulo 1.2</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÓDULO 1.2</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🤝 Por que usar os dois juntos</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Não é "qual é melhor". É "quando cada um brilha", e por que depender de um só te coloca em risco.</p>
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">6</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">30</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Básico</div><div class="text-xs text-neutral-400">Nível</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Mindset</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-12">
+<h3 class="text-lg font-semibold text-primary mb-2 flex items-center"><span class="mr-2">🎯</span>O que você ganha aqui</h3>
+<p class="text-neutral-300">Argumentos concretos pra defender (pra você, pro time, pro chefe) a postura tool-agnostic. Sair de "vou usar o que estiver na moda" pra "tenho os dois, escolho cada um pelo motivo certo".</p>
+</div>
+<h2 class="text-2xl font-bold mb-6">Conteúdo detalhado</h2>
+<!-- TOPICO 1 -->
+<section class="mb-16" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">🪜 Forças complementares — quem é melhor em quê</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Os dois agentes têm <strong class="text-emerald-400">perfis distintos</strong>. Não é "Claude &gt; Codex" nem o contrário — é "cada um brilha em situações diferentes". Quem usa os dois aprende a puxar o certo pra cada tarefa em poucos dias.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
+<h4 class="font-bold text-blue-400 mb-3 flex items-center"><span class="mr-2">🔷</span>Claude Code tende a brilhar</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li>• <strong>Refactor longo</strong> que envolve ler vários arquivos antes</li>
+<li>• <strong>Debug profundo</strong> com hipóteses sequenciais</li>
+<li>• <strong>Plan mode</strong> pra desenhar arquitetura antes de mexer</li>
+<li>• <strong>Sub-agents paralelos</strong> (research em vários ângulos)</li>
+<li>• <strong>Tarefas ambíguas</strong> onde "pensar antes" rende mais</li>
+<li>• <strong>Skills com injeção dinâmica</strong> (backtick-bang)</li>
+</ul>
+</div>
+<div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6">
+<h4 class="font-bold text-purple-400 mb-3 flex items-center"><span class="mr-2">🟣</span>Codex tende a brilhar</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li>• <strong>Tarefas pequenas e bem definidas</strong> (rápido)</li>
+<li>• <strong>Hard prompts</strong> seguidos à risca</li>
+<li>• <strong>Sandbox controlado</strong> (config TOML granular)</li>
+<li>• <strong>Tarefas com saída estruturada</strong> (JSON/YAML/etc.)</li>
+<li>• <strong>Geração de teste</strong> em pair com humano</li>
+<li>• <strong>Invocação explícita</strong> (previsível, sem surpresa)</li>
+</ul>
+</div>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">⚠️</span>Aviso de viés</h3>
+<p class="text-neutral-300 text-sm">Estes perfis vêm da observação de quem usa os dois há meses. Modelos atualizam toda hora — o que era força hoje pode ser força do outro semana que vem. <strong>Sempre faça seu próprio A/B.</strong></p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-emerald-400">Conceitos-chave</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Planner-heavy</strong><br/><span class="text-neutral-400 text-xs">Pensa muito antes</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Doer-heavy</strong><br/><span class="text-neutral-400 text-xs">Age rápido</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Tolerância a ambig.</strong><br/><span class="text-neutral-400 text-xs">Quanto especifica</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Custo/token</strong><br/><span class="text-neutral-400 text-xs">Modelo escolhido</span></div>
+</div>
+</div>
+</section>
+<!-- TOPICO 2 -->
+<section class="mb-16" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">🆘 Quando um trava, o outro destrava — second opinion</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">É a <strong class="text-emerald-400">justificativa #1</strong> pra ter os dois instalados. Padrão observado em todo workflow dual: quando um agente entra em loop, repete o mesmo erro ou perde o fio, passar o contexto pro outro frequentemente resolve em segundos.</p>
+<div class="space-y-6 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Você identifica que o agente está travado</h4>
+<p class="text-sm text-neutral-400 mb-3">Sintomas: repete a mesma solução, ignora a sua correção, propõe mudança que claramente não resolve, ou começa a inventar API que não existe.</p>
+<p class="text-neutral-300 text-sm">É a hora de NÃO insistir. Mais 5 prompts iguais não vão destravar — vai só queimar contexto.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Pede um session handoff</h4>
+<p class="text-sm text-neutral-400 mb-3">Comando ou skill que gera resumo: o que tentou, o que falhou, o que precisa ser feito, arquivos relevantes.</p>
+<p class="text-neutral-300 text-sm">Veja a skill <code class="text-xs">session-handoff</code> (T6.1) pra padronização. Mesmo sem skill, um simples "me dá um resumo do que tentei até agora" funciona.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Cola no outro agente, observa</h4>
+<p class="text-sm text-neutral-400 mb-3">No outro terminal (Codex se vinha do Claude, ou vice-versa), cola o handoff e adiciona: "o agente anterior travou nisso, tente uma abordagem diferente".</p>
+<p class="text-neutral-300 text-sm"><strong class="text-emerald-400">"Fresh eyes effect"</strong> — sem o histórico do loop, o novo agente frequentemente vê algo que o primeiro perdeu.</p>
+</div>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span>Por que funciona</h3>
+<p class="text-neutral-300 text-sm">Não é mágica. O segundo agente começa com prompt limpo, sem o caminho mental que travou o primeiro. Adiciona que os modelos têm vieses ligeiramente diferentes — vê o problema sob outro ângulo. Custo de troca é ~30s; benefício é destravar 10-30min de loop.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-emerald-400">Conceitos-chave</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Session handoff</strong><br/><span class="text-neutral-400 text-xs">Resumo padronizado</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Fresh eyes</strong><br/><span class="text-neutral-400 text-xs">Sem histórico do loop</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Stop signals</strong><br/><span class="text-neutral-400 text-xs">Sintomas de travamento</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Custo de troca</strong><br/><span class="text-neutral-400 text-xs">Quase zero c/ handoff</span></div>
+</div>
+</div>
+</section>
+<!-- TOPICO 3 -->
+<section class="mb-16" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">🛡️ Redundância — provider down não te derruba</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Provedores caem. Limites são atingidos. Modelos são depreciados sem aviso. Se sua produtividade depende <strong class="text-red-400">100% de um único provedor</strong>, qualquer instabilidade tira você do ar — e você fica refém do timeline deles, não do seu.</p>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">📉</span>Coisas que acontecem (e vão acontecer de novo)</h3>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li>• <strong>Outage de algumas horas</strong> — checa status.anthropic.com / status.openai.com</li>
+<li>• <strong>Rate limit atingido</strong> em momento crítico (release, deadline)</li>
+<li>• <strong>Depreciação de modelo</strong> que você usava em skill específica</li>
+<li>• <strong>Manutenção programada</strong> que coincide com sua janela de trabalho</li>
+<li>• <strong>Mudança de comportamento</strong> em update de modelo (skill quebra silenciosamente)</li>
+</ul>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Dependência única — risco</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Cliente esperando, agente fora do ar = você parado</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Custo de oportunidade absurdo em hora crítica</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Conhecimento concentrado em um ecossistema</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Sujeito a mudança unilateral de preço/política</span></li>
+</ul>
+</div>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Os dois — resiliência</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Um cai? Abre o outro, segue trabalho em 1 min</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Rate limit hoje? Usa o outro hoje</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Pluralidade de skills no time</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Poder de barganha (não está casado com fornecedor)</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-emerald-400">Conceitos-chave</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Status pages</strong><br/><span class="text-neutral-400 text-xs">Monitora ambos</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Rate limit</strong><br/><span class="text-neutral-400 text-xs">Janela por provider</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Fallback manual</strong><br/><span class="text-neutral-400 text-xs">Troca em segundos</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Risk distribution</strong><br/><span class="text-neutral-400 text-xs">Não concentra</span></div>
+</div>
+</div>
+</section>
+<!-- TOPICO 4 -->
+<section class="mb-16" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">🏗️ Conhecimento compartilhado — só 5% se duplica</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Eis a sacada que destrava a coexistência: <strong class="text-emerald-400">95% do projeto é compartilhado</strong>. Os dois agentes leem os mesmos arquivos de código, docs, scripts, READMEs, wikis. Você não duplica nada disso. Só os 5% de configuração precisam tradução.</p>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3">📊 Anatomia da "duplicação"</h3>
+<div class="space-y-3 text-sm">
+<div class="flex items-center space-x-3">
+<div class="w-48 text-neutral-400">Código-fonte</div>
+<div class="flex-1 bg-dark-900/50 rounded h-6 relative"><div class="bg-emerald-500 h-full rounded" style="width:100%"></div></div>
+<div class="w-16 text-right text-emerald-400 font-mono">0%</div>
+</div>
+<div class="flex items-center space-x-3">
+<div class="w-48 text-neutral-400">Docs/wikis/ADRs</div>
+<div class="flex-1 bg-dark-900/50 rounded h-6 relative"><div class="bg-emerald-500 h-full rounded" style="width:100%"></div></div>
+<div class="w-16 text-right text-emerald-400 font-mono">0%</div>
+</div>
+<div class="flex items-center space-x-3">
+<div class="w-48 text-neutral-400">Scripts e dados</div>
+<div class="flex-1 bg-dark-900/50 rounded h-6 relative"><div class="bg-emerald-500 h-full rounded" style="width:100%"></div></div>
+<div class="w-16 text-right text-emerald-400 font-mono">0%</div>
+</div>
+<div class="flex items-center space-x-3">
+<div class="w-48 text-neutral-400">CLAUDE.md ↔ AGENTS.md</div>
+<div class="flex-1 bg-dark-900/50 rounded h-6 relative"><div class="bg-amber-500 h-full rounded" style="width:30%"></div></div>
+<div class="w-16 text-right text-amber-400 font-mono">~30%</div>
+</div>
+<div class="flex items-center space-x-3">
+<div class="w-48 text-neutral-400">Skills</div>
+<div class="flex-1 bg-dark-900/50 rounded h-6 relative"><div class="bg-amber-500 h-full rounded" style="width:80%"></div></div>
+<div class="w-16 text-right text-amber-400 font-mono">~80%</div>
+</div>
+<div class="flex items-center space-x-3">
+<div class="w-48 text-neutral-400">Sub-agents</div>
+<div class="flex-1 bg-dark-900/50 rounded h-6 relative"><div class="bg-red-500 h-full rounded" style="width:100%"></div></div>
+<div class="w-16 text-right text-red-400 font-mono">100%</div>
+</div>
+<div class="flex items-center space-x-3">
+<div class="w-48 text-neutral-400">Settings (.json/.toml)</div>
+<div class="flex-1 bg-dark-900/50 rounded h-6 relative"><div class="bg-red-500 h-full rounded" style="width:100%"></div></div>
+<div class="w-16 text-right text-red-400 font-mono">100%</div>
+</div>
+</div>
+<p class="text-xs text-neutral-500 mt-4">Verde = sem duplicação. Amarelo = parcial (polyskill resolve). Vermelho = duplicação total (manual).</p>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">🦜</span>Onde polyskill ataca</h3>
+<p class="text-neutral-300 text-sm">Polyskill resolve a duplicação de SKILLS — o item de maior superfície (80%). Sub-agents e settings continuam à mão por enquanto, mas são fixos no projeto e mudam raramente.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-emerald-400">Conceitos-chave</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Source compartilhada</strong><br/><span class="text-neutral-400 text-xs">Código/docs neutros</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Config duplicada</strong><br/><span class="text-neutral-400 text-xs">Settings + sub-agents</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Skills semi-dup.</strong><br/><span class="text-neutral-400 text-xs">Polyskill resolve</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">5% problem</strong><br/><span class="text-neutral-400 text-xs">Foco da duplicação</span></div>
+</div>
+</div>
+</section>
+<!-- TOPICO 5 -->
+<section class="mb-16" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">🧠 Mindset tool-agnostic — princípio de longo prazo</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Tool-agnostic não é "usa qualquer ferramenta". É <strong class="text-emerald-400">não casar com nenhuma</strong>. O ecossistema de coding agents muda rápido — Gemini CLI, Cursor, Copilot, JetBrains AI, e os próximos. Sua skill deve sobreviver à troca de ferramenta.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Tool-agnostic</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Escreve skill no formato spec aberta</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Mantém código/docs neutros (sem amarrar a um runtime)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Testa em mais de uma ferramenta periodicamente</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Aprende padrão (não comando específico)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Adota cedo padrões abertos (MCP, Agent Skills)</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Tool-married</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Skill com features exclusivas (backtick-bang sem fallback)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Workflow inteiro depende de feature proprietária</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Nunca testou em runtime alternativo</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Decora comandos, não conceitos</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Reaproveita zero quando a ferramenta muda</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3">📜 O caso histórico que repete</h3>
+<p class="text-neutral-300 text-sm mb-2">Toda nova categoria de dev tool teve uma fase "vai ser sempre X" — IDE, controle de versão, package manager, build system. Em cada caso, X mudou em 5 anos. Quem fez investimento em padrão aberto reaproveitou. Quem fez em proprietário reescreveu.</p>
+<p class="text-neutral-300 text-sm">Hoje a aposta é Claude Code + Codex. Em 2027? Sabe-se lá. Mas a spec Agent Skills, o protocolo MCP e o conceito de skill com SKILL.md vão continuar válidos.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-emerald-400">Conceitos-chave</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Spec aberta</strong><br/><span class="text-neutral-400 text-xs">agentskills.io, MCP</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Portable source</strong><br/><span class="text-neutral-400 text-xs">Adapters por runtime</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Padrão &gt; comando</strong><br/><span class="text-neutral-400 text-xs">Conceito sobrevive</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Rewrite-once</strong><br/><span class="text-neutral-400 text-xs">Deploy-many</span></div>
+</div>
+</div>
+</section>
+<!-- TOPICO 6 -->
+<section class="mb-16" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">💰 Custo de duas assinaturas — fazendo a conta</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Sim, são dois planos a pagar. Quem nunca usou os dois acha caro. Quem já usa há meses sabe que <strong class="text-emerald-400">o custo de ficar parado é maior</strong> que o custo das duas assinaturas. Mas vale defender com números.</p>
+<div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden mb-6">
+<div class="grid grid-cols-2 gap-0 text-sm">
+<div class="p-4 bg-dark-700/50 font-semibold text-red-400 border-b border-dark-600">Cenário SEM duplo agente</div>
+<div class="p-4 bg-dark-700/50 font-semibold text-emerald-400 border-b border-dark-600 border-l border-dark-600">Cenário COM duplo agente</div>
+<div class="p-4 text-neutral-300 border-b border-dark-600">Provider X cai por 2h em horário de pico</div>
+<div class="p-4 text-neutral-300 border-b border-dark-600 border-l border-dark-600">Troca pra Y em 1min, segue trabalhando</div>
+<div class="p-4 text-neutral-300 border-b border-dark-600">Skill quebra em update silencioso</div>
+<div class="p-4 text-neutral-300 border-b border-dark-600 border-l border-dark-600">Outro agente cobre enquanto debuga</div>
+<div class="p-4 text-neutral-300 border-b border-dark-600">Bug travou Claude 30min</div>
+<div class="p-4 text-neutral-300 border-b border-dark-600 border-l border-dark-600">Codex resolve em 30s com handoff</div>
+<div class="p-4 text-neutral-300 border-b border-dark-600">Conhecimento concentrado num ecossistema</div>
+<div class="p-4 text-neutral-300 border-b border-dark-600 border-l border-dark-600">Fluência em dois — virou habilidade portável</div>
+<div class="p-4 text-neutral-300 font-semibold">Custo do bloqueio: 2-3h/mês</div>
+<div class="p-4 text-neutral-300 font-semibold border-l border-dark-600">Custo da 2ª assinatura: ~R$ 100/mês</div>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">🧮</span>Faz a conta pra você</h3>
+<p class="text-neutral-300 text-sm mb-3">Quanto vale UMA hora sua bloqueada? Multiplica por horas perdidas por mês. Compara com o custo da segunda assinatura. Quase sempre vale.</p>
+<p class="text-neutral-300 text-sm">Exceção honesta: dev iniciante usando free tier, fazendo projeto pessoal sem deadline — pode começar com um só, sem culpa. Mas profissional com deadline e cliente? Dois.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="font-semibold mb-3 text-emerald-400">Conceitos-chave</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Custo oportunidade</strong><br/><span class="text-neutral-400 text-xs">Hora bloqueada</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Plano por uso</strong><br/><span class="text-neutral-400 text-xs">vs assinatura fixa</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Valor redundância</strong><br/><span class="text-neutral-400 text-xs">Em fluxos críticos</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-emerald-400">Depreciação</strong><br/><span class="text-neutral-400 text-xs">Conhecimento parado</span></div>
+</div>
+</div>
+</section>
+<!-- RESUMO -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 rounded-xl border border-emerald-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">🎯</span>Resumo do módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Forças complementares</strong><span class="text-neutral-400"> — Claude planner-heavy, Codex doer-heavy (mas sempre A/B teste).</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Second opinion destrava loops</strong><span class="text-neutral-400"> — handoff + outro agente + fresh eyes.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Redundância protege deadline</strong><span class="text-neutral-400"> — provider down não te derruba.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">95% do projeto é compartilhado</strong><span class="text-neutral-400"> — só skills (80%), settings e sub-agents (100%) duplicam.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Tool-agnostic = sobrevive mudança</strong><span class="text-neutral-400"> — aposta em spec aberta, não em runtime.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Custo de bloqueio &gt; custo da 2ª assinatura</strong><span class="text-neutral-400"> — faz a conta, defende com número.</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-emerald-400 mb-2">Próxima trilha:</h3>
+<p class="text-neutral-300">T2 — Anatomia do Claude Code (CLAUDE.md, .claude/, settings, hooks, slash commands, skills, sub-agents, MCP)</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-1-1.html">← Anterior: 1.1</a>
+<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="../trilha2-claude-code/index.html">Trilha 2: Claude Code →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>PolySkills • Módulo 1.2 • <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+const themeToggle=document.getElementById('theme-toggle'),tDark=document.getElementById('theme-toggle-dark-icon'),tLight=document.getElementById('theme-toggle-light-icon'),html=document.documentElement;
+if(localStorage.getItem('theme')==='light'||(!localStorage.getItem('theme')&&!html.classList.contains('dark'))){tDark.classList.remove('hidden');html.classList.remove('dark')}else{tLight.classList.remove('hidden')}
+themeToggle.addEventListener('click',()=>{tDark.classList.toggle('hidden');tLight.classList.toggle('hidden');html.classList.toggle('dark');localStorage.setItem('theme',html.classList.contains('dark')?'dark':'light')});
+</script>
+</body>
+</html>
