@@ -44,7 +44,7 @@ html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-fundamentos/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-claude-code/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Claude Code</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-codex/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Codex</span></a>
-<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-conversao/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Conversão</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-conversao/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Conversêo</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5-polyskill/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">polyskill</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-rose-400 bg-rose-500/10" href="index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Fluxos</span></a>
 <button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
@@ -65,7 +65,7 @@ html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 <span class="inline-block px-3 py-1 bg-rose-500/20 text-rose-400 text-xs font-semibold rounded-full mb-4">MÓDULO 6.1</span>
 <h1 class="text-3xl sm:text-4xl font-bold mb-4">🎭 Dois agentes lado a lado no mesmo projeto</h1>
-<p class="text-lg text-neutral-400 max-w-3xl">Como gente que vive nos dois agentes opera no dia a dia: session handoff, dois terminais sincronizados, divisão de trabalho pra não atropelar, MCP compartilhado e governança simples.</p>
+<p class="text-lg text-neutral-400 max-w-3xl">Como gente que vive nos dois agentes opera no dia a dia: session handoff, dois terminais sincronizados, divisêo de trabalho pra nêo atropelar, MCP compartilhado e governança simples.</p>
 <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-rose-400">7</div><div class="text-xs text-neutral-400">Tópicos</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-rose-400">50</div><div class="text-xs text-neutral-400">Minutos</div></div>
@@ -92,16 +92,16 @@ html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
 <pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-4 overflow-x-auto"># Session handoff — 2026-05-24 16:30
 
 ## 🎯 Foco atual
-Implementar autenticação OAuth no /api/auth com Google.
+Implementar autenticaçêo OAuth no /api/auth com Google.
 
 ## 📂 Arquivos tocados (com estado)
-- src/api/auth.ts          ← parcial, falta validação JWT
+- src/api/auth.ts          ← parcial, falta validaçêo JWT
 - src/api/auth.test.ts     ← testes do happy path passando
 - prisma/schema.prisma     ← adicionou model OAuthAccount
 
 ## ✅ Decisões tomadas
-- Usar passport.js (não auth0)
-- JWT em cookie httpOnly (não localStorage)
+- Usar passport.js (nêo auth0)
+- JWT em cookie httpOnly (nêo localStorage)
 - Refresh token rotacionando a cada 1h
 
 ## 🚧 Problema aberto
@@ -122,7 +122,7 @@ cookie parse) sem sucesso. Provável bug na lib ou no setup do test.
 <li>• Curto (cabe numa página)</li>
 <li>• Estrutura fixa (5 seções)</li>
 <li>• Lista de arquivos COM estado</li>
-<li>• Decisões explícitas (não óbvias do código)</li>
+<li>• Decisões explícitas (nêo óbvias do código)</li>
 <li>• Problema atual com tentativas anteriores</li>
 </ul>
 </div>
@@ -131,7 +131,7 @@ cookie parse) sem sucesso. Provável bug na lib ou no setup do test.
 <ul class="space-y-2 text-neutral-300 text-sm">
 <li>• "Estou trabalhando na feature X" (vago)</li>
 <li>• 20 páginas de contexto (ninguém lê)</li>
-<li>• Sem problema atual (não sabe o que fazer)</li>
+<li>• Sem problema atual (nêo sabe o que fazer)</li>
 <li>• Decisões que dá pra ler do código (redundante)</li>
 <li>• Sem próximo passo</li>
 </ul>
@@ -164,7 +164,7 @@ cookie parse) sem sucesso. Provável bug na lib ou no setup do test.
 │ Explorer │  src/api/auth.ts                                       │
 │          │  ──────────────────────────────────────                │
 │ ▾ src    │  export async function login(req, res) {               │
-│   api    │    // implementação aqui                               │
+│   api    │    // implementaçêo aqui                               │
 │   ui     │    ...                                                 │
 │ ▸ tests  │  }                                                     │
 │          │                                                        │
@@ -219,7 +219,7 @@ cookie parse) sem sucesso. Provável bug na lib ou no setup do test.
 <h3 class="font-semibold mb-3 text-rose-400">Conceitos-chave</h3>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
 <div class="bg-dark-700 rounded p-3"><strong class="text-rose-400">Split terminal</strong><br/><span class="text-neutral-400 text-xs">Painéis lado a lado</span></div>
-<div class="bg-dark-700 rounded p-3"><strong class="text-rose-400">Profile colorido</strong><br/><span class="text-neutral-400 text-xs">Distinção visual</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-rose-400">Profile colorido</strong><br/><span class="text-neutral-400 text-xs">Distinçêo visual</span></div>
 <div class="bg-dark-700 rounded p-3"><strong class="text-rose-400">Atalhos foco</strong><br/><span class="text-neutral-400 text-xs">Sem mouse</span></div>
 <div class="bg-dark-700 rounded p-3"><strong class="text-rose-400">Settings repo</strong><br/><span class="text-neutral-400 text-xs">.vscode/ no git</span></div>
 </div>
@@ -231,21 +231,21 @@ cookie parse) sem sucesso. Provável bug na lib ou no setup do test.
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">3</span>
 <h2 class="text-2xl font-bold">⚠️ Evitar atropelo — quando os dois editam</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed">Se os dois agentes editam o mesmo arquivo ao mesmo tempo, <strong class="text-red-400">um sobrescreve o outro</strong>. É a forma #1 de perder trabalho com workflow dual. Solução é disciplina simples: <strong class="text-rose-400">dividir por área ou por fase</strong>.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed">Se os dois agentes editam o mesmo arquivo ao mesmo tempo, <strong class="text-red-400">um sobrescreve o outro</strong>. É a forma #1 de perder trabalho com workflow dual. Soluçêo é disciplina simples: <strong class="text-rose-400">dividir por área ou por fase</strong>.</p>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
-<h4 class="font-bold text-emerald-400 mb-3">📂 Divisão por área</h4>
+<h4 class="font-bold text-emerald-400 mb-3">📂 Divisêo por área</h4>
 <p class="text-sm text-neutral-300 mb-3">Cada agente trabalha em pastas diferentes:</p>
 <pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-3">Claude   → src/api/    (backend)
 Codex    → src/ui/     (frontend)</pre>
-<p class="text-xs text-neutral-400 mt-2">Não há sobreposição, não há atropelo. Mais simples.</p>
+<p class="text-xs text-neutral-400 mt-2">Nêo há sobreposiçêo, nêo há atropelo. Mais simples.</p>
 </div>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
-<h4 class="font-bold text-blue-400 mb-3">⚙️ Divisão por fase</h4>
+<h4 class="font-bold text-blue-400 mb-3">⚙️ Divisêo por fase</h4>
 <p class="text-sm text-neutral-300 mb-3">Mesma área, fases diferentes:</p>
 <pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-3">Claude   → implementa src/x.ts
 Codex    → escreve testes/x.test.ts</pre>
-<p class="text-xs text-neutral-400 mt-2">Coordena: terminou implementação? Avisa o Codex pra fazer teste.</p>
+<p class="text-xs text-neutral-400 mt-2">Coordena: terminou implementaçêo? Avisa o Codex pra fazer teste.</p>
 </div>
 </div>
 <div class="bg-rose-900/20 rounded-xl border border-rose-500/30 p-6 mb-6">
@@ -263,8 +263,8 @@ Codex    → escreve testes/x.test.ts</pre>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
 <h3 class="font-semibold mb-3 text-rose-400">Conceitos-chave</h3>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
-<div class="bg-dark-700 rounded p-3"><strong class="text-rose-400">Divisão por área</strong><br/><span class="text-neutral-400 text-xs">Mais simples</span></div>
-<div class="bg-dark-700 rounded p-3"><strong class="text-rose-400">Divisão por fase</strong><br/><span class="text-neutral-400 text-xs">Impl vs test</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-rose-400">Divisêo por área</strong><br/><span class="text-neutral-400 text-xs">Mais simples</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-rose-400">Divisêo por fase</strong><br/><span class="text-neutral-400 text-xs">Impl vs test</span></div>
 <div class="bg-dark-700 rounded p-3"><strong class="text-rose-400">Branch por agente</strong><br/><span class="text-neutral-400 text-xs">Avançado</span></div>
 <div class="bg-dark-700 rounded p-3"><strong class="text-rose-400">Last-write-wins</strong><br/><span class="text-neutral-400 text-xs">Perde trabalho</span></div>
 </div>
@@ -276,9 +276,9 @@ Codex    → escreve testes/x.test.ts</pre>
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">4</span>
 <h2 class="text-2xl font-bold">🔌 MCP servers compartilhados</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed">MCP servers rodam como processos independentes. <strong class="text-rose-400">Configurou uma vez, os dois agentes conectam no mesmo</strong>. Server não é duplicado — só a declaração no client (JSON pro Claude, TOML pro Codex).</p>
+<p class="text-neutral-300 mb-6 leading-relaxed">MCP servers rodam como processos independentes. <strong class="text-rose-400">Configurou uma vez, os dois agentes conectam no mesmo</strong>. Server nêo é duplicado — só a declaraçêo no client (JSON pro Claude, TOML pro Codex).</p>
 <div class="bg-rose-900/20 rounded-xl border border-rose-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-rose-400 mb-3">Configuração espelhada</h3>
+<h3 class="text-lg font-semibold text-rose-400 mb-3">Configuraçêo espelhada</h3>
 <pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-4 overflow-x-auto"><span class="text-blue-400"># Claude: .mcp.json (no projeto)</span>
 {
   "mcpServers": {
@@ -306,7 +306,7 @@ TOKEN = "${GITHUB_TOKEN}"
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-5">
 <div class="text-2xl mb-2">🔧</div>
 <h4 class="font-bold mb-1 text-rose-400">Server independente</h4>
-<p class="text-sm text-neutral-400">MCP server é processo. Sobe quando é chamado, fica disponível. Não importa quem chamou.</p>
+<p class="text-sm text-neutral-400">MCP server é processo. Sobe quando é chamado, fica disponível. Nêo importa quem chamou.</p>
 </div>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-5">
 <div class="text-2xl mb-2">🔑</div>
@@ -320,15 +320,15 @@ TOKEN = "${GITHUB_TOKEN}"
 </div>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span>Manutenção</h3>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span>Manutençêo</h3>
 <p class="text-neutral-300 text-sm">Skill que precisa de MCP específico? Declare no <code>openai.yaml</code> sidecar pro Codex E no frontmatter ou doc do Claude. Polyskill cuida disso automaticamente ao buildar.</p>
 </div>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
 <h3 class="font-semibold mb-3 text-rose-400">Conceitos-chave</h3>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
-<div class="bg-dark-700 rounded p-3"><strong class="text-rose-400">Server único</strong><br/><span class="text-neutral-400 text-xs">Não duplica</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-rose-400">Server único</strong><br/><span class="text-neutral-400 text-xs">Nêo duplica</span></div>
 <div class="bg-dark-700 rounded p-3"><strong class="text-rose-400">.env central</strong><br/><span class="text-neutral-400 text-xs">Credenciais uma vez</span></div>
-<div class="bg-dark-700 rounded p-3"><strong class="text-rose-400">Declaração 2x</strong><br/><span class="text-neutral-400 text-xs">JSON + TOML</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-rose-400">Declaraçêo 2x</strong><br/><span class="text-neutral-400 text-xs">JSON + TOML</span></div>
 <div class="bg-dark-700 rounded p-3"><strong class="text-rose-400">Allowlist indep.</strong><br/><span class="text-neutral-400 text-xs">Por client</span></div>
 </div>
 </div>
@@ -339,9 +339,9 @@ TOKEN = "${GITHUB_TOKEN}"
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">5</span>
 <h2 class="text-2xl font-bold">🪝 Hooks compartilhados via script</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed">Hooks são shell commands. <strong class="text-rose-400">Coloque a lógica em <code>scripts/check.sh</code> no projeto, os dois runtimes apontam pra esse script</strong>. Manutenção em um único lugar — edita o script, os dois agentes obedecem.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed">Hooks sêo shell commands. <strong class="text-rose-400">Coloque a lógica em <code>scripts/check.sh</code> no projeto, os dois runtimes apontam pra esse script</strong>. Manutençêo em um único lugar — edita o script, os dois agentes obedecem.</p>
 <div class="bg-rose-900/20 rounded-xl border border-rose-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-rose-400 mb-3">Padrão recomendado</h3>
+<h3 class="text-lg font-semibold text-rose-400 mb-3">Padrêo recomendado</h3>
 <pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-4 overflow-x-auto"><span class="text-emerald-400"># scripts/lint-on-edit.sh — lógica central</span>
 #!/bin/bash
 set -e
@@ -392,7 +392,7 @@ command = "./scripts/lint-on-edit.sh ${file}"</pre>
 <li>• Duplica regex/comandos nos dois runtimes</li>
 <li>• Esquece de atualizar um lado</li>
 <li>• Difícil de testar isolado</li>
-<li>• Não dá pra reusar fora dos hooks</li>
+<li>• Nêo dá pra reusar fora dos hooks</li>
 </ul>
 </div>
 </div>
@@ -416,7 +416,7 @@ command = "./scripts/lint-on-edit.sh ${file}"</pre>
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">6</span>
 <h2 class="text-2xl font-bold">📊 Governança — quando usar qual</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed">Conjunto de regras pra escolher agente por tipo de tarefa. <strong class="text-rose-400">Sem regra escrita, escolha vira intuição instável</strong>. Com regra, novos integrantes do time têm padrão pra seguir.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed">Conjunto de regras pra escolher agente por tipo de tarefa. <strong class="text-rose-400">Sem regra escrita, escolha vira intuiçêo instável</strong>. Com regra, novos integrantes do time têm padrêo pra seguir.</p>
 <div class="bg-rose-900/20 rounded-xl border border-rose-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-rose-400 mb-3">Rule of thumb (exemplo real)</h3>
 <div class="bg-dark-800 rounded overflow-hidden">
@@ -425,19 +425,19 @@ command = "./scripts/lint-on-edit.sh ${file}"</pre>
 <div class="p-3 bg-dark-700/50 font-semibold text-blue-400 border-b border-dark-600 border-l border-dark-600">Claude Code</div>
 <div class="p-3 bg-dark-700/50 font-semibold text-purple-400 border-b border-dark-600 border-l border-dark-600">Codex</div>
 <div class="p-3 text-neutral-300 border-b border-dark-600">Refactor longo (multi-arquivo)</div>
-<div class="p-3 text-blue-400 border-b border-dark-600 border-l border-dark-600">✓ Padrão</div>
+<div class="p-3 text-blue-400 border-b border-dark-600 border-l border-dark-600">✓ Padrêo</div>
 <div class="p-3 text-neutral-500 border-b border-dark-600 border-l border-dark-600">backup</div>
 <div class="p-3 text-neutral-300 border-b border-dark-600">Debug profundo (hipóteses)</div>
-<div class="p-3 text-blue-400 border-b border-dark-600 border-l border-dark-600">✓ Padrão</div>
+<div class="p-3 text-blue-400 border-b border-dark-600 border-l border-dark-600">✓ Padrêo</div>
 <div class="p-3 text-neutral-500 border-b border-dark-600 border-l border-dark-600">backup</div>
-<div class="p-3 text-neutral-300 border-b border-dark-600">Geração de teste</div>
+<div class="p-3 text-neutral-300 border-b border-dark-600">Geraçêo de teste</div>
 <div class="p-3 text-neutral-500 border-b border-dark-600 border-l border-dark-600">backup</div>
-<div class="p-3 text-purple-400 border-b border-dark-600 border-l border-dark-600">✓ Padrão</div>
+<div class="p-3 text-purple-400 border-b border-dark-600 border-l border-dark-600">✓ Padrêo</div>
 <div class="p-3 text-neutral-300 border-b border-dark-600">CRUD bem definido</div>
 <div class="p-3 text-neutral-500 border-b border-dark-600 border-l border-dark-600">backup</div>
-<div class="p-3 text-purple-400 border-b border-dark-600 border-l border-dark-600">✓ Padrão</div>
+<div class="p-3 text-purple-400 border-b border-dark-600 border-l border-dark-600">✓ Padrêo</div>
 <div class="p-3 text-neutral-300 border-b border-dark-600">Research/arquitetura (sub-agents)</div>
-<div class="p-3 text-blue-400 border-b border-dark-600 border-l border-dark-600">✓ Padrão</div>
+<div class="p-3 text-blue-400 border-b border-dark-600 border-l border-dark-600">✓ Padrêo</div>
 <div class="p-3 text-neutral-500 border-b border-dark-600 border-l border-dark-600">backup</div>
 <div class="p-3 text-neutral-300">Travou em loop</div>
 <div class="p-3 text-neutral-500 border-l border-dark-600">handoff →</div>
@@ -463,8 +463,8 @@ command = "./scripts/lint-on-edit.sh ${file}"</pre>
 </div>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span>Revisão trimestral</h3>
-<p class="text-neutral-300 text-sm">Modelos atualizam toda hora. O que era força de um pode ser força do outro 3 meses depois. Marca revisão da rule of thumb a cada trimestre. Sem revisão, a regra vira mito.</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span>Revisêo trimestral</h3>
+<p class="text-neutral-300 text-sm">Modelos atualizam toda hora. O que era força de um pode ser força do outro 3 meses depois. Marca revisêo da rule of thumb a cada trimestre. Sem revisêo, a regra vira mito.</p>
 </div>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
 <h3 class="font-semibold mb-3 text-rose-400">Conceitos-chave</h3>
@@ -472,7 +472,7 @@ command = "./scripts/lint-on-edit.sh ${file}"</pre>
 <div class="bg-dark-700 rounded p-3"><strong class="text-rose-400">Regra escrita</strong><br/><span class="text-neutral-400 text-xs">Time consulta</span></div>
 <div class="bg-dark-700 rounded p-3"><strong class="text-rose-400">A/B test</strong><br/><span class="text-neutral-400 text-xs">Calibra</span></div>
 <div class="bg-dark-700 rounded p-3"><strong class="text-rose-400">Default + backup</strong><br/><span class="text-neutral-400 text-xs">Sempre uma alternativa</span></div>
-<div class="bg-dark-700 rounded p-3"><strong class="text-rose-400">Trimestral</strong><br/><span class="text-neutral-400 text-xs">Revisão fixa</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-rose-400">Trimestral</strong><br/><span class="text-neutral-400 text-xs">Revisêo fixa</span></div>
 </div>
 </div>
 </section>
@@ -482,17 +482,17 @@ command = "./scripts/lint-on-edit.sh ${file}"</pre>
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">7</span>
 <h2 class="text-2xl font-bold">🚀 Próximos runtimes — preparando o futuro</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed">O ecossistema não para em Claude+Codex. <strong class="text-rose-400">Gemini CLI, Cursor, Copilot, JetBrains AI Assistant</strong> estão no roadmap do polyskill. Suas skills cross-runtime já estão prontas — falta só o adapter.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed">O ecossistema nêo para em Claude+Codex. <strong class="text-rose-400">Gemini CLI, Cursor, Copilot, JetBrains AI Assistant</strong> estêo no roadmap do polyskill. Suas skills cross-runtime já estêo prontas — falta só o adapter.</p>
 <div class="bg-rose-900/20 rounded-xl border border-rose-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-rose-400 mb-3">Roadmap polyskill</h3>
 <div class="space-y-3">
 <div class="flex items-center space-x-3"><span class="text-emerald-400 font-bold">✓</span><div><strong>Claude Code</strong> — adapter completo, prod</div></div>
 <div class="flex items-center space-x-3"><span class="text-emerald-400 font-bold">✓</span><div><strong>OpenAI Codex</strong> — adapter completo, prod</div></div>
 <div class="flex items-center space-x-3"><span class="text-emerald-400 font-bold">✓</span><div><strong>Portable</strong> — source canônico</div></div>
-<div class="flex items-center space-x-3"><span class="text-amber-400 font-bold">🔜</span><div><strong>Gemini CLI</strong> — em discussão, esperando spec estável</div></div>
-<div class="flex items-center space-x-3"><span class="text-amber-400 font-bold">🔜</span><div><strong>Cursor</strong> — em discussão</div></div>
-<div class="flex items-center space-x-3"><span class="text-amber-400 font-bold">🔜</span><div><strong>GitHub Copilot</strong> — em discussão</div></div>
-<div class="flex items-center space-x-3"><span class="text-amber-400 font-bold">🔜</span><div><strong>JetBrains AI Assistant</strong> — em discussão</div></div>
+<div class="flex items-center space-x-3"><span class="text-amber-400 font-bold">🔜</span><div><strong>Gemini CLI</strong> — em discussêo, esperando spec estável</div></div>
+<div class="flex items-center space-x-3"><span class="text-amber-400 font-bold">🔜</span><div><strong>Cursor</strong> — em discussêo</div></div>
+<div class="flex items-center space-x-3"><span class="text-amber-400 font-bold">🔜</span><div><strong>GitHub Copilot</strong> — em discussêo</div></div>
+<div class="flex items-center space-x-3"><span class="text-amber-400 font-bold">🔜</span><div><strong>JetBrains AI Assistant</strong> — em discussêo</div></div>
 </div>
 </div>
 <div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6 mb-6">
@@ -512,12 +512,12 @@ command = "./scripts/lint-on-edit.sh ${file}"</pre>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
 <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">🦜</span>O investimento que sobrevive</h3>
-<p class="text-neutral-300 text-sm">Cada skill que você escreve no formato portable é à prova de futuro. Quando Gemini ganhar adapter? Sua skill funciona lá no dia 1. Quando Cursor? Mesma coisa. Quando aparecer o "Claude 5 Code"? Mesma coisa. Você não reescreve.</p>
+<p class="text-neutral-300 text-sm">Cada skill que você escreve no formato portable é à prova de futuro. Quando Gemini ganhar adapter? Sua skill funciona lá no dia 1. Quando Cursor? Mesma coisa. Quando aparecer o "Claude 5 Code"? Mesma coisa. Você nêo reescreve.</p>
 </div>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
 <h3 class="font-semibold mb-3 text-rose-400">Conceitos-chave</h3>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
-<div class="bg-dark-700 rounded p-3"><strong class="text-rose-400">Adapter via PR</strong><br/><span class="text-neutral-400 text-xs">Contribuição padrão</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-rose-400">Adapter via PR</strong><br/><span class="text-neutral-400 text-xs">Contribuiçêo padrêo</span></div>
 <div class="bg-dark-700 rounded p-3"><strong class="text-rose-400">Skill futuro-proof</strong><br/><span class="text-neutral-400 text-xs">Investimento dura</span></div>
 <div class="bg-dark-700 rounded p-3"><strong class="text-rose-400">Comunidade</strong><br/><span class="text-neutral-400 text-xs">Early AI Dopters</span></div>
 <div class="bg-dark-700 rounded p-3"><strong class="text-rose-400">parse+emit+validate</strong><br/><span class="text-neutral-400 text-xs">Barra simples</span></div>
@@ -529,13 +529,13 @@ command = "./scripts/lint-on-edit.sh ${file}"</pre>
 <div class="bg-gradient-to-br from-rose-900/40 via-dark-800 to-dark-800 rounded-xl border border-rose-500/30 p-8">
 <h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">🎯</span>Resumo do módulo</h2>
 <div class="space-y-4 mb-8">
-<div class="flex items-start space-x-3"><span class="text-rose-400 mt-1">✓</span><div><strong class="text-white">Session handoff em 5 seções</strong><span class="text-neutral-400"> — vira skill, padroniza transição.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-rose-400 mt-1">✓</span><div><strong class="text-white">Session handoff em 5 seções</strong><span class="text-neutral-400"> — vira skill, padroniza transiçêo.</span></div></div>
 <div class="flex items-start space-x-3"><span class="text-rose-400 mt-1">✓</span><div><strong class="text-white">Dois terminais no VS Code com profile colorido</strong><span class="text-neutral-400"> — atalho de foco, settings commitada.</span></div></div>
 <div class="flex items-start space-x-3"><span class="text-rose-400 mt-1">✓</span><div><strong class="text-white">Evita atropelo: por área OU por fase</strong><span class="text-neutral-400"> — disciplina simples, perde-trabalho zero.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-rose-400 mt-1">✓</span><div><strong class="text-white">MCP server compartilhado, declaração 2×</strong><span class="text-neutral-400"> — credenciais centrais (.env).</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-rose-400 mt-1">✓</span><div><strong class="text-white">MCP server compartilhado, declaraçêo 2×</strong><span class="text-neutral-400"> — credenciais centrais (.env).</span></div></div>
 <div class="flex items-start space-x-3"><span class="text-rose-400 mt-1">✓</span><div><strong class="text-white">Hooks chamam script central</strong><span class="text-neutral-400"> — reuso em CI/pre-commit também.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-rose-400 mt-1">✓</span><div><strong class="text-white">Governança = rule of thumb escrita + revisão trimestral</strong><span class="text-neutral-400"> — sem mito.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-rose-400 mt-1">✓</span><div><strong class="text-white">Gemini/Cursor/Copilot vêm aí</strong><span class="text-neutral-400"> — skills portáveis estão prontas.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-rose-400 mt-1">✓</span><div><strong class="text-white">Governança = rule of thumb escrita + revisêo trimestral</strong><span class="text-neutral-400"> — sem mito.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-rose-400 mt-1">✓</span><div><strong class="text-white">Gemini/Cursor/Copilot vêm aí</strong><span class="text-neutral-400"> — skills portáveis estêo prontas.</span></div></div>
 </div>
 <div class="bg-dark-800/50 rounded-lg p-4 mb-8">
 <h3 class="font-semibold text-rose-400 mb-2">🏁 Fim do curso!</h3>

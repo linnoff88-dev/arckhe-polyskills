@@ -136,7 +136,7 @@ html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
 <h3 class="text-lg font-semibold text-amber-400 mb-3">Template — Claude → Codex</h3>
 <pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-4 overflow-x-auto leading-relaxed">Este projeto foi criado pra Claude Code. Quero usar Codex também.
 
-Faça o seguinte (cobertura completa, não pule etapa):
+Faça o seguinte (cobertura completa, nêo pule etapa):
 
 1. Leia o `CLAUDE.md` atual.
    Gere um `AGENTS.md` equivalente. Mantém instruções,
@@ -147,31 +147,31 @@ Faça o seguinte (cobertura completa, não pule etapa):
    Crie `.codex/config.toml` equivalente. Converte:
    - permissions (allow/deny/ask) → sandbox_mode + approval_policy
    - hooks → entries equivalentes (mesma matcher, mesmo command)
-   - env vars → seção [env]
+   - env vars → seçêo [env]
    - MCP servers de .mcp.json → [mcp_servers.&lt;nome&gt;]
 
 3. Pra cada sub-agent em `.claude/agents/*.md`:
    Converte pra `.codex/agents/&lt;nome&gt;.toml`.
    Frontmatter → chaves TOML. Body → string em `instructions = """..."""`.
-   Adapta description pra mencionar invocação explícita.
+   Adapta description pra mencionar invocaçêo explícita.
 
 4. Pra cada skill em `.claude/skills/&lt;nome&gt;/`:
-   Copia pra `.agents/skills/&lt;nome&gt;/` (note: .agents/, NÃO .codex/).
-   Remove campos não-portáveis do frontmatter (allowed-tools,
+   Copia pra `.agents/skills/&lt;nome&gt;/` (note: .agents/, NêO .codex/).
+   Remove campos nêo-portáveis do frontmatter (allowed-tools,
    disable-model-invocation, model). Converte backtick-bang em prosa.
    Se a skill precisa de MCP, cria `agents/openai.yaml` sidecar.
 
 5. Pra cada slash command em `.claude/commands/*.md`:
    Copia pra `.codex/commands/`. Remove backtick-bang.
 
-6. Antes de terminar: pesquise documentação oficial do Codex
+6. Antes de terminar: pesquise documentaçêo oficial do Codex
    pra confirmar formatos atuais (sandbox, profiles, MCP).
 
 7. Devolva um RELATÓRIO no final:
    - Arquivos criados (com path)
-   - Conversões não-óbvias que fez
+   - Conversões nêo-óbvias que fez
    - Coisas que removeu (e por quê)
-   - O que NÃO conseguiu portar e precisa ajuste manual</pre>
+   - O que NêO conseguiu portar e precisa ajuste manual</pre>
 </div>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-blue-400 mb-3">Template — Codex → Claude</h3>
@@ -300,7 +300,7 @@ Faça o seguinte (cobertura completa, não pule etapa):
 </div>
 </div>
 </section>
-<!-- 5. Manutenção -->
+<!-- 5. Manutençêo -->
 <section class="mb-16" id="topico-5">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">5</span>
@@ -351,7 +351,7 @@ Faça o seguinte (cobertura completa, não pule etapa):
 </div>
 </div>
 </section>
-<!-- 6. Migração parcial -->
+<!-- 6. Migraçêo parcial -->
 <section class="mb-16" id="topico-6">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">6</span>

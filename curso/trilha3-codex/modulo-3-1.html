@@ -42,7 +42,7 @@ html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-fundamentos/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-claude-code/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Claude Code</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-purple-400 bg-purple-500/10" href="index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Codex</span></a>
-<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-conversao/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Conversão</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-conversao/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Conversêo</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5-polyskill/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">polyskill</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6-fluxos/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Fluxos</span></a>
 <button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
@@ -63,7 +63,7 @@ html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 <span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full mb-4">MÓDULO 3.1</span>
 <h1 class="text-3xl sm:text-4xl font-bold mb-4">📕 AGENTS.md, .codex/ e agents em TOML</h1>
-<p class="text-lg text-neutral-400 max-w-3xl">A configuração do Codex peça por peça — AGENTS.md como gêmeo do CLAUDE.md, config.toml, sub-agents em TOML e a invocação explícita que pega muita gente desprevenida.</p>
+<p class="text-lg text-neutral-400 max-w-3xl">A configuraçêo do Codex peça por peça — AGENTS.md como gêmeo do CLAUDE.md, config.toml, sub-agents em TOML e a invocaçêo explícita que pega muita gente desprevenida.</p>
 <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">7</div><div class="text-xs text-neutral-400">Tópicos</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">35</div><div class="text-xs text-neutral-400">Minutos</div></div>
@@ -75,16 +75,16 @@ html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
 <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-12">
 <h3 class="text-lg font-semibold text-primary mb-2 flex items-center"><span class="mr-2">🎯</span>O que você ganha aqui</h3>
-<p class="text-neutral-300">Mapeamento direto Claude → Codex pra cada peça de configuração. Sair sabendo onde cada arquivo mora, qual sintaxe usar (TOML vs JSON) e o motivo da separação <code>.codex/</code> × <code>.agents/</code>.</p>
+<p class="text-neutral-300">Mapeamento direto Claude → Codex pra cada peça de configuraçêo. Sair sabendo onde cada arquivo mora, qual sintaxe usar (TOML vs JSON) e o motivo da separaçêo <code>.codex/</code> × <code>.agents/</code>.</p>
 </div>
 <h2 class="text-2xl font-bold mb-6">Conteúdo detalhado</h2>
 <!-- 1. AGENTS.md -->
 <section class="mb-16" id="topico-1">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">1</span>
-<h2 class="text-2xl font-bold">📜 AGENTS.md — o irmão do CLAUDE.md</h2>
+<h2 class="text-2xl font-bold">📜 AGENTS.md — o irmêo do CLAUDE.md</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed">Arquivo markdown na raiz do projeto que o Codex lê no início da sessão e injeta no system prompt. <strong class="text-purple-400">Função idêntica</strong> ao CLAUDE.md. Quem migra copia o CLAUDE.md, renomeia pra AGENTS.md, funciona em 90% dos casos.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed">Arquivo markdown na raiz do projeto que o Codex lê no início da sessêo e injeta no system prompt. <strong class="text-purple-400">Funçêo idêntica</strong> ao CLAUDE.md. Quem migra copia o CLAUDE.md, renomeia pra AGENTS.md, funciona em 90% dos casos.</p>
 <div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-purple-400 mb-3">Mapeamento direto</h3>
 <div class="bg-dark-800 rounded overflow-hidden">
@@ -101,18 +101,18 @@ html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
 </div>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span>Os 10% que NÃO portam</h3>
+<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span>Os 10% que NêO portam</h3>
 <ul class="space-y-2 text-neutral-300 text-sm">
-<li>• <strong>Backtick-bang</strong> dentro do AGENTS.md → não interpreta, vira texto literal</li>
+<li>• <strong>Backtick-bang</strong> dentro do AGENTS.md → nêo interpreta, vira texto literal</li>
 <li>• <strong>Descrições muito longas</strong> podem ser truncadas (limite oculto ~8K chars)</li>
 <li>• <strong>Referências a tools exclusivas do Claude</strong> (Task, plan mode) → ignoradas</li>
-<li>• <strong>Hooks/permissões inline</strong> não funcionam — pertencem ao <code>config.toml</code></li>
+<li>• <strong>Hooks/permissões inline</strong> nêo funcionam — pertencem ao <code>config.toml</code></li>
 </ul>
 </div>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
 <h3 class="font-semibold mb-3 text-purple-400">Conceitos-chave</h3>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
-<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">Mesma função</strong><br/><span class="text-neutral-400 text-xs">System prompt do projeto</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">Mesma funçêo</strong><br/><span class="text-neutral-400 text-xs">System prompt do projeto</span></div>
 <div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">Mesma hierarquia</strong><br/><span class="text-neutral-400 text-xs">Global → projeto → subdir</span></div>
 <div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">Sem bang nativo</strong><br/><span class="text-neutral-400 text-xs">Vira texto</span></div>
 <div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">Tamanho conserv.</strong><br/><span class="text-neutral-400 text-xs">~1-2KB</span></div>
@@ -125,7 +125,7 @@ html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">2</span>
 <h2 class="text-2xl font-bold">📂 Por que DUAS pastas — .codex/ e .agents/</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed">Codex faz uma <strong class="text-purple-400">separação intencional</strong>: o que é proprietário (config do Codex, agents em TOML) fica em <code>.codex/</code>; o que é spec aberta (Agent Skills) fica em <code>.agents/</code>. Compatibilidade com outras tools que adotam a spec.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed">Codex faz uma <strong class="text-purple-400">separaçêo intencional</strong>: o que é proprietário (config do Codex, agents em TOML) fica em <code>.codex/</code>; o que é spec aberta (Agent Skills) fica em <code>.agents/</code>. Compatibilidade com outras tools que adotam a spec.</p>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6">
 <h3 class="text-lg font-semibold text-purple-400 mb-3">🔧 .codex/ — proprietário</h3>
@@ -155,7 +155,7 @@ html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
 <p class="text-neutral-300 text-sm">Você lê "skill do Codex" e por reflexo coloca em <code>.codex/skills/</code>. <strong>Errado.</strong> Skill mora em <code>.agents/skills/</code> — sempre. <code>.codex/</code> é só config proprietária e sub-agents em TOML.</p>
 </div>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-3">📊 Comparação completa</h3>
+<h3 class="text-lg font-semibold text-blue-400 mb-3">📊 Comparaçêo completa</h3>
 <div class="bg-dark-800 rounded overflow-hidden">
 <div class="grid grid-cols-3 gap-0 text-xs">
 <div class="p-3 bg-dark-700/50 font-semibold text-neutral-300 border-b border-dark-600">Item</div>
@@ -198,12 +198,12 @@ html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">3</span>
 <h2 class="text-2xl font-bold">⚙️ config.toml — settings em TOML</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed">Equivalente do <code>settings.json</code> do Claude, mas em <strong class="text-purple-400">TOML</strong>. Não é mais difícil — é DIFERENTE. Sintaxe de seções com colchetes, arrays com colchetes duplos, multiline com aspas triplas.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed">Equivalente do <code>settings.json</code> do Claude, mas em <strong class="text-purple-400">TOML</strong>. Nêo é mais difícil — é DIFERENTE. Sintaxe de seções com colchetes, arrays com colchetes duplos, multiline com aspas triplas.</p>
 <div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-purple-400 mb-3">config.toml comentado</h3>
-<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-4 overflow-x-auto"><span class="text-neutral-500"># modelo padrão</span>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-4 overflow-x-auto"><span class="text-neutral-500"># modelo padrêo</span>
 model = "gpt-5-codex"
-approval_policy = "on-failure"   <span class="text-neutral-500"># quando pedir aprovação</span>
+approval_policy = "on-failure"   <span class="text-neutral-500"># quando pedir aprovaçêo</span>
 sandbox_mode = "workspace-write" <span class="text-neutral-500"># nível de sandbox</span>
 
 <span class="text-neutral-500"># profiles — perfis nomeados</span>
@@ -236,10 +236,10 @@ numero = 42
 booleano = true
 array = ["a", "b", "c"]
 
-[secao]               <span class="text-neutral-500"># seção (= objeto)</span>
+[secao]               <span class="text-neutral-500"># seçêo (= objeto)</span>
 chave = "valor"
 
-[secao.sub]           <span class="text-neutral-500"># sub-seção</span>
+[secao.sub]           <span class="text-neutral-500"># sub-seçêo</span>
 outra = "outra"
 
 [[lista_de_secoes]]   <span class="text-neutral-500"># array de seções</span>
@@ -260,7 +260,7 @@ linhas
 <div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">[section]</strong><br/><span class="text-neutral-400 text-xs">Equivalente a objeto</span></div>
 <div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">[[arrays]]</strong><br/><span class="text-neutral-400 text-xs">Array de seções</span></div>
 <div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">"""multi"""</strong><br/><span class="text-neutral-400 text-xs">String multiline</span></div>
-<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">${ENV}</strong><br/><span class="text-neutral-400 text-xs">Interpolação env</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">${ENV}</strong><br/><span class="text-neutral-400 text-xs">Interpolaçêo env</span></div>
 </div>
 </div>
 </section>
@@ -268,9 +268,9 @@ linhas
 <section class="mb-16" id="topico-4">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">4</span>
-<h2 class="text-2xl font-bold">👤 Sub-agents em TOML — não é Markdown</h2>
+<h2 class="text-2xl font-bold">👤 Sub-agents em TOML — nêo é Markdown</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed">Sub-agents no Codex são <strong class="text-purple-400">arquivos .toml</strong> em <code>.codex/agents/</code>. Estrutura, não prosa. Você preenche campos de uma struct: <code>name</code>, <code>description</code>, <code>model</code>, <code>tools</code>, e <code>instructions</code> (string multiline com o system prompt).</p>
+<p class="text-neutral-300 mb-6 leading-relaxed">Sub-agents no Codex sêo <strong class="text-purple-400">arquivos .toml</strong> em <code>.codex/agents/</code>. Estrutura, nêo prosa. Você preenche campos de uma struct: <code>name</code>, <code>description</code>, <code>model</code>, <code>tools</code>, e <code>instructions</code> (string multiline com o system prompt).</p>
 <div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-purple-400 mb-3">Exemplo — .codex/agents/code-reviewer.toml</h3>
 <pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-4 overflow-x-auto">name = "code-reviewer"
@@ -320,26 +320,26 @@ You are a senior code reviewer.
 </div>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span>Conversão prática</h3>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span>Conversêo prática</h3>
 <p class="text-neutral-300 text-sm">Pra portar um sub-agent Claude pro Codex: pega o frontmatter, vira chaves TOML. Pega o body do markdown, joga em <code>instructions = """..."""</code>. Ajusta a description pra mencionar "call explicitly".</p>
 </div>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
 <h3 class="font-semibold mb-3 text-purple-400">Conceitos-chave</h3>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
-<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">TOML struct</strong><br/><span class="text-neutral-400 text-xs">Não Markdown</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">TOML struct</strong><br/><span class="text-neutral-400 text-xs">Nêo Markdown</span></div>
 <div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">instructions</strong><br/><span class="text-neutral-400 text-xs">String multiline</span></div>
 <div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">tools array</strong><br/><span class="text-neutral-400 text-xs">["read", "bash"]</span></div>
 <div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">model override</strong><br/><span class="text-neutral-400 text-xs">Por agent</span></div>
 </div>
 </div>
 </section>
-<!-- 5. Invocação explícita -->
+<!-- 5. Invocaçêo explícita -->
 <section class="mb-16" id="topico-5">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">5</span>
-<h2 class="text-2xl font-bold">🚦 Invocação explícita — a pegadinha do Claude → Codex</h2>
+<h2 class="text-2xl font-bold">🚦 Invocaçêo explícita — a pegadinha do Claude → Codex</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed">No Codex, sub-agents <strong class="text-red-400">NÃO são auto-disparados</strong> pela description. Você precisa chamar pelo nome no prompt. É a diferença que mais quebra a cabeça de quem vem do Claude.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed">No Codex, sub-agents <strong class="text-red-400">NêO sêo auto-disparados</strong> pela description. Você precisa chamar pelo nome no prompt. É a diferença que mais quebra a cabeça de quem vem do Claude.</p>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
 <h4 class="font-bold text-blue-400 mb-3">🔷 Claude — auto</h4>
@@ -349,14 +349,14 @@ You are a senior code reviewer.
 → Match: code-reviewer
 → Dispara sub-agent
 → Devolve findings</pre>
-<p class="text-xs text-neutral-400">Você não precisa saber que existe o agent.</p>
+<p class="text-xs text-neutral-400">Você nêo precisa saber que existe o agent.</p>
 </div>
 <div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6">
 <h4 class="font-bold text-purple-400 mb-3">🟣 Codex — explícito</h4>
 <pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-3 mb-3">User: "revisa essa PR"
 
-→ Codex faz revisão genérica
-→ Sub-agent code-reviewer NÃO roda
+→ Codex faz revisêo genérica
+→ Sub-agent code-reviewer NêO roda
 
 User: "use code-reviewer para
         revisar a PR #123"
@@ -367,15 +367,15 @@ User: "use code-reviewer para
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">🚨</span>Sintoma do erro</h3>
-<p class="text-neutral-300 text-sm mb-2">"Por que meu agent não está sendo chamado? Está exatamente como no Claude!"</p>
-<p class="text-neutral-300 text-sm">→ Porque você não chamou. No Codex, description é só pra você LEMBRAR que o agent existe, não pra disparar. Chama pelo nome.</p>
+<p class="text-neutral-300 text-sm mb-2">"Por que meu agent nêo está sendo chamado? Está exatamente como no Claude!"</p>
+<p class="text-neutral-300 text-sm">→ Porque você nêo chamou. No Codex, description é só pra você LEMBRAR que o agent existe, nêo pra disparar. Chama pelo nome.</p>
 </div>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-blue-400 mb-3">Trade-off de design</h3>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
 <div class="bg-dark-800 rounded p-4">
 <strong class="text-emerald-400">Vantagem (Codex):</strong>
-<p class="text-neutral-300 mt-1">Previsibilidade. Você sempre sabe o que vai rodar. Sem surpresa de "Claude resolveu chamar X que eu não esperava".</p>
+<p class="text-neutral-300 mt-1">Previsibilidade. Você sempre sabe o que vai rodar. Sem surpresa de "Claude resolveu chamar X que eu nêo esperava".</p>
 </div>
 <div class="bg-dark-800 rounded p-4">
 <strong class="text-red-400">Desvantagem (Codex):</strong>
@@ -386,10 +386,10 @@ User: "use code-reviewer para
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
 <h3 class="font-semibold mb-3 text-purple-400">Conceitos-chave</h3>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
-<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">Invocação por nome</strong><br/><span class="text-neutral-400 text-xs">"use agent X..."</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">Invocaçêo por nome</strong><br/><span class="text-neutral-400 text-xs">"use agent X..."</span></div>
 <div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">Sem auto-dispatch</strong><br/><span class="text-neutral-400 text-xs">Por design</span></div>
 <div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">Previsibilidade</strong><br/><span class="text-neutral-400 text-xs">Trade-off</span></div>
-<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">Description = lembrete</strong><br/><span class="text-neutral-400 text-xs">Pra você, não pro LLM</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">Description = lembrete</strong><br/><span class="text-neutral-400 text-xs">Pra você, nêo pro LLM</span></div>
 </div>
 </div>
 </section>
@@ -399,7 +399,7 @@ User: "use code-reviewer para
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">6</span>
 <h2 class="text-2xl font-bold">🏖️ Sandbox e approval modes</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed">Codex tem <strong class="text-purple-400">sandbox configurável</strong> via <code>config.toml</code>. Três níveis crescentes de poder + approval policies que controlam quando pedir confirmação. Mais granular e explícito que o equivalente do Claude.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed">Codex tem <strong class="text-purple-400">sandbox configurável</strong> via <code>config.toml</code>. Três níveis crescentes de poder + approval policies que controlam quando pedir confirmaçêo. Mais granular e explícito que o equivalente do Claude.</p>
 <div class="space-y-4 mb-6">
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">🔒</span></div>
@@ -411,8 +411,8 @@ User: "use code-reviewer para
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">📝</span></div>
 <div class="flex-1 bg-dark-800 rounded-xl p-5 border border-blue-500/30">
-<h4 class="font-semibold text-blue-400 mb-1">workspace-write (padrão)</h4>
-<p class="text-sm text-neutral-300">Escreve no projeto. Não escreve fora. Rede limitada. Modo do dia a dia.</p>
+<h4 class="font-semibold text-blue-400 mb-1">workspace-write (padrêo)</h4>
+<p class="text-sm text-neutral-300">Escreve no projeto. Nêo escreve fora. Rede limitada. Modo do dia a dia.</p>
 </div>
 </div>
 <div class="flex items-start space-x-4">
@@ -426,8 +426,8 @@ User: "use code-reviewer para
 <div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-purple-400 mb-3">Approval policies</h3>
 <div class="space-y-2 text-sm text-neutral-300">
-<div><code class="text-purple-400">"always"</code> — pede confirmação em TODO comando</div>
-<div><code class="text-purple-400">"on-failure"</code> — só pede se a primeira tentativa falhou (padrão razoável)</div>
+<div><code class="text-purple-400">"always"</code> — pede confirmaçêo em TODO comando</div>
+<div><code class="text-purple-400">"on-failure"</code> — só pede se a primeira tentativa falhou (padrêo razoável)</div>
 <div><code class="text-purple-400">"on-request"</code> — pede só se o modelo achar que precisa</div>
 <div><code class="text-purple-400">"never"</code> — nunca pede (combina com sandbox restritivo)</div>
 </div>
@@ -458,8 +458,8 @@ description: Revisa o diff atual procurando bugs
 Revise o diff atual da branch (rode <code>git diff</code>).
 
 Procure:
-- Bugs de correção
-- Casos não tratados
+- Bugs de correçêo
+- Casos nêo tratados
 - Vulnerabilidades comuns
 
 Se passar argumento, foque nesse arquivo.
@@ -469,15 +469,15 @@ Retorne lista numerada de findings + severity.</pre>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span>Sem backtick-bang</h3>
-<p class="text-neutral-300 text-sm">No Claude, você poderia escrever <code>Branch atual: `!git branch --show-current`</code> dentro do command e o resultado entrava no prompt. No Codex, vira texto literal. Solução: peça que o agente RODE o comando (prosa de fallback) ou chame um script.</p>
+<p class="text-neutral-300 text-sm">No Claude, você poderia escrever <code>Branch atual: `!git branch --show-current`</code> dentro do command e o resultado entrava no prompt. No Codex, vira texto literal. Soluçêo: peça que o agente RODE o comando (prosa de fallback) ou chame um script.</p>
 </div>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
 <h3 class="font-semibold mb-3 text-purple-400">Conceitos-chave</h3>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
-<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">.codex/commands/</strong><br/><span class="text-neutral-400 text-xs">Mesma convenção</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">.codex/commands/</strong><br/><span class="text-neutral-400 text-xs">Mesma convençêo</span></div>
 <div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">Frontmatter</strong><br/><span class="text-neutral-400 text-xs">description mínima</span></div>
 <div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">Sem bang</strong><br/><span class="text-neutral-400 text-xs">Prosa de fallback</span></div>
-<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">Script delegado</strong><br/><span class="text-neutral-400 text-xs">Alt à injeção</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-purple-400">Script delegado</strong><br/><span class="text-neutral-400 text-xs">Alt à injeçêo</span></div>
 </div>
 </div>
 </section>
@@ -486,11 +486,11 @@ Retorne lista numerada de findings + severity.</pre>
 <div class="bg-gradient-to-br from-purple-900/40 via-dark-800 to-dark-800 rounded-xl border border-purple-500/30 p-8">
 <h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">🎯</span>Resumo do módulo</h2>
 <div class="space-y-4 mb-8">
-<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">AGENTS.md ≡ CLAUDE.md</strong><span class="text-neutral-400"> — mesma função, mesma hierarquia, só sem backtick-bang.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">AGENTS.md ≡ CLAUDE.md</strong><span class="text-neutral-400"> — mesma funçêo, mesma hierarquia, só sem backtick-bang.</span></div></div>
 <div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Duas pastas: .codex/ proprietário, .agents/ spec aberta</strong><span class="text-neutral-400"> — skills SEMPRE em .agents/.</span></div></div>
 <div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">config.toml em TOML</strong><span class="text-neutral-400"> — [section], [[arrays]], """multiline""", ${ENV}.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Sub-agents = TOML struct</strong><span class="text-neutral-400"> — instructions string multiline, não markdown body.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Invocação EXPLÍCITA de agent</strong><span class="text-neutral-400"> — "use agent X..." ou nada acontece.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Sub-agents = TOML struct</strong><span class="text-neutral-400"> — instructions string multiline, nêo markdown body.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Invocaçêo EXPLÍCITA de agent</strong><span class="text-neutral-400"> — "use agent X..." ou nada acontece.</span></div></div>
 <div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Sandbox em 3 níveis + 4 approval policies</strong><span class="text-neutral-400"> — granularidade explícita.</span></div></div>
 <div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Slash commands sem backtick-bang</strong><span class="text-neutral-400"> — usar prosa de fallback ou script.</span></div></div>
 </div>

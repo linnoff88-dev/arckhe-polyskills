@@ -40,7 +40,7 @@ html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-fundamentos/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-claude-code/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Claude Code</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-purple-400 bg-purple-500/10" href="index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Codex</span></a>
-<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-conversao/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Conversão</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-conversao/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Conversêo</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5-polyskill/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">polyskill</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6-fluxos/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Fluxos</span></a>
 <button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
@@ -58,7 +58,7 @@ html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
 <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">2</div><div class="text-xs text-neutral-400">Módulos</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">14</div><div class="text-xs text-neutral-400">Tópicos</div></div>
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">~70min</div><div class="text-xs text-neutral-400">Duração</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">~70min</div><div class="text-xs text-neutral-400">Duraçêo</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Inter.</div><div class="text-xs text-neutral-400">Nível</div></div>
 </div>
 </div>
@@ -85,18 +85,18 @@ html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
 <div class="p-6 border-b border-dark-600">
 <div class="flex items-center justify-between mb-2"><span class="text-purple-400 font-bold">3.1</span><span class="text-xs text-neutral-500">~35 min</span></div>
 <h3 class="text-2xl font-bold mb-2">📕 AGENTS.md, .codex/ e agents em TOML</h3>
-<p class="text-neutral-400 text-sm">A configuração do Codex num projeto, peça por peça.</p>
+<p class="text-neutral-400 text-sm">A configuraçêo do Codex num projeto, peça por peça.</p>
 </div>
 <div class="divide-y divide-dark-600">
 <div class="topic-item">
 <button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
-<span class="text-lg">📜</span><div><span class="font-medium">AGENTS.md — o irmão do CLAUDE.md</span><span class="text-neutral-500 text-sm ml-2">- Mesma função, mesmo lugar</span></div>
+<span class="text-lg">📜</span><div><span class="font-medium">AGENTS.md — o irmêo do CLAUDE.md</span><span class="text-neutral-500 text-sm ml-2">- Mesma funçêo, mesmo lugar</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Arquivo markdown na raiz do projeto que o Codex injeta no system prompt no início da sessão. Função idêntica ao CLAUDE.md — só o nome muda.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Quem migra de Claude Code copia o CLAUDE.md e renomeia. Funciona em 90% dos casos. Os 10% restantes são gotchas: sintaxe backtick-bang (injeção dinâmica) não vai funcionar, e descrições muito longas podem ser truncadas.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Hierarquia global (<code>~/.codex/AGENTS.md</code>) vs projeto, ausência de injeção dinâmica nativa, tamanho ideal mais conservador que Claude.</p></div>
+<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Arquivo markdown na raiz do projeto que o Codex injeta no system prompt no início da sessêo. Funçêo idêntica ao CLAUDE.md — só o nome muda.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Quem migra de Claude Code copia o CLAUDE.md e renomeia. Funciona em 90% dos casos. Os 10% restantes sêo gotchas: sintaxe backtick-bang (injeçêo dinâmica) nêo vai funcionar, e descrições muito longas podem ser truncadas.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Hierarquia global (<code>~/.codex/AGENTS.md</code>) vs projeto, ausência de injeçêo dinâmica nativa, tamanho ideal mais conservador que Claude.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
@@ -105,9 +105,9 @@ html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
 <span class="text-lg">📂</span><div><span class="font-medium">Por que DUAS pastas: .codex/ e .agents/</span><span class="text-neutral-500 text-sm ml-2">- Config separada de skills</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Codex separa o que é seu específico (<code>.codex/</code> — config.toml, agents/) do que é spec aberta (<code>.agents/skills/</code> — segue Agent Skills standard). Convenção que respeita a separação config × extensão.</p></div>
+<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Codex separa o que é seu específico (<code>.codex/</code> — config.toml, agents/) do que é spec aberta (<code>.agents/skills/</code> — segue Agent Skills standard). Convençêo que respeita a separaçêo config × extensêo.</p></div>
 <div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Quem espera "tudo numa pasta só" como no Claude se confunde. Skills no Codex ficam em <code>~/.agents/skills/</code> globalmente e em <code>./.agents/skills/</code> por projeto.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Padrão "config no .codex, extensões no .agents", interoperabilidade com outras tools que usam .agents/, separação responsabilidades.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Padrêo "config no .codex, extensões no .agents", interoperabilidade com outras tools que usam .agents/, separaçêo responsabilidades.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
@@ -116,31 +116,31 @@ html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
 <span class="text-lg">⚙️</span><div><span class="font-medium">config.toml — settings do Codex</span><span class="text-neutral-500 text-sm ml-2">- TOML em vez de JSON</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Arquivo em <code>~/.codex/config.toml</code> ou <code>./.codex/config.toml</code>: modelo padrão, profile de aprovação, sandbox mode, MCP servers, model providers, network access.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Codex usa TOML em vez de JSON. Sintaxe diferente — chaves em <code>[section]</code>, arrays em <code>[[array.section]]</code>. Não é mais difícil, mas é DIFERENTE.</p></div>
+<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Arquivo em <code>~/.codex/config.toml</code> ou <code>./.codex/config.toml</code>: modelo padrêo, profile de aprovaçêo, sandbox mode, MCP servers, model providers, network access.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Codex usa TOML em vez de JSON. Sintaxe diferente — chaves em <code>[section]</code>, arrays em <code>[[array.section]]</code>. Nêo é mais difícil, mas é DIFERENTE.</p></div>
 <div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Sintaxe TOML básica, profiles (<code>[profiles.work]</code>), sandbox levels, model provider override, env interpolation.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
-<span class="text-lg">👤</span><div><span class="font-medium">Agents em TOML</span><span class="text-neutral-500 text-sm ml-2">- Não é Markdown como no Claude</span></div>
+<span class="text-lg">👤</span><div><span class="font-medium">Agents em TOML</span><span class="text-neutral-500 text-sm ml-2">- Nêo é Markdown como no Claude</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Sub-agents no Codex são arquivos <code>.toml</code> em <code>.codex/agents/</code>. Têm campos como <code>name</code>, <code>description</code>, <code>model</code>, <code>tools</code> e <code>instructions</code> (string multiline com o system prompt).</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Quem chega do Claude espera markdown. O agente do Codex é estrutura — você não escreve "system prompt em prosa", você preenche campos de uma struct.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Multiline string em TOML (<code>"""..."""</code>), invocação EXPLÍCITA (não auto-dispatch), namespace por arquivo, paralelismo manual.</p></div>
+<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Sub-agents no Codex sêo arquivos <code>.toml</code> em <code>.codex/agents/</code>. Têm campos como <code>name</code>, <code>description</code>, <code>model</code>, <code>tools</code> e <code>instructions</code> (string multiline com o system prompt).</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Quem chega do Claude espera markdown. O agente do Codex é estrutura — você nêo escreve "system prompt em prosa", você preenche campos de uma struct.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Multiline string em TOML (<code>"""..."""</code>), invocaçêo EXPLÍCITA (nêo auto-dispatch), namespace por arquivo, paralelismo manual.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
-<span class="text-lg">🚦</span><div><span class="font-medium">Invocação explícita de agents</span><span class="text-neutral-500 text-sm ml-2">- A maior pegadinha pra quem vem do Claude</span></div>
+<span class="text-lg">🚦</span><div><span class="font-medium">Invocaçêo explícita de agents</span><span class="text-neutral-500 text-sm ml-2">- A maior pegadinha pra quem vem do Claude</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">No Codex, sub-agents NÃO são auto-disparados pela descrição. Você precisa chamar pelo nome: <code>"use o agent code-reviewer para revisar X"</code>. Sem isso, o agent simplesmente não roda.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É o erro #1 de quem migra. "Por que meu agent não é chamado?" — porque você não chamou. Você escreve a descrição achando que ela dispara, e não dispara. Trade-off: previsibilidade vs conveniência.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Invocação por nome, vantagem de controle (sem surpresa), desvantagem de ergonomia, padrão "menciono o agent no prompt".</p></div>
+<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">No Codex, sub-agents NêO sêo auto-disparados pela descriçêo. Você precisa chamar pelo nome: <code>"use o agent code-reviewer para revisar X"</code>. Sem isso, o agent simplesmente nêo roda.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É o erro #1 de quem migra. "Por que meu agent nêo é chamado?" — porque você nêo chamou. Você escreve a descriçêo achando que ela dispara, e nêo dispara. Trade-off: previsibilidade vs conveniência.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Invocaçêo por nome, vantagem de controle (sem surpresa), desvantagem de ergonomia, padrêo "menciono o agent no prompt".</p></div>
 </div></div>
 </div>
 <div class="topic-item">
@@ -149,9 +149,9 @@ html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
 <span class="text-lg">🏖️</span><div><span class="font-medium">Sandbox e approval modes</span><span class="text-neutral-500 text-sm ml-2">- Read-only, workspace-write, full</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Codex tem sandbox configurável em <code>config.toml</code>: <code>read-only</code> (só lê), <code>workspace-write</code> (escreve no projeto), <code>full</code> (livre). E approval modes que controlam quando pedir confirmação.</p></div>
+<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Codex tem sandbox configurável em <code>config.toml</code>: <code>read-only</code> (só lê), <code>workspace-write</code> (escreve no projeto), <code>full</code> (livre). E approval modes que controlam quando pedir confirmaçêo.</p></div>
 <div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É a granularidade de segurança do Codex. Mais explícita que a do Claude Code, e configurada via toml. Confuso no início, mas robusto depois de entender.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Sandbox por sessão vs global, escopo de filesystem write, network gating, profiles que combinam (<code>danger-full-access</code>, <code>safe-readonly</code>).</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Sandbox por sessêo vs global, escopo de filesystem write, network gating, profiles que combinam (<code>danger-full-access</code>, <code>safe-readonly</code>).</p></div>
 </div></div>
 </div>
 <div class="topic-item">
@@ -161,8 +161,8 @@ html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
 <div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Codex também suporta slash commands customizados, geralmente como arquivos em <code>.codex/commands/</code> ou via skills com prefixo. Sintaxe de argumentos e namespacing diferem do Claude.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Pra portar seus slash favoritos. A maioria converte 1:1, alguns precisam de adaptação (especialmente se usam injeção dinâmica do Claude).</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Convenção de pasta, frontmatter mínimo, ausência de backtick-bang, alternativas pra injeção dinâmica (script + prompt).</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Pra portar seus slash favoritos. A maioria converte 1:1, alguns precisam de adaptaçêo (especialmente se usam injeçêo dinâmica do Claude).</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Convençêo de pasta, frontmatter mínimo, ausência de backtick-bang, alternativas pra injeçêo dinâmica (script + prompt).</p></div>
 </div></div>
 </div>
 </div>
@@ -182,12 +182,12 @@ html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
 <div class="topic-item">
 <button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
-<span class="text-lg">📦</span><div><span class="font-medium">Skill no Codex — onde mora</span><span class="text-neutral-500 text-sm ml-2">- .agents/skills/ não .codex/skills/</span></div>
+<span class="text-lg">📦</span><div><span class="font-medium">Skill no Codex — onde mora</span><span class="text-neutral-500 text-sm ml-2">- .agents/skills/ nêo .codex/skills/</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Skills do Codex moram em <code>~/.agents/skills/&lt;nome&gt;/</code> (global) ou <code>./.agents/skills/&lt;nome&gt;/</code> (projeto). Por quê? Porque <code>.agents/</code> é a convenção da spec aberta — funciona em qualquer tool compatível.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Quem espera <code>.codex/skills/</code> coloca a skill lá e não funciona. Detalhe pequeno, consequência grande: skill invisível ao agente.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Convenção aberta vs proprietária, portabilidade automática pra outras tools, reload manual (Plugins → refresh).</p></div>
+<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Skills do Codex moram em <code>~/.agents/skills/&lt;nome&gt;/</code> (global) ou <code>./.agents/skills/&lt;nome&gt;/</code> (projeto). Por quê? Porque <code>.agents/</code> é a convençêo da spec aberta — funciona em qualquer tool compatível.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Quem espera <code>.codex/skills/</code> coloca a skill lá e nêo funciona. Detalhe pequeno, consequência grande: skill invisível ao agente.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Convençêo aberta vs proprietária, portabilidade automática pra outras tools, reload manual (Plugins → refresh).</p></div>
 </div></div>
 </div>
 <div class="topic-item">
@@ -208,8 +208,8 @@ html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
 <div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Arquivo opcional <code>agents/openai.yaml</code> dentro da pasta da skill. Carrega metadata específica de UI (branding, ícone), declarações de MCP server requeridos, e flags de comportamento.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Sem o sidecar, sua skill funciona, mas perde refinamentos: aparece sem ícone, sem branding, e dependências de MCP precisam ser instaladas à mão. Com sidecar, instalação fica turn-key.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Estrutura YAML do sidecar, campos suportados (mcp_servers, branding, hidden), opt-in (não bloqueia funcionamento básico).</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Sem o sidecar, sua skill funciona, mas perde refinamentos: aparece sem ícone, sem branding, e dependências de MCP precisam ser instaladas à mêo. Com sidecar, instalaçêo fica turn-key.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Estrutura YAML do sidecar, campos suportados (mcp_servers, branding, hidden), opt-in (nêo bloqueia funcionamento básico).</p></div>
 </div></div>
 </div>
 <div class="topic-item">
@@ -218,19 +218,19 @@ html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
 <span class="text-lg">📏</span><div><span class="font-medium">Limite oculto da description</span><span class="text-neutral-500 text-sm ml-2">- ~8K chars no catálogo</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">O Codex tem um limite não-documentado (~8K caracteres) para o tamanho da description da skill quando ela é indexada no catálogo. Acima disso, description é truncada — e a skill perde gatilhos.</p></div>
+<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">O Codex tem um limite nêo-documentado (~8K caracteres) para o tamanho da description da skill quando ela é indexada no catálogo. Acima disso, description é truncada — e a skill perde gatilhos.</p></div>
 <div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Skill grande importada do Claude pode ter description longa que funciona bem lá e morre no Codex. O polyskill antecipa isso e reescreve.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Limite oculto, comportamento silencioso (não dá erro), técnica de "front-loading" (mover gatilhos pro topo), polyskill como solução automática.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Limite oculto, comportamento silencioso (nêo dá erro), técnica de "front-loading" (mover gatilhos pro topo), polyskill como soluçêo automática.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
-<span class="text-lg">🚫</span><div><span class="font-medium">Sem backtick-bang nativo</span><span class="text-neutral-500 text-sm ml-2">- Como contornar injeção dinâmica</span></div>
+<span class="text-lg">🚫</span><div><span class="font-medium">Sem backtick-bang nativo</span><span class="text-neutral-500 text-sm ml-2">- Como contornar injeçêo dinâmica</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Codex não interpreta backtick-bang como execução shell pré-prompt. Skills do Claude que dependem disso precisam adaptação: virar instrução em prosa ("rode `git status` e analise") ou script chamado.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É a diferença que mais quebra portabilidade de skills do Claude. Polyskill faz a tradução automática como prosa de fallback.</p></div>
+<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Codex nêo interpreta backtick-bang como execuçêo shell pré-prompt. Skills do Claude que dependem disso precisam adaptaçêo: virar instruçêo em prosa ("rode `git status` e analise") ou script chamado.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É a diferença que mais quebra portabilidade de skills do Claude. Polyskill faz a traduçêo automática como prosa de fallback.</p></div>
 <div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Build-time vs runtime injection, prosa de fallback, script delegado, idempotência.</p></div>
 </div></div>
 </div>
@@ -240,20 +240,20 @@ html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
 <span class="text-lg">🔌</span><div><span class="font-medium">MCP servers no Codex</span><span class="text-neutral-500 text-sm ml-2">- Declarados em config.toml</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">MCP servers declarados em <code>[mcp_servers.&lt;nome&gt;]</code> dentro do <code>config.toml</code>, ou em sidecar <code>openai.yaml</code> da skill. Mesma spec MCP, mesmo protocolo, declaração diferente.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Pra ligar Slack, Gmail, GitHub etc. no Codex. Comando, args e env vars são iguais ao Claude — só o formato do arquivo muda (TOML/YAML em vez de JSON).</p></div>
+<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">MCP servers declarados em <code>[mcp_servers.&lt;nome&gt;]</code> dentro do <code>config.toml</code>, ou em sidecar <code>openai.yaml</code> da skill. Mesma spec MCP, mesmo protocolo, declaraçêo diferente.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Pra ligar Slack, Gmail, GitHub etc. no Codex. Comando, args e env vars sêo iguais ao Claude — só o formato do arquivo muda (TOML/YAML em vez de JSON).</p></div>
 <div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Mapping JSON↔TOML pra MCP, sidecar como local recomendado pra deps de skill, env interpolation no TOML.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">7</span>
-<span class="text-lg">$</span><div><span class="font-medium">Invocação $skill — não é /skill</span><span class="text-neutral-500 text-sm ml-2">- O signo do dólar</span></div>
+<span class="text-lg">$</span><div><span class="font-medium">Invocaçêo $skill — nêo é /skill</span><span class="text-neutral-500 text-sm ml-2">- O signo do dólar</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
 <div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Codex usa <code>$nome-skill</code> em vez de <code>/nome-skill</code> pra invocar skill explicitamente. Mesma ideia, sigla diferente. Slash continua existindo pra comandos built-in.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Reflexo de digitar <code>/</code> no Codex resulta em comando interno, não skill. Pequena fonte de atrito que some depois de 1 dia de uso.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Separação slash (built-in) × dollar (skill), nomenclatura kebab-case, auto-completar disponível, alias possível.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Reflexo de digitar <code>/</code> no Codex resulta em comando interno, nêo skill. Pequena fonte de atrito que some depois de 1 dia de uso.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Separaçêo slash (built-in) × dollar (skill), nomenclatura kebab-case, auto-completar disponível, alias possível.</p></div>
 </div></div>
 </div>
 </div>
@@ -264,7 +264,7 @@ html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
 </div>
 <div class="flex flex-col sm:flex-row gap-4 mt-8">
 <a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="../trilha2-claude-code/index.html">← Trilha 2: Claude Code</a>
-<a class="flex-1 text-center px-6 py-3 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-500 transition-colors" href="../trilha4-conversao/index.html">Trilha 4: Conversão →</a>
+<a class="flex-1 text-center px-6 py-3 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-500 transition-colors" href="../trilha4-conversao/index.html">Trilha 4: Conversêo →</a>
 </div>
 </main>
 <div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-3-1" onclick="if(event.target === this) closeModal()">

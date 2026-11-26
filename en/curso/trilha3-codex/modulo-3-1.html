@@ -201,9 +201,9 @@ html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
 <p class="text-neutral-300 mb-6 leading-relaxed">Equivalent of <code>settings.json</code> from Claude, but in <strong class="text-purple-400">TOML</strong>. It’s not harder—it’s DIFFERENT. Section syntax uses brackets, arrays use double brackets, and multiline strings use triple quotes.</p>
 <div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-purple-400 mb-3">commented config.toml</h3>
-<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-4 overflow-x-auto"><span class="text-neutral-500"># modelo padrão</span>
+<pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-4 overflow-x-auto"><span class="text-neutral-500"># modelo padrêo</span>
 model = "gpt-5-codex"
-approval_policy = "on-failure"   <span class="text-neutral-500"># quando pedir aprovação</span>
+approval_policy = "on-failure"   <span class="text-neutral-500"># quando pedir aprovaçêo</span>
 sandbox_mode = "workspace-write" <span class="text-neutral-500"># nível de sandbox</span>
 
 <span class="text-neutral-500"># profiles — perfis nomeados</span>
@@ -236,10 +236,10 @@ numero = 42
 booleano = true
 array = ["a", "b", "c"]
 
-[secao]               <span class="text-neutral-500"># seção (= objeto)</span>
+[secao]               <span class="text-neutral-500"># seçêo (= objeto)</span>
 chave = "valor"
 
-[secao.sub]           <span class="text-neutral-500"># sub-seção</span>
+[secao.sub]           <span class="text-neutral-500"># sub-seçêo</span>
 outra = "outra"
 
 [[lista_de_secoes]]   <span class="text-neutral-500"># array de seções</span>
@@ -333,7 +333,7 @@ You are a senior code reviewer.
 </div>
 </div>
 </section>
-<!-- 5. Invocação explícita -->
+<!-- 5. Invocaçêo explícita -->
 <section class="mb-16" id="topico-5">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">5</span>
@@ -355,8 +355,8 @@ You are a senior code reviewer.
 <h4 class="font-bold text-purple-400 mb-3">🟣 Codex — explicit</h4>
 <pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-3 mb-3">User: "revisa essa PR"
 
-→ Codex faz revisão genérica
-→ Sub-agent code-reviewer NÃO roda
+→ Codex faz revisêo genérica
+→ Sub-agent code-reviewer NêO roda
 
 User: "use code-reviewer para
         revisar a PR #123"
@@ -458,8 +458,8 @@ description: Revisa o diff atual procurando bugs
 Revise o diff atual da branch (rode <code>git diff</code>).
 
 Procure:
-- Bugs de correção
-- Casos não tratados
+- Bugs de correçêo
+- Casos nêo tratados
 - Vulnerabilidades comuns
 
 Se passar argumento, foque nesse arquivo.

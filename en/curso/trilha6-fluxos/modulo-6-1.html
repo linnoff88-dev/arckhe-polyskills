@@ -92,16 +92,16 @@ html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
 <pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-4 overflow-x-auto"># Session handoff — 2026-05-24 16:30
 
 ## 🎯 Foco atual
-Implementar autenticação OAuth no /api/auth com Google.
+Implementar autenticaçêo OAuth no /api/auth com Google.
 
 ## 📂 Arquivos tocados (com estado)
-- src/api/auth.ts          ← parcial, falta validação JWT
+- src/api/auth.ts          ← parcial, falta validaçêo JWT
 - src/api/auth.test.ts     ← testes do happy path passando
 - prisma/schema.prisma     ← adicionou model OAuthAccount
 
 ## ✅ Decisões tomadas
-- Usar passport.js (não auth0)
-- JWT em cookie httpOnly (não localStorage)
+- Usar passport.js (nêo auth0)
+- JWT em cookie httpOnly (nêo localStorage)
 - Refresh token rotacionando a cada 1h
 
 ## 🚧 Problema aberto
@@ -164,7 +164,7 @@ cookie parse) sem sucesso. Provável bug na lib ou no setup do test.
 │ Explorer │  src/api/auth.ts                                       │
 │          │  ──────────────────────────────────────                │
 │ ▾ src    │  export async function login(req, res) {               │
-│   api    │    // implementação aqui                               │
+│   api    │    // implementaçêo aqui                               │
 │   ui     │    ...                                                 │
 │ ▸ tests  │  }                                                     │
 │          │                                                        │

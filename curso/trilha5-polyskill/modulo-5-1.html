@@ -43,7 +43,7 @@ html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-fundamentos/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-claude-code/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Claude Code</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-codex/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Codex</span></a>
-<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-conversao/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Conversão</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-conversao/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Conversêo</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-teal-400 bg-teal-500/10" href="index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">polyskill</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6-fluxos/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Fluxos</span></a>
 <button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
@@ -63,7 +63,7 @@ html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
 <header class="bg-gradient-to-br from-teal-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 <span class="inline-block px-3 py-1 bg-teal-500/20 text-teal-400 text-xs font-semibold rounded-full mb-4">MÓDULO 5.1</span>
-<h1 class="text-3xl sm:text-4xl font-bold mb-4">🏛️ O padrão Agent Skills, a dor e a arquitetura do polyskill</h1>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🏛️ O padrêo Agent Skills, a dor e a arquitetura do polyskill</h1>
 <p class="text-lg text-neutral-400 max-w-3xl">Antes do CLI, o conceito. Por que polyskill existe, qual problema resolve e como sua arquitetura de 3 peças (IR + adapters + CLI) escala pra novos runtimes sem rewrite.</p>
 <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">7</div><div class="text-xs text-neutral-400">Tópicos</div></div>
@@ -85,13 +85,13 @@ html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">1</span>
 <h2 class="text-2xl font-bold">📐 A spec aberta Agent Skills (agentskills.io)</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed">Padrão originado na Anthropic e <strong class="text-teal-400">liberado como spec aberta</strong>. Hoje adotado por 40+ ferramentas. Define o formato canônico de skill: SKILL.md + frontmatter YAML + corpo markdown + convenção de pastas.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed">Padrêo originado na Anthropic e <strong class="text-teal-400">liberado como spec aberta</strong>. Hoje adotado por 40+ ferramentas. Define o formato canônico de skill: SKILL.md + frontmatter YAML + corpo markdown + convençêo de pastas.</p>
 <div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-teal-400 mb-3">Os 4 pilares — o que TODOS os runtimes concordam</h3>
 <div class="space-y-3">
-<div class="flex items-start space-x-3"><span class="text-teal-400 font-bold mt-0.5 text-lg">1</span><div><strong>Nome do arquivo:</strong> <code class="text-sm">SKILL.md</code> — não inventar variações</div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 font-bold mt-0.5 text-lg">1</span><div><strong>Nome do arquivo:</strong> <code class="text-sm">SKILL.md</code> — nêo inventar variações</div></div>
 <div class="flex items-start space-x-3"><span class="text-teal-400 font-bold mt-0.5 text-lg">2</span><div><strong>Frontmatter YAML</strong> com no mínimo <code class="text-sm">name</code> e <code class="text-sm">description</code></div></div>
-<div class="flex items-start space-x-3"><span class="text-teal-400 font-bold mt-0.5 text-lg">3</span><div><strong>Corpo</strong> em markdown padrão</div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 font-bold mt-0.5 text-lg">3</span><div><strong>Corpo</strong> em markdown padrêo</div></div>
 <div class="flex items-start space-x-3"><span class="text-teal-400 font-bold mt-0.5 text-lg">4</span><div><strong>Pastas convencionadas:</strong> <code class="text-sm">scripts/</code>, <code class="text-sm">references/</code>, <code class="text-sm">assets/</code></div></div>
 </div>
 </div>
@@ -103,7 +103,7 @@ html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
 <h3 class="font-semibold mb-3 text-teal-400">Conceitos-chave</h3>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
 <div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">Spec aberta</strong><br/><span class="text-neutral-400 text-xs">agentskills.io</span></div>
-<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">40+ runtimes</strong><br/><span class="text-neutral-400 text-xs">Adoção ampla</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">40+ runtimes</strong><br/><span class="text-neutral-400 text-xs">Adoçêo ampla</span></div>
 <div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">4 pilares</strong><br/><span class="text-neutral-400 text-xs">Núcleo portable</span></div>
 <div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">Extras = amarra</strong><br/><span class="text-neutral-400 text-xs">Fora dos 4 = runtime</span></div>
 </div>
@@ -149,18 +149,18 @@ html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
 <div class="flex-shrink-0 w-12 h-12 rounded-full bg-red-500/20 flex items-center justify-center"><span class="text-red-400 font-bold">M1</span></div>
 <div class="flex-1 bg-dark-800 rounded-xl p-5 border border-red-500/30">
 <h4 class="font-semibold text-red-400 mb-1">Mês 1 — Duas skills DIFERENTES</h4>
-<p class="text-sm text-neutral-300">As versões divergiram em 4 pontos. Você não lembra qual está certa. Cada vez que você melhora uma, joga fora a melhoria da outra. <strong>Fonte de verdade ambígua.</strong></p>
+<p class="text-sm text-neutral-300">As versões divergiram em 4 pontos. Você nêo lembra qual está certa. Cada vez que você melhora uma, joga fora a melhoria da outra. <strong>Fonte de verdade ambígua.</strong></p>
 </div>
 </div>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">💀</span>Custos invisíveis do drift</h3>
 <ul class="space-y-2 text-neutral-300 text-sm">
-<li>• Tempo perdido decidindo "qual versão é a boa"</li>
-<li>• Bugs voltam (você corrigiu numa versão, esqueceu na outra)</li>
-<li>• Feature funciona num agente, não no outro</li>
+<li>• Tempo perdido decidindo "qual versêo é a boa"</li>
+<li>• Bugs voltam (você corrigiu numa versêo, esqueceu na outra)</li>
+<li>• Feature funciona num agente, nêo no outro</li>
 <li>• Time fica confuso (skill se comporta diferente)</li>
-<li>• Documentação fica desatualizada nos dois lados</li>
+<li>• Documentaçêo fica desatualizada nos dois lados</li>
 </ul>
 </div>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
@@ -169,7 +169,7 @@ html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
 <div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">Drift orgânico</strong><br/><span class="text-neutral-400 text-xs">Inevitável sem tooling</span></div>
 <div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">Fork acidental</strong><br/><span class="text-neutral-400 text-xs">Versões divergentes</span></div>
 <div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">Source ambígua</strong><br/><span class="text-neutral-400 text-xs">Qual é a boa?</span></div>
-<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">Custo cognitivo</strong><br/><span class="text-neutral-400 text-xs">Decisão constante</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">Custo cognitivo</strong><br/><span class="text-neutral-400 text-xs">Decisêo constante</span></div>
 </div>
 </div>
 </section>
@@ -192,7 +192,7 @@ html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
 <div><span class="text-teal-400">Polyskill:</span></div>
 <div>  definition.md → polyskill build → dist/claude/SKILL.md + dist/codex/SKILL.md</div>
 </div>
-<p class="text-sm text-neutral-400 mt-3">Mesma metáfora: source canônica, compilação seletiva por alvo, output otimizado.</p>
+<p class="text-sm text-neutral-400 mt-3">Mesma metáfora: source canônica, compilaçêo seletiva por alvo, output otimizado.</p>
 </div>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-blue-400 mb-3">Como fica a estrutura</h3>
@@ -204,24 +204,24 @@ html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
 └── dist/                  ← OUTPUTS (gerados pelo polyskill build)
     ├── claude/
     │   └── minha-skill/
-    │       └── SKILL.md  ← versão Claude (com allowed-tools, backtick-bang...)
+    │       └── SKILL.md  ← versêo Claude (com allowed-tools, backtick-bang...)
     └── codex/
         └── minha-skill/
-            ├── SKILL.md  ← versão Codex (sem bang, description front-loaded)
+            ├── SKILL.md  ← versêo Codex (sem bang, description front-loaded)
             └── agents/
                 └── openai.yaml  ← sidecar gerado automaticamente</pre>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
 <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">🎯</span>O "aha moment"</h3>
-<p class="text-neutral-300 text-sm">Você nunca edita <code>dist/</code>. Só edita <code>definition.md</code>. Roda <code>polyskill build</code>. O <code>dist/</code> reflete. Roda <code>polyskill install</code>. Os dois runtimes têm a versão fresca. <strong>Uma única fonte de verdade.</strong></p>
+<p class="text-neutral-300 text-sm">Você nunca edita <code>dist/</code>. Só edita <code>definition.md</code>. Roda <code>polyskill build</code>. O <code>dist/</code> reflete. Roda <code>polyskill install</code>. Os dois runtimes têm a versêo fresca. <strong>Uma única fonte de verdade.</strong></p>
 </div>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
 <h3 class="font-semibold mb-3 text-teal-400">Conceitos-chave</h3>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
 <div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">Source canônica</strong><br/><span class="text-neutral-400 text-xs">definition.md</span></div>
-<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">Compilação</strong><br/><span class="text-neutral-400 text-xs">polyskill build</span></div>
-<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">dist/ gerada</strong><br/><span class="text-neutral-400 text-xs">Não editar à mão</span></div>
-<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">Otimização/target</strong><br/><span class="text-neutral-400 text-xs">Por adapter</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">Compilaçêo</strong><br/><span class="text-neutral-400 text-xs">polyskill build</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">dist/ gerada</strong><br/><span class="text-neutral-400 text-xs">Nêo editar à mêo</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">Otimizaçêo/target</strong><br/><span class="text-neutral-400 text-xs">Por adapter</span></div>
 </div>
 </div>
 </section>
@@ -231,12 +231,12 @@ html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">4</span>
 <h2 class="text-2xl font-bold">🧱 As 3 peças — IR, adapters, CLI</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed">Por dentro, polyskill tem três peças. Entendendo isso, você vê que <strong class="text-teal-400">adicionar Gemini/Cursor/Copilot é UM arquivo</strong> — o adapter. Não rewrite.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed">Por dentro, polyskill tem três peças. Entendendo isso, você vê que <strong class="text-teal-400">adicionar Gemini/Cursor/Copilot é UM arquivo</strong> — o adapter. Nêo rewrite.</p>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
 <div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6">
 <div class="text-2xl mb-2">🏛️</div>
-<h4 class="font-bold text-teal-400 mb-2">1. IR (Representação Interna)</h4>
-<p class="text-sm text-neutral-300">Versão neutra de tudo que uma skill precisa ser, SEM amarração a runtime específico. É o esperanto do polyskill.</p>
+<h4 class="font-bold text-teal-400 mb-2">1. IR (Representaçêo Interna)</h4>
+<p class="text-sm text-neutral-300">Versêo neutra de tudo que uma skill precisa ser, SEM amarraçêo a runtime específico. É o esperanto do polyskill.</p>
 </div>
 <div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6">
 <div class="text-2xl mb-2">🔌</div>
@@ -246,7 +246,7 @@ html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
 <div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6">
 <div class="text-2xl mb-2">⚡</div>
 <h4 class="font-bold text-teal-400 mb-2">3. CLI</h4>
-<p class="text-sm text-neutral-300">O que você executa no terminal. Orquestra os adapters via registry. Não sabe de detalhes de runtime — pergunta pro adapter.</p>
+<p class="text-sm text-neutral-300">O que você executa no terminal. Orquestra os adapters via registry. Nêo sabe de detalhes de runtime — pergunta pro adapter.</p>
 </div>
 </div>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
@@ -263,7 +263,7 @@ html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
 <div>         │</div>
 <div>         ▼</div>
 <div>┌──────────────────┐</div>
-<div>│  IR (neutral)    │  ← representação interna</div>
+<div>│  IR (neutral)    │  ← representaçêo interna</div>
 <div>└────────┬─────────┘</div>
 <div>         │ split por target</div>
 <div>         ├──────────────┬──────────────┐</div>
@@ -296,7 +296,7 @@ register(<span class="text-blue-400">new</span> CodexAdapter());</pre>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
 <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">🚀</span>Por que isso escala</h3>
-<p class="text-neutral-300 text-sm">Quando Gemini CLI ganhar tração, alguém implementa <code>src/adapters/gemini.ts</code> com parse/emit/validate, registra no registry, abre PR. Polyskill ganha suporte ao Gemini <strong>sem mudar uma linha do core</strong>. Mesma coisa pra Cursor, Copilot, o-que-vier.</p>
+<p class="text-neutral-300 text-sm">Quando Gemini CLI ganhar traçêo, alguém implementa <code>src/adapters/gemini.ts</code> com parse/emit/validate, registra no registry, abre PR. Polyskill ganha suporte ao Gemini <strong>sem mudar uma linha do core</strong>. Mesma coisa pra Cursor, Copilot, o-que-vier.</p>
 </div>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
 <h3 class="font-semibold mb-3 text-teal-400">Conceitos-chave</h3>
@@ -314,7 +314,7 @@ register(<span class="text-blue-400">new</span> CodexAdapter());</pre>
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">5</span>
 <h2 class="text-2xl font-bold">🔁 Round-trip — Claude ↔ portable ↔ Codex</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed">Adapter "lê E escreve". Você pode importar skill existente do Claude (<code>--from claude</code>), virar portable, daí emitir pros dois. <strong class="text-teal-400">Não precisa começar do zero</strong>.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed">Adapter "lê E escreve". Você pode importar skill existente do Claude (<code>--from claude</code>), virar portable, daí emitir pros dois. <strong class="text-teal-400">Nêo precisa começar do zero</strong>.</p>
 <div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-teal-400 mb-3">Fluxos de round-trip</h3>
 <div class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-4 leading-relaxed">
@@ -330,14 +330,14 @@ register(<span class="text-blue-400">new</span> CodexAdapter());</pre>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
-<h4 class="font-bold text-blue-400 mb-3">Importação Claude → portable</h4>
+<h4 class="font-bold text-blue-400 mb-3">Importaçêo Claude → portable</h4>
 <pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-3 mb-2">$ polyskill import \
   ~/.claude/skills/x \
   --from claude</pre>
 <p class="text-xs text-neutral-400">Lê SKILL.md + scripts + references. Gera definition.md preservando tudo.</p>
 </div>
 <div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6">
-<h4 class="font-bold text-purple-400 mb-3">Importação Codex → portable</h4>
+<h4 class="font-bold text-purple-400 mb-3">Importaçêo Codex → portable</h4>
 <pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-3 mb-2">$ polyskill import \
   ~/.agents/skills/x \
   --from codex</pre>
@@ -374,12 +374,12 @@ register(<span class="text-blue-400">new</span> CodexAdapter());</pre>
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">6</span>
 <h2 class="text-2xl font-bold">🛡️ Drift policy — o seguro contra atropelar</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed">Toda vez que faz build, polyskill <strong class="text-teal-400">calcula hash dos arquivos de output</strong>. No build seguinte, se algum arquivo de destino foi editado à mão fora do polyskill, o build ABORTA com erro. Você decide.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed">Toda vez que faz build, polyskill <strong class="text-teal-400">calcula hash dos arquivos de output</strong>. No build seguinte, se algum arquivo de destino foi editado à mêo fora do polyskill, o build ABORTA com erro. Você decide.</p>
 <div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-teal-400 mb-3">O fluxo de drift</h3>
 <div class="space-y-3">
 <div class="flex items-start space-x-3"><span class="text-teal-400 font-bold">1.</span><div><code>polyskill build</code> → gera <code>dist/claude/x/SKILL.md</code>, grava hash em <code>.polyskill-hashes</code></div></div>
-<div class="flex items-start space-x-3"><span class="text-teal-400 font-bold">2.</span><div>Você edita à mão <code>~/.claude/skills/x/SKILL.md</code> (ajuste específico)</div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 font-bold">2.</span><div>Você edita à mêo <code>~/.claude/skills/x/SKILL.md</code> (ajuste específico)</div></div>
 <div class="flex items-start space-x-3"><span class="text-teal-400 font-bold">3.</span><div>Dias depois: <code>polyskill build</code> de novo</div></div>
 <div class="flex items-start space-x-3"><span class="text-red-400 font-bold">4.</span><div>Polyskill compara hash: <strong class="text-red-400">drift detectado</strong>. Aborta com mensagem clara.</div></div>
 <div class="flex items-start space-x-3"><span class="text-teal-400 font-bold">5.</span><div>Você escolhe: <code>--force</code> (sobrescreve, perde ajuste) OU <code>polyskill reconcile</code> (inspeciona, decide).</div></div>
@@ -390,18 +390,18 @@ register(<span class="text-blue-400">new</span> CodexAdapter());</pre>
 <h4 class="font-bold text-emerald-400 mb-3">✓ Por que isso é seguro</h4>
 <ul class="space-y-2 text-neutral-300 text-sm">
 <li>• Nunca sobrescreve trabalho seu silenciosamente</li>
-<li>• Drift é VISTO, não escondido</li>
-<li>• Você sempre tem a opção de force OU reconcile</li>
-<li>• Edição em produção fica detectável no próximo build</li>
+<li>• Drift é VISTO, nêo escondido</li>
+<li>• Você sempre tem a opçêo de force OU reconcile</li>
+<li>• Ediçêo em produçêo fica detectável no próximo build</li>
 </ul>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
 <h4 class="font-bold text-red-400 mb-3">✗ Sem drift policy seria…</h4>
 <ul class="space-y-2 text-neutral-300 text-sm">
-<li>• Ajuste à mão sumiria no build seguinte</li>
+<li>• Ajuste à mêo sumiria no build seguinte</li>
 <li>• Você nunca saberia (sem erro)</li>
 <li>• Confiança no tool cairia</li>
-<li>• Voltaria pra manutenção manual de qualquer jeito</li>
+<li>• Voltaria pra manutençêo manual de qualquer jeito</li>
 </ul>
 </div>
 </div>
@@ -453,7 +453,7 @@ $ polyskill build</pre>
 <pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-3 mb-3">$polyskill converte minha skill
 y-compare pra funcionar nos dois
 runtimes</pre>
-<p class="text-xs text-neutral-400">Mesma skill, mesma tradução:</p>
+<p class="text-xs text-neutral-400">Mesma skill, mesma traduçêo:</p>
 <pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-3 mt-2">$ polyskill import \
     ~/.agents/skills/y-compare \
     --from codex
@@ -461,7 +461,7 @@ $ polyskill build</pre>
 </div>
 </div>
 <div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-teal-400 mb-3">Caminhos de instalação — A vs B</h3>
+<h3 class="text-lg font-semibold text-teal-400 mb-3">Caminhos de instalaçêo — A vs B</h3>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
 <div class="bg-dark-800 rounded p-4">
 <strong class="text-teal-400">Caminho A — drag &amp; drop</strong>

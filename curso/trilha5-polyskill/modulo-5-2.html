@@ -43,7 +43,7 @@ html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-fundamentos/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-claude-code/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Claude Code</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-codex/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Codex</span></a>
-<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-conversao/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Conversão</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-conversao/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Conversêo</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-teal-400 bg-teal-500/10" href="index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">polyskill</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6-fluxos/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Fluxos</span></a>
 <button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
@@ -64,7 +64,7 @@ html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 <span class="inline-block px-3 py-1 bg-teal-500/20 text-teal-400 text-xs font-semibold rounded-full mb-4">MÓDULO 5.2</span>
 <h1 class="text-3xl sm:text-4xl font-bold mb-4">⚡ CLI polyskill na prática</h1>
-<p class="text-lg text-neutral-400 max-w-3xl">Da instalação ao reconcile. Cada comando explicado, demonstrado num caso real, com cenários de uso e erros comuns.</p>
+<p class="text-lg text-neutral-400 max-w-3xl">Da instalaçêo ao reconcile. Cada comando explicado, demonstrado num caso real, com cenários de uso e erros comuns.</p>
 <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">7</div><div class="text-xs text-neutral-400">Tópicos</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">45</div><div class="text-xs text-neutral-400">Minutos</div></div>
@@ -76,14 +76,14 @@ html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
 <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-12">
 <h3 class="text-lg font-semibold text-primary mb-2 flex items-center"><span class="mr-2">🎯</span>O que você ganha aqui</h3>
-<p class="text-neutral-300">Conhecer cada comando do CLI por dentro. Sair sabendo qual usar pra cada situação (instalar, importar skill existente, builddar, validar, lidar com drift) e o que esperar do output.</p>
+<p class="text-neutral-300">Conhecer cada comando do CLI por dentro. Sair sabendo qual usar pra cada situaçêo (instalar, importar skill existente, builddar, validar, lidar com drift) e o que esperar do output.</p>
 </div>
 <h2 class="text-2xl font-bold mb-6">Conteúdo detalhado</h2>
-<!-- 1. Instalação -->
+<!-- 1. Instalaçêo -->
 <section class="mb-16" id="topico-1">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">1</span>
-<h2 class="text-2xl font-bold">📥 Instalação — Caminho A vs Caminho B</h2>
+<h2 class="text-2xl font-bold">📥 Instalaçêo — Caminho A vs Caminho B</h2>
 </div>
 <p class="text-neutral-300 mb-6 leading-relaxed">Duas formas de instalar, dependendo do que você precisa. <strong class="text-teal-400">A</strong> é mais rápido mas limitado. <strong class="text-teal-400">B</strong> é completo — necessário pra construir suas próprias skills.</p>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -96,7 +96,7 @@ cp -r skill/dist/claude/polyskill \
 <span class="text-neutral-500"># OpenAI Codex</span>
 cp -r skill/dist/codex/polyskill \
   ~/.agents/skills/polyskill</pre>
-<p class="text-xs text-neutral-400 mt-2">Skill funciona pra invocação NL. Mas se ela precisar rodar <code>polyskill build</code> por baixo, falha — CLI não está no PATH.</p>
+<p class="text-xs text-neutral-400 mt-2">Skill funciona pra invocaçêo NL. Mas se ela precisar rodar <code>polyskill build</code> por baixo, falha — CLI nêo está no PATH.</p>
 </div>
 <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
 <h4 class="font-bold text-emerald-400 mb-3">B. Source + CLI (completo)</h4>
@@ -118,7 +118,7 @@ cd skill &amp;&amp; polyskill install</pre>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
 <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span>Qual escolher</h3>
-<p class="text-neutral-300 text-sm">Se você só quer USAR skills cross-runtime já existentes, A basta. Se vai CRIAR/PORTAR skills suas, B é obrigatório. Na dúvida, B — não tem downside.</p>
+<p class="text-neutral-300 text-sm">Se você só quer USAR skills cross-runtime já existentes, A basta. Se vai CRIAR/PORTAR skills suas, B é obrigatório. Na dúvida, B — nêo tem downside.</p>
 </div>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
 <h3 class="font-semibold mb-3 text-teal-400">Conceitos-chave</h3>
@@ -136,9 +136,9 @@ cd skill &amp;&amp; polyskill install</pre>
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">2</span>
 <h2 class="text-2xl font-bold">🚀 polyskill init &lt;nome&gt;</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed">Cria um <strong class="text-teal-400">workspace de skill portable do zero</strong>. Estrutura inicial com <code>definition.md</code> stub, pastas convencionadas, config de build. Você nunca cria SKILL.md à mão.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed">Cria um <strong class="text-teal-400">workspace de skill portable do zero</strong>. Estrutura inicial com <code>definition.md</code> stub, pastas convencionadas, config de build. Você nunca cria SKILL.md à mêo.</p>
 <div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-teal-400 mb-3">Em ação</h3>
+<h3 class="text-lg font-semibold text-teal-400 mb-3">Em açêo</h3>
 <pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-4 overflow-x-auto">$ polyskill init my-reviewer
 <span class="text-emerald-400">✓ Created workspace</span>: ./my-reviewer
 
@@ -164,7 +164,7 @@ description: Use when... [edit this]
 
 # My Reviewer
 
-Edite o corpo aqui. Suporta markdown padrão.
+Edite o corpo aqui. Suporta markdown padrêo.
 
 Pode referenciar arquivos relativos: `./references/x.md`
 Pode delegar pra scripts: `./scripts/check.sh`</pre>
@@ -173,7 +173,7 @@ Pode delegar pra scripts: `./scripts/check.sh`</pre>
 <h3 class="font-semibold mb-3 text-teal-400">Conceitos-chave</h3>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
 <div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">Estrutura inicial</strong><br/><span class="text-neutral-400 text-xs">Tudo pronto</span></div>
-<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">definition.md</strong><br/><span class="text-neutral-400 text-xs">Não SKILL.md</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">definition.md</strong><br/><span class="text-neutral-400 text-xs">Nêo SKILL.md</span></div>
 <div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">.polyskill.json</strong><br/><span class="text-neutral-400 text-xs">Config local</span></div>
 <div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">Stub pronto</strong><br/><span class="text-neutral-400 text-xs">Só editar</span></div>
 </div>
@@ -187,7 +187,7 @@ Pode delegar pra scripts: `./scripts/check.sh`</pre>
 </div>
 <p class="text-neutral-300 mb-6 leading-relaxed">Pega skill existente em qualquer runtime, gera workspace portable equivalente. <strong class="text-teal-400">Bidirecional</strong>: <code>--from claude</code> pega de <code>.claude/skills/</code>, <code>--from codex</code> pega de <code>.agents/skills/</code>.</p>
 <div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-teal-400 mb-3">Em ação — importando uma skill do Claude</h3>
+<h3 class="text-lg font-semibold text-teal-400 mb-3">Em açêo — importando uma skill do Claude</h3>
 <pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-4 overflow-x-auto">$ polyskill import ~/.claude/skills/code-reviewer \
     --from claude
 
@@ -204,7 +204,7 @@ Next steps:
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
-<h4 class="font-bold text-emerald-400 mb-3">✓ O que importação preserva</h4>
+<h4 class="font-bold text-emerald-400 mb-3">✓ O que importaçêo preserva</h4>
 <ul class="space-y-2 text-neutral-300 text-sm">
 <li>• Todos os arquivos em <code>scripts/</code>, <code>references/</code>, <code>assets/</code></li>
 <li>• Frontmatter (name + description)</li>
@@ -224,7 +224,7 @@ Next steps:
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
 <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span>Reverse engineering grátis</h3>
-<p class="text-neutral-300 text-sm">Você tem 10 skills do Claude que adora? Importa cada uma com um comando, daí <code>polyskill build</code> gera versão Codex de cada. Round-trip — começou Claude-only, agora roda nos dois. Mesma coisa se você começou no Codex.</p>
+<p class="text-neutral-300 text-sm">Você tem 10 skills do Claude que adora? Importa cada uma com um comando, daí <code>polyskill build</code> gera versêo Codex de cada. Round-trip — começou Claude-only, agora roda nos dois. Mesma coisa se você começou no Codex.</p>
 </div>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
 <h3 class="font-semibold mb-3 text-teal-400">Conceitos-chave</h3>
@@ -265,7 +265,7 @@ Build complete (3 files in 2 targets, 312ms).</pre>
 <div class="p-3 text-neutral-300 border-b border-dark-600">Restaura backtick-bang nas marcações da IR</div>
 <div class="p-3 text-neutral-300 border-b border-dark-600 border-l border-dark-600">Converte marcações dinâmicas em prosa de fallback</div>
 <div class="p-3 text-neutral-300 border-b border-dark-600">Emite <code>allowed-tools</code> no frontmatter se IR tem</div>
-<div class="p-3 text-neutral-300 border-b border-dark-600 border-l border-dark-600">Ignora <code>allowed-tools</code> (não suporta)</div>
+<div class="p-3 text-neutral-300 border-b border-dark-600 border-l border-dark-600">Ignora <code>allowed-tools</code> (nêo suporta)</div>
 <div class="p-3 text-neutral-300 border-b border-dark-600">Sem sidecar</div>
 <div class="p-3 text-neutral-300 border-b border-dark-600 border-l border-dark-600">Emite <code>agents/openai.yaml</code> se IR tem branding/mcp</div>
 <div class="p-3 text-neutral-300">Description literal</div>
@@ -280,7 +280,7 @@ Build complete (3 files in 2 targets, 312ms).</pre>
 
 <span class="text-emerald-400">$ polyskill build --force</span>
 <span class="text-emerald-400">✓ Forced overwrite (drift discarded)</span></pre>
-<p class="text-sm text-neutral-300 mt-2">Use --force só quando tem certeza que o ajuste à mão pode ir embora. Senão, use <code>reconcile</code>.</p>
+<p class="text-sm text-neutral-300 mt-2">Use --force só quando tem certeza que o ajuste à mêo pode ir embora. Senêo, use <code>reconcile</code>.</p>
 </div>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
 <h3 class="font-semibold mb-3 text-teal-400">Conceitos-chave</h3>
@@ -300,7 +300,7 @@ Build complete (3 files in 2 targets, 312ms).</pre>
 </div>
 <p class="text-neutral-300 mb-6 leading-relaxed">Combina <code>build</code> + copy pros diretórios canônicos: <code>~/.claude/skills/&lt;skill&gt;</code> e <code>~/.agents/skills/&lt;skill&gt;</code>. <strong class="text-teal-400">Skill instantaneamente disponível</strong> nos dois runtimes.</p>
 <div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-teal-400 mb-3">Em ação</h3>
+<h3 class="text-lg font-semibold text-teal-400 mb-3">Em açêo</h3>
 <pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-4 overflow-x-auto">$ polyskill install
 
 <span class="text-emerald-400">✓ Built</span> 2 targets (claude, codex)
@@ -328,12 +328,12 @@ Install complete.</pre>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-5">
 <div class="text-2xl mb-2">🗑️</div>
 <h4 class="font-bold mb-1 text-teal-400">Uninstall</h4>
-<p class="text-sm text-neutral-400">Não tem comando. <code>rm -rf ~/.claude/skills/x</code> + <code>rm -rf ~/.agents/skills/x</code>.</p>
+<p class="text-sm text-neutral-400">Nêo tem comando. <code>rm -rf ~/.claude/skills/x</code> + <code>rm -rf ~/.agents/skills/x</code>.</p>
 </div>
 </div>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-blue-400 mb-3">Escopo de install</h3>
-<p class="text-neutral-300 text-sm mb-2">Por padrão instala no <strong>global</strong> (<code>~/.claude/</code>, <code>~/.agents/</code>). Pra instalar no projeto:</p>
+<p class="text-neutral-300 text-sm mb-2">Por padrêo instala no <strong>global</strong> (<code>~/.claude/</code>, <code>~/.agents/</code>). Pra instalar no projeto:</p>
 <pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-3">$ polyskill install --scope project
 <span class="text-emerald-400">✓ Installed to</span> ./.claude/skills/ and ./.agents/skills/</pre>
 </div>
@@ -353,11 +353,11 @@ Install complete.</pre>
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">6</span>
 <h2 class="text-2xl font-bold">🔍 polyskill detect / status / adapters</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed">Três comandos <strong class="text-teal-400">read-only de inspeção</strong>. Não editam nada. Servem pra debug e introspecção do estado atual.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed">Três comandos <strong class="text-teal-400">read-only de inspeçêo</strong>. Nêo editam nada. Servem pra debug e introspecçêo do estado atual.</p>
 <div class="space-y-4 mb-6">
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-5">
 <h4 class="font-bold text-teal-400 mb-2"><code>polyskill detect</code></h4>
-<p class="text-sm text-neutral-400 mb-3">Diz quais runtimes estão instalados na máquina e onde estão.</p>
+<p class="text-sm text-neutral-400 mb-3">Diz quais runtimes estêo instalados na máquina e onde estêo.</p>
 <pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-3">$ polyskill detect
 <span class="text-emerald-400">✓ Claude Code</span>     v1.4.2 (~/.claude/, npm)
 <span class="text-emerald-400">✓ OpenAI Codex</span>    v0.8.1 (~/.codex/, brew)
@@ -391,12 +391,12 @@ Roadmap (not yet):
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
 <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span>Útil em troubleshoot</h3>
-<p class="text-neutral-300 text-sm">Skill não dispara? <code>detect</code> primeiro pra ver se o runtime está visível. Build estranho? <code>status</code> mostra o que está dessincronizado. Adapter quebrou? <code>adapters</code> confirma que está carregado.</p>
+<p class="text-neutral-300 text-sm">Skill nêo dispara? <code>detect</code> primeiro pra ver se o runtime está visível. Build estranho? <code>status</code> mostra o que está dessincronizado. Adapter quebrou? <code>adapters</code> confirma que está carregado.</p>
 </div>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
 <h3 class="font-semibold mb-3 text-teal-400">Conceitos-chave</h3>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
-<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">Read-only</strong><br/><span class="text-neutral-400 text-xs">Não editam</span></div>
+<div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">Read-only</strong><br/><span class="text-neutral-400 text-xs">Nêo editam</span></div>
 <div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">--json</strong><br/><span class="text-neutral-400 text-xs">Parseable</span></div>
 <div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">CI-friendly</strong><br/><span class="text-neutral-400 text-xs">Exit codes</span></div>
 <div class="bg-dark-700 rounded p-3"><strong class="text-teal-400">Debug first stop</strong><br/><span class="text-neutral-400 text-xs">Sempre detect</span></div>
@@ -409,7 +409,7 @@ Roadmap (not yet):
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">7</span>
 <h2 class="text-2xl font-bold">🩺 polyskill validate / reconcile</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed">Dois comandos de <strong class="text-teal-400">saúde</strong>. <code>validate</code> roda linter por adapter (regras por alvo). <code>reconcile</code> resolve drift quando alguém editou à mão fora do polyskill.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed">Dois comandos de <strong class="text-teal-400">saúde</strong>. <code>validate</code> roda linter por adapter (regras por alvo). <code>reconcile</code> resolve drift quando alguém editou à mêo fora do polyskill.</p>
 <div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-teal-400 mb-3">polyskill validate — lint por target</h3>
 <pre class="font-mono text-xs text-neutral-300 bg-dark-900/50 rounded p-4 overflow-x-auto">$ polyskill validate
@@ -461,7 +461,7 @@ Choice (k/o/m/s): k
 <h4 class="font-bold text-blue-400 mb-3">Quando rodar reconcile</h4>
 <ul class="space-y-2 text-neutral-300 text-sm">
 <li>• Build aborta com erro de drift</li>
-<li>• Você sabe que alguém editou à mão</li>
+<li>• Você sabe que alguém editou à mêo</li>
 <li>• Skill voltou pra source de outra máquina</li>
 <li>• Periodicamente como sanity check</li>
 </ul>
@@ -469,7 +469,7 @@ Choice (k/o/m/s): k
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
 <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span>Setup ideal</h3>
-<p class="text-neutral-300 text-sm">Pre-commit hook roda <code>polyskill validate</code> + <code>polyskill build</code>. CI roda os dois também. Reconcile você corre à mão quando drift aparece. Esse triângulo cobre 95% dos casos.</p>
+<p class="text-neutral-300 text-sm">Pre-commit hook roda <code>polyskill validate</code> + <code>polyskill build</code>. CI roda os dois também. Reconcile você corre à mêo quando drift aparece. Esse triângulo cobre 95% dos casos.</p>
 </div>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
 <h3 class="font-semibold mb-3 text-teal-400">Conceitos-chave</h3>
@@ -490,8 +490,8 @@ Choice (k/o/m/s): k
 <div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">init cria workspace portable</strong><span class="text-neutral-400"> — definition.md + dirs convencionados.</span></div></div>
 <div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">import puxa skill existente nos dois sentidos</strong><span class="text-neutral-400"> — anota conversões na IR.</span></div></div>
 <div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">build emite pros 2 targets + grava hash</strong><span class="text-neutral-400"> — --force pra ignorar drift.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">install = build + copy pros dirs canônicos</strong><span class="text-neutral-400"> — global por padrão, --scope project se quiser.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">detect/status/adapters = inspeção read-only</strong><span class="text-neutral-400"> — primeiros comandos pra troubleshoot.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">install = build + copy pros dirs canônicos</strong><span class="text-neutral-400"> — global por padrêo, --scope project se quiser.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">detect/status/adapters = inspeçêo read-only</strong><span class="text-neutral-400"> — primeiros comandos pra troubleshoot.</span></div></div>
 <div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">validate em CI + reconcile pra drift</strong><span class="text-neutral-400"> — triângulo de saúde da skill.</span></div></div>
 </div>
 <div class="bg-dark-800/50 rounded-lg p-4 mb-8">
